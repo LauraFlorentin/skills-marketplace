@@ -20,16 +20,6 @@ To install a specific pattern, such as the **Planning** skill:
 npx skills add LauraFlorentin/skills-marketplace/skills/agentic_systems_architecture/planning
 ```
 
-## 🧩 Available Collections
-
-### 1. [Agentic Systems Architecture](./skills/agentic_systems_architecture/README.md)
-The core building blocks for autonomous agents.
-- **Includes**: Planning, Routing, Tool Use, RAG, Memory, Reflection, and 15+ more.
-- **Best for**: Building robust, production-grade agentic workflows.
-
-### 2. [Consulting Strategies](./skills/consulting/README.md)
-*(Coming Soon)* Strategic frameworks for AI implementation and business analysis.
-
 ## 🤖 Claude Plugin Integration
 
 This repository is configured as a native **Claude Code Plugin**.
@@ -40,6 +30,16 @@ npx skills add LauraFlorentin/skills-marketplace --agent claude-code
 ```
 
 Once installed, Claude will automatically have access to all skills in the `skills/` directory and can use them to better plan, route, and execute tasks.
+
+## 🧩 Available Collections
+
+### 1. [Agentic Systems Architecture](./skills/agentic_systems_architecture/README.md)
+The core building blocks for autonomous agents.
+- **Includes**: Planning, Routing, Tool Use, RAG, Memory, Reflection, and 15+ more.
+- **Best for**: Building robust, production-grade agentic workflows.
+
+### 2. [Consulting Strategies](./skills/consulting/README.md)
+*(Coming Soon)* Strategic frameworks for AI implementation and business analysis.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a PR to add new skills to the marketplace.
