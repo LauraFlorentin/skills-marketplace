@@ -32,10 +32,14 @@ The core building blocks for autonomous agents.
 
 ## 🤖 Claude Plugin Integration
 
-This repository is configured as a **Claude Code Plugin**.
-When you use `npx skills add`, it will automatically detect your Claude configuration and install the selected skills as instructions or tools available to Claude.
+This repository is configured as a native **Claude Code Plugin**.
 
-The `claude.json` manifest ensures that all skills are correctly exposed to the Claude ecosystem.
+You can install it directly into Claude Code to give your agent access to these skills:
+```bash
+npx code install LauraFlorentin/skills-marketplace
+```
+
+Once installed, Claude will automatically have access to all skills in the `skills/` directory and can use them to better plan, route, and execute tasks.
 
 ## Contributing
 Contributions are welcome! Please open an issue or submit a PR to add new skills to the marketplace.
