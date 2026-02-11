@@ -5,27 +5,16 @@
     "author": {
         "name": "LauraFlorentin"
     },
-    "skills": [
-        "skills/agentic_systems_architecture/planning",
-        "skills/agentic_systems_architecture/tool_use",
-        "skills/agentic_systems_architecture/routing",
-        "skills/agentic_systems_architecture/parallelization",
-        "skills/agentic_systems_architecture/reflection",
-        "skills/agentic_systems_architecture/rag",
-        "skills/agentic_systems_architecture/memory_management",
-        "skills/agentic_systems_architecture/prompt_chaining",
-        "skills/agentic_systems_architecture/adaptation",
-        "skills/agentic_systems_architecture/evaluation",
-        "skills/agentic_systems_architecture/exception_handling",
-        "skills/agentic_systems_architecture/exploration",
-        "skills/agentic_systems_architecture/goal_setting",
-        "skills/agentic_systems_architecture/guardrails",
-        "skills/agentic_systems_architecture/human_in_the_loop",
-        "skills/agentic_systems_architecture/inter_agent_communication",
-        "skills/agentic_systems_architecture/mcp",
-        "skills/agentic_systems_architecture/multi_agent_collaboration",
-        "skills/agentic_systems_architecture/prioritization",
-        "skills/agentic_systems_architecture/reasoning",
-        "skills/agentic_systems_architecture/resource_optimization"
+    "keywords": [
+        "agentic",
+        "skills",
+        "planning",
+        "routing",
+        "tool-use",
+        "rag",
+        "memory",
+        "reflection",
+        "parallelization",
+        "prompt-chaining"
     ]
 }
