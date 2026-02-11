@@ -1,0 +1,14 @@
+{
+    "name": "management-consulting",
+    "version": "1.0.0",
+    "description": "Management consulting frameworks for AI strategy, workflow analysis, and business transformation.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "keywords": [
+        "management-consulting",
+        "strategy",
+        "business-analysis",
+        "advisory"
+    ]
+}

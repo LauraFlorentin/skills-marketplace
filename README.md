@@ -1,45 +1,75 @@
 # AI Skills Marketplace
 
-Welcome to the premier **AI Skills Marketplace**, designed for **Claude Code**, **Vercel AI SDK**, and other agentic systems.
+A curated collection of specialized AI skills, organized as a **Claude Code Plugin Marketplace**. Install individual skill packs directly into Claude Code, Cowork, or any Vercel AI SDK-compatible agent.
 
-This repository hosts a curated collection of specialized agentic skills—from foundational architecture patterns to high-level strategic capabilities—ready to be installed directly into your AI agents.
+## 📦 Available Skill Packs
+
+| Plugin | Skills | Description |
+| :--- | :---: | :--- |
+| **[Agentic Skills](./plugins/agentic-skills/skills/README.md)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, and more. |
+| **[Management Consulting](./plugins/management-consulting/skills/README.md)** | — | *(Coming Soon)* Strategic frameworks for AI implementation and business transformation. |
+
+---
 
 ## 🚀 Installation
 
-You can install these skills directly using the Vercel `skills` CLI. This command works for **Claude Code**, **Cursor**, **Vercel AI SDK**, and other supported agents.
+### Claude Code
 
-### Install All Skills
-To access the full marketplace:
+1. Open Claude Code and run `/plugins`
+2. Select **Add Marketplace**
+3. Enter the source:
+   ```
+   LauraFlorentin/skills-marketplace
+   ```
+4. Browse the available plugins and choose which to install.
+
+### Cowork
+
+1. Open Cowork and navigate to **Settings → Plugins**
+2. Select **Add from Marketplace**
+3. Enter:
+   ```
+   LauraFlorentin/skills-marketplace
+   ```
+4. Select the skill pack you want to add.
+
+### Vercel AI SDK (`npx skills`)
+
+Install the full marketplace:
 ```bash
 npx skills add LauraFlorentin/skills-marketplace
 ```
 
-### Install Specific Skills
-To install a specific pattern, such as the **Planning** skill:
+Install a specific skill pack:
 ```bash
-npx skills add LauraFlorentin/skills-marketplace/skills/agentic_systems_architecture/planning
+npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills
 ```
 
-## 🤖 Claude Plugin Integration
-
-This repository is configured as a native **Claude Code Plugin**.
-
-You can install it directly into Claude Code using the `skills` CLI with the agent flag:
+Install a single skill:
 ```bash
-npx skills add LauraFlorentin/skills-marketplace --agent claude-code
+npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills/skills/planning
 ```
 
-Once installed, Claude will automatically have access to all skills in the `skills/` directory and can use them to better plan, route, and execute tasks.
+---
 
-## 🧩 Available Collections
+## 🗂 Repository Structure
 
-### 1. [Agentic Systems Architecture](./skills/agentic_systems_architecture/README.md)
-The core building blocks for autonomous agents.
-- **Includes**: Planning, Routing, Tool Use, RAG, Memory, Reflection, and 15+ more.
-- **Best for**: Building robust, production-grade agentic workflows.
-
-### 2. [Consulting Strategies](./skills/consulting/README.md)
-*(Coming Soon)* Strategic frameworks for AI implementation and business analysis.
+```
+skills-marketplace/
+├── .claude-plugin/
+│   └── marketplace.json            ← Marketplace definition
+├── plugins/
+│   ├── agentic-skills/
+│   │   ├── .claude-plugin/
+│   │   │   └── plugin.json         ← Plugin manifest
+│   │   └── skills/                 ← 21 agentic skills (SKILL.md each)
+│   └── management-consulting/
+│       ├── .claude-plugin/
+│       │   └── plugin.json
+│       └── skills/                 ← Consulting skills (coming soon)
+└── README.md
+```
 
 ## Contributing
+
 Contributions are welcome! Please open an issue or submit a PR to add new skills to the marketplace.

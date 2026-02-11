@@ -27,16 +27,16 @@
             ]
         },
         {
-            "name": "consulting",
-            "description": "Strategic consulting frameworks for AI implementation and business analysis.",
+            "name": "management-consulting",
+            "description": "Management consulting frameworks for AI strategy, workflow analysis, and business transformation.",
             "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
             },
-            "source": "./plugins/consulting",
+            "source": "./plugins/management-consulting",
             "category": "consulting",
             "tags": [
-                "consulting",
+                "management-consulting",
                 "strategy",
                 "business-analysis"
             ]

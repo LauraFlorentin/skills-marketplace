@@ -1,6 +1,6 @@
-# Agentic Systems Architecture - Design Patterns
+# Agentic Systems Architecture — Design Patterns
 
-Welcome to the **Agentic Systems** pattern library. This collection provides a comprehensive set of 21 foundational patterns for architecting intelligent agents. Each module includes a conceptual overview, strategic use cases, and reference implementations to accelerate the development of autonomous systems.
+21 foundational patterns for building autonomous AI agents. Each skill includes a conceptual overview, strategic use cases, and reference implementations.
 
 ## Skills Overview
 
@@ -41,8 +41,19 @@ Welcome to the **Agentic Systems** pattern library. This collection provides a c
 | [Reasoning Techniques](./reasoning/SKILL.md) | Chain of Thought (CoT) and other reasoning prompts. |
 | [Adaptation](./adaptation/SKILL.md) | Evolving code or prompts based on feedback. |
 
-## How to Use These Skills
+## Installation
 
-1.  **Reference**: Use these files as a cheat sheet when designing your own agentic systems.
-2.  **Implementation**: Copy the code examples to jumpstart your development.
-3.  **Context**: Provide specific `SKILL.md` files to an AI assistant to help it understand the exact pattern you want to implement.
+### Claude Code / Cowork
+
+Add the marketplace (`LauraFlorentin/skills-marketplace`) via Plugins, then install **agentic-skills**.
+
+### Vercel AI SDK
+
+```bash
+npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills
+```
+
+Install a single skill:
+```bash
+npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills/skills/planning
+```
