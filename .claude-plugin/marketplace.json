@@ -1,0 +1,16 @@
+{
+    "$schema": "https://raw.githubusercontent.com/anthropics/claude-code/main/docs/plugin-schema.json",
+    "name": "skills-marketplace",
+    "version": "1.0.0",
+    "description": "Agentic Systems Skills for Claude Code",
+    "skills": [
+        "skills/agentic_systems_architecture/planning",
+        "skills/agentic_systems_architecture/tool_use",
+        "skills/agentic_systems_architecture/routing",
+        "skills/agentic_systems_architecture/parallelization",
+        "skills/agentic_systems_architecture/reflection",
+        "skills/agentic_systems_architecture/rag",
+        "skills/agentic_systems_architecture/memory_management",
+        "skills/agentic_systems_architecture/prompt_chaining"
+    ]
+}
