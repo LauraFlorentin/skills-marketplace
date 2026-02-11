@@ -1,0 +1,52 @@
+---
+name: Multi-Agent Collaboration
+description: A structural pattern where multiple specialized agents communicate and coordinate to solve a problem that is too complex for a single agent.
+---
+
+# Multi-Agent Collaboration
+
+Multi-Agent Collaboration (MAC) involves a team of agents, each with a specific role, tools, and persona. They work together by exchanging messages, handing off tasks, or debating solutions. This mimics human organizational structures (e.g., a software team with a PM, Dev, and QA).
+
+## When to Use
+
+-   **Separation of Concerns**: To keep prompts simple and focused. Complex prompts often confuse models; specialized agents are more reliable.
+-   **Role-Playing**: When specific expertise or persona is needed (e.g., "Act as a grumpy editor").
+-   **Scalability**: Adding new capabilities is as simple as adding a new agent to the team.
+-   **Simulating User Behavior**: Modeling market dynamics, social networks, or game theory scenarios.
+
+## Use Cases
+
+-   **Software Dev Team**: Product Manager -> Developer -> Reviewer -> QA.
+-   **Debate**: Proposition Agent vs. Opposition Agent -> Moderator synthesizes.
+-   **Creative Writing Room**: Idea Generator -> Plot Outliner -> Dialogue Specialist -> Editor.
+
+## Implementation Pattern
+
+```python
+class Agent:
+    def process(self, message):
+        # ... logic ...
+        return response
+
+def collaboration_workflow(task):
+    # Define Roles
+    researcher = Agent(role="Researcher", tools=[search_tool])
+    writer = Agent(role="Writer", tools=[editor_tool])
+    reviewer = Agent(role="Reviewer", prompt="Critique for accuracy")
+
+    # Flow
+    # 1. Research
+    facts = researcher.process(f"Gather facts on: {task}")
+    
+    # 2. Write Draft
+    draft = writer.process(f"Write an article using these facts: {facts}")
+    
+    # 3. Review & Iterate
+    feedback = reviewer.process(draft)
+    if feedback.has_issues:
+        final_draft = writer.process(f"Fix these issues: {feedback}")
+    else:
+        final_draft = draft
+        
+    return final_draft
+```
