@@ -3,11 +3,29 @@
     "owner": {
         "name": "LauraFlorentin"
     },
+    "metadata": {
+        "description": "A curated collection of agentic systems skills for Claude Code",
+        "version": "1.0.0"
+    },
     "plugins": [
         {
             "name": "agentic-skills",
-            "description": "Agentic Systems Skills for Claude Code — planning, routing, tool use, RAG, memory, reflection, and more.",
-            "source": "."
+            "description": "Agentic Systems Skills — planning, routing, tool use, RAG, memory, reflection, and more.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./",
+            "category": "ai-skills",
+            "tags": [
+                "agentic",
+                "skills",
+                "planning",
+                "routing",
+                "rag",
+                "memory",
+                "reflection"
+            ]
         }
     ]
 }
