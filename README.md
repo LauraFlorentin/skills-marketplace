@@ -34,9 +34,9 @@ The core building blocks for autonomous agents.
 
 This repository is configured as a native **Claude Code Plugin**.
 
-You can install it directly into Claude Code to give your agent access to these skills:
+You can install it directly into Claude Code using the `skills` CLI with the agent flag:
 ```bash
-npx code install LauraFlorentin/skills-marketplace
+npx skills add LauraFlorentin/skills-marketplace --agent claude-code
 ```
 
 Once installed, Claude will automatically have access to all skills in the `skills/` directory and can use them to better plan, route, and execute tasks.
