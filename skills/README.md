@@ -1,6 +1,6 @@
 # AI Skills Marketplace
 
-Welcome to the AI Skills Marketplace. This repository is organized into specialized domains, allowing you to download comprehensive skill sets for different architectural needs.
+Welcome to the AI Skills Marketplace. This repository is organized into specialized domains, allowing you to download comprehensive skill sets for different architectural needs. It is designed as a premier marketplace for **Claude** and **Vercel** integration.
 
 ## Available Domains
 
