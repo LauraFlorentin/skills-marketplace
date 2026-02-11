@@ -1,0 +1,26 @@
+{
+  "name": "api-skills-marketplace",
+  "version": "1.0.0",
+  "description": "A curated marketplace of AI agent skills for Agentic Systems Architecture, compatible with Claude and Vercel.",
+  "keywords": [
+    "ai",
+    "skills",
+    "agent",
+    "claude",
+    "vercel",
+    "npx-skills",
+    "agentic-systems",
+    "planning",
+    "tool-use"
+  ],
+  "author": "Laura Florentine",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LauraFlorentin/skills-marketplace.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LauraFlorentin/skills-marketplace/issues"
+  },
+  "homepage": "https://github.com/LauraFlorentin/skills-marketplace#readme"
+}
