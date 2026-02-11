@@ -1,0 +1,14 @@
+{
+    "name": "consulting",
+    "version": "1.0.0",
+    "description": "Strategic consulting frameworks for AI implementation, business analysis, and advisory engagements.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "keywords": [
+        "consulting",
+        "strategy",
+        "business-analysis",
+        "advisory"
+    ]
+}

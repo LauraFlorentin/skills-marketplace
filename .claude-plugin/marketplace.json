@@ -4,27 +4,41 @@
         "name": "LauraFlorentin"
     },
     "metadata": {
-        "description": "A curated collection of agentic systems skills for Claude Code",
+        "description": "A curated collection of AI skills for Claude Code",
         "version": "1.0.0"
     },
     "plugins": [
         {
             "name": "agentic-skills",
-            "description": "Agentic Systems Skills — planning, routing, tool use, RAG, memory, reflection, and more.",
+            "description": "Agentic Systems Architecture — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns.",
             "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
             },
-            "source": "./",
+            "source": "./plugins/agentic-skills",
             "category": "ai-skills",
             "tags": [
                 "agentic",
-                "skills",
                 "planning",
                 "routing",
                 "rag",
                 "memory",
                 "reflection"
+            ]
+        },
+        {
+            "name": "consulting",
+            "description": "Strategic consulting frameworks for AI implementation and business analysis.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./plugins/consulting",
+            "category": "consulting",
+            "tags": [
+                "consulting",
+                "strategy",
+                "business-analysis"
             ]
         }
     ]

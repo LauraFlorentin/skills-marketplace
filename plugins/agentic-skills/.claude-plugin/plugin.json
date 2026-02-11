@@ -1,20 +1,17 @@
 {
     "name": "agentic-skills",
     "version": "1.0.0",
-    "description": "Agentic Systems Skills for Claude Code",
+    "description": "Agentic Systems Architecture skills — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns for building autonomous agents.",
     "author": {
         "name": "LauraFlorentin"
     },
     "keywords": [
         "agentic",
-        "skills",
         "planning",
         "routing",
         "tool-use",
         "rag",
         "memory",
-        "reflection",
-        "parallelization",
-        "prompt-chaining"
+        "reflection"
     ]
 }
