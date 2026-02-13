@@ -5,6 +5,9 @@
     "author": {
         "name": "LauraFlorentin"
     },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
     "keywords": [
         "agentic",
         "planning",
