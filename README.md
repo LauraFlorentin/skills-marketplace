@@ -6,8 +6,8 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 
 | Plugin | Skills | Description |
 | :--- | :---: | :--- |
-| **[Agentic Skills](./plugins/agentic-skills/skills/README.md)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, and more. |
-| **[Management Consulting](./plugins/management-consulting/skills/README.md)** | — | *(Coming Soon)* Strategic frameworks for AI implementation and business transformation. |
+| **[Agentic Skills](./agentic-skills/skills/README.md)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, and more. |
+| **[Management Consulting](./management-consulting/skills/README.md)** | — | *(Coming Soon)* Strategic frameworks for AI implementation and business transformation. |
 
 ---
 
@@ -42,12 +42,12 @@ npx skills add LauraFlorentin/skills-marketplace
 
 Install a specific skill pack:
 ```bash
-npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills
+npx skills add LauraFlorentin/skills-marketplace/agentic-skills
 ```
 
 Install a single skill:
 ```bash
-npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills/skills/planning
+npx skills add LauraFlorentin/skills-marketplace/agentic-skills/skills/planning
 ```
 
 ---
@@ -57,16 +57,15 @@ npx skills add LauraFlorentin/skills-marketplace/plugins/agentic-skills/skills/p
 ```
 skills-marketplace/
 ├── .claude-plugin/
-│   └── marketplace.json            ← Marketplace definition
-├── plugins/
-│   ├── agentic-skills/
-│   │   ├── .claude-plugin/
-│   │   │   └── plugin.json         ← Plugin manifest
-│   │   └── skills/                 ← 21 agentic skills (SKILL.md each)
-│   └── management-consulting/
-│       ├── .claude-plugin/
-│       │   └── plugin.json
-│       └── skills/                 ← Consulting skills (coming soon)
+│   └── marketplace.json              ← Marketplace definition
+├── agentic-skills/
+│   ├── .claude-plugin/
+│   │   └── plugin.json               ← Plugin manifest
+│   └── skills/                       ← 21 agentic skills (SKILL.md each)
+├── management-consulting/
+│   ├── .claude-plugin/
+│   │   └── plugin.json
+│   └── skills/                       ← Consulting skills (coming soon)
 └── README.md
 ```
 

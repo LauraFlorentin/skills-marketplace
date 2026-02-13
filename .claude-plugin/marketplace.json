@@ -15,7 +15,7 @@
             "author": {
                 "name": "LauraFlorentin"
             },
-            "source": "./plugins/agentic-skills",
+            "source": "./agentic-skills",
             "category": "ai-skills",
             "tags": [
                 "agentic",
@@ -33,7 +33,7 @@
             "author": {
                 "name": "LauraFlorentin"
             },
-            "source": "./plugins/management-consulting",
+            "source": "./management-consulting",
             "category": "consulting",
             "tags": [
                 "management-consulting",
