@@ -8,6 +8,7 @@
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
     "license": "MIT",
     "skills": "./skills/",
+    "commands": "./commands/",
     "keywords": [
         "management-consulting",
         "strategy",
