@@ -40,6 +40,24 @@
                 "strategy",
                 "business-analysis"
             ]
+        },
+        {
+            "name": "real-estate-investment",
+            "description": "Real estate investment analysis using an adaptive multi-agent system — deal screening, underwriting, pro forma, financing, tax strategy, and more.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./real-estate-investment",
+            "category": "real-estate",
+            "tags": [
+                "real-estate",
+                "investment-analysis",
+                "underwriting",
+                "pro-forma",
+                "syndication",
+                "hospitality"
+            ]
         }
     ]
 }
