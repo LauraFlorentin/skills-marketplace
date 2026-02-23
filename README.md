@@ -2,12 +2,13 @@
 
 A curated collection of specialized AI skills, organized as a **Claude Code Plugin Marketplace**. Install individual skill packs directly into Claude Code, Cowork, or any Vercel AI SDK-compatible agent.
 
-## 📦 Available Skill Packs
+## 📦 Available Plugins
 
 | Plugin | Skills | Description |
 | :--- | :---: | :--- |
-| **[Agentic Skills](./agentic-skills/skills/README.md)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, and more. |
-| **[Management Consulting](./management-consulting/skills/README.md)** | — | *(Coming Soon)* Strategic frameworks for AI implementation and business transformation. |
+| **[Agentic Skills](./agentic-skills/)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, tool use, and more. |
+| **[Real Estate Investment](./real-estate-investment/)** | 1 | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
+| **[Management Consulting](./management-consulting/)** | 3 | Strategic frameworks for consulting operations — bench management, thought leadership content creation, and ASE workshop planning. |
 
 ---
 
@@ -40,7 +41,7 @@ Install the full marketplace:
 npx skills add LauraFlorentin/skills-marketplace
 ```
 
-Install a specific skill pack:
+Install a specific plugin:
 ```bash
 npx skills add LauraFlorentin/skills-marketplace/agentic-skills
 ```
@@ -54,18 +55,31 @@ npx skills add LauraFlorentin/skills-marketplace/agentic-skills/skills/planning
 
 ## 🗂 Repository Structure
 
+Each plugin follows a standardized layout:
+
 ```
 skills-marketplace/
-├── .claude-plugin/
-│   └── marketplace.json              ← Marketplace definition
 ├── agentic-skills/
-│   ├── .claude-plugin/
-│   │   └── plugin.json               ← Plugin manifest
-│   └── skills/                       ← 21 agentic skills (SKILL.md each)
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/
+│   ├── commands/
+│   ├── hooks/
+│   ├── skills/          ← 21 agentic design patterns
+│   └── README.md
+├── real-estate-investment/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/          ← Orchestrator + 11 specialist agents
+│   ├── commands/
+│   ├── hooks/
+│   ├── skills/
+│   └── README.md
 ├── management-consulting/
-│   ├── .claude-plugin/
-│   │   └── plugin.json
-│   └── skills/                       ← Consulting skills (coming soon)
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/
+│   ├── commands/
+│   ├── hooks/
+│   ├── skills/          ← Coming soon
+│   └── README.md
 └── README.md
 ```
 

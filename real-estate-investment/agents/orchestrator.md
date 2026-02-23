@@ -38,16 +38,16 @@ DEAL CLASSIFICATION
 | Agent ID | Agent Name | Skill Reference | Primary Role |
 |----------|-----------|-----------------|--------------|
 | A1 | Research Scout | (web search + market data) | Gather market data, comps, rates |
-| A2 | Deal Screener | ../references/deal-screener.md | Quick pass/fail on rules of thumb |
-| A3 | Property Underwriter | ../references/property-underwriter.md | Full financial analysis |
-| A4 | Pro Forma Builder | ../references/pro-forma-builder.md | Multi-year projections |
-| A5 | Financing Analyzer | ../references/financing-analyzer.md | Loan comparison & leverage analysis |
-| A6 | Tax Strategist | ../references/tax-strategist.md | Depreciation, 1031, cost seg |
-| A7 | Stress Tester | ../references/stress-tester.md | Scenario analysis & resilience |
-| A8 | Syndication Analyzer | ../references/syndication-analyzer.md | SPV/fund structure & fee analysis |
-| A9 | International Risk Assessor | ../references/international-risk-assessor.md | Cross-border & jurisdiction risk |
-| A10 | Hospitality Underwriter | ../references/hospitality-underwriter.md | Hotel/resort specific metrics |
-| A11 | Legal Reviewer | ../references/legal-reviewer.md | Document red flags |
+| A2 | Deal Screener | ./deal-screener/reference.md | Quick pass/fail on rules of thumb |
+| A3 | Property Underwriter | ./property-underwriter/reference.md | Full financial analysis |
+| A4 | Pro Forma Builder | ./pro-forma-builder/reference.md | Multi-year projections |
+| A5 | Financing Analyzer | ./financing-analyzer/reference.md | Loan comparison & leverage analysis |
+| A6 | Tax Strategist | ./tax-strategist/reference.md | Depreciation, 1031, cost seg |
+| A7 | Stress Tester | ./stress-tester/reference.md | Scenario analysis & resilience |
+| A8 | Syndication Analyzer | ./syndication-analyzer/reference.md | SPV/fund structure & fee analysis |
+| A9 | International Risk Assessor | ./international-risk-assessor/reference.md | Cross-border & jurisdiction risk |
+| A10 | Hospitality Underwriter | ./hospitality-underwriter/reference.md | Hotel/resort specific metrics |
+| A11 | Legal Reviewer | ./legal-reviewer/reference.md | Document red flags |
 | A12 | Report Compiler | (synthesis agent) | Final investment memo |
 
 ## Adaptive Routing Rules

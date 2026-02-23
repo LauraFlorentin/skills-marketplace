@@ -1,26 +1,11 @@
-# Management Consulting Skills
+# Skills
 
-Strategic frameworks for AI implementation, business analysis, and advisory engagements.
+3 management consulting skills for consulting operations, thought leadership, and workshop facilitation.
 
-## Overview
+## Skills Overview
 
-*(Skills coming soon)*
-
-## Planned Skills
-
-- **AI Strategy** — Helping clients identify high-impact use cases.
-- **Workflow Analysis** — Mapping existing business processes to AI opportunities.
-- **ROI Calculation** — Estimating the business value of AI automation.
-- **Change Management** — Guiding organizations through AI adoption.
-
-## Installation
-
-### Claude Code / Cowork
-
-Add the marketplace (`LauraFlorentin/skills-marketplace`) via Plugins, then install **management-consulting**.
-
-### Vercel AI SDK
-
-```bash
-npx skills add LauraFlorentin/skills-marketplace/plugins/management-consulting
-```
+| Skill | Description |
+| :--- | :--- |
+| [Bench Management & Activity Tracker](./bench-management/SKILL.md) | Track bench consultant utilization with structured reporting, idle-time alerts, and pipeline alignment. |
+| [Thought Leadership & Whitepaper Drafting](./thought-leadership/SKILL.md) | Guided whitepaper creation pipeline — from raw ideas to publication-ready content. |
+| [ASE Workshop Planner](./ase-workshop-planner/SKILL.md) | ASE methodology workshops — pre-work, diverge-converge agendas, and post-workshop follow-through. |

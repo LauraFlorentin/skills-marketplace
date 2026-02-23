@@ -76,18 +76,18 @@ The Orchestrator will tell you which specialist reference files to read based on
 | Agent | Reference File | Use When |
 |-------|---------------|----------|
 | A1 Research Scout | *(uses web search tools)* | Always — gather market data first |
-| A2 Deal Screener | `../../references/deal-screener.md` | Quick pass/fail filtering |
-| A3 Property Underwriter | `../../references/property-underwriter.md` | Full financial analysis |
-| A4 Pro Forma Builder | `../../references/pro-forma-builder.md` | Multi-year projections |
-| A5 Financing Analyzer | `../../references/financing-analyzer.md` | Loan comparison & leverage |
-| A6 Tax Strategist | `../../references/tax-strategist.md` | Depreciation, 1031, cost seg |
-| A7 Stress Tester | `../../references/stress-tester.md` | Scenario analysis |
-| A8 Syndication Analyzer | `../../references/syndication-analyzer.md` | SPV, fund, passive deals |
-| A9 Int'l Risk Assessor | `../../references/international-risk-assessor.md` | Cross-border investments |
-| A10 Hospitality Underwriter | `../../references/hospitality-underwriter.md` | Hotels, resorts, STRs |
-| A11 Legal Reviewer | `../../references/legal-reviewer.md` | Document red flags |
+| A2 Deal Screener | `../../agents/deal-screener/reference.md` | Quick pass/fail filtering |
+| A3 Property Underwriter | `../../agents/property-underwriter/reference.md` | Full financial analysis |
+| A4 Pro Forma Builder | `../../agents/pro-forma-builder/reference.md` | Multi-year projections |
+| A5 Financing Analyzer | `../../agents/financing-analyzer/reference.md` | Loan comparison & leverage |
+| A6 Tax Strategist | `../../agents/tax-strategist/reference.md` | Depreciation, 1031, cost seg |
+| A7 Stress Tester | `../../agents/stress-tester/reference.md` | Scenario analysis |
+| A8 Syndication Analyzer | `../../agents/syndication-analyzer/reference.md` | SPV, fund, passive deals |
+| A9 Int'l Risk Assessor | `../../agents/international-risk-assessor/reference.md` | Cross-border investments |
+| A10 Hospitality Underwriter | `../../agents/hospitality-underwriter/reference.md` | Hotels, resorts, STRs |
+| A11 Legal Reviewer | `../../agents/legal-reviewer/reference.md` | Document red flags |
 | A12 Report Compiler | `../../agents/orchestrator.md` (synthesis section) | Final recommendation |
-| — Data Sources | `../../references/data-sources.md` | API lookups, batch screening, market data |
+| — Data Sources | `../../agents/data-sources/reference.md` | API lookups, batch screening, market data |
 
 ## Routing Quick Reference
 
@@ -215,7 +215,7 @@ Use the Orchestrator's synthesis template to produce the final Investment Analys
 6. **Provide ranges** — when uncertain, give best/base/worst estimates
 7. **Caveat legal content** — always note that legal review is not legal advice
 8. **Integrate with tools** — use xlsx skill for calculators, docx for reports, web search for market data
-9. **Generate code when asked** — provide Python/JS calculators, batch scripts, or API integration code; reference `../../references/data-sources.md` for API patterns and `../../references/stress-tester.md` for Monte Carlo templates
+9. **Generate code when asked** — provide Python/JS calculators, batch scripts, or API integration code; reference `../../agents/data-sources/reference.md` for API patterns and `../../agents/stress-tester/reference.md` for Monte Carlo templates
 10. **Match output format to need** — narrative for reports, tables for comparisons, code for automation, spreadsheets for interactive analysis
 
 ## Integration with Other Skills
