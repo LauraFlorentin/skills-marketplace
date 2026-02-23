@@ -8,7 +8,7 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | :--- | :---: | :--- |
 | **[Agentic Skills](./agentic-skills/)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, tool use, and more. |
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
-| **[Management Consulting](./management-consulting/)** | 3 | Strategic frameworks for consulting operations — bench management, thought leadership content creation, and ASE workshop planning. |
+| **[Management Consulting](./management-consulting/)** | 13 | End-to-end consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks. |
 
 ---
 

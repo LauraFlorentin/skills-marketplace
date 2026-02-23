@@ -1,7 +1,7 @@
 {
     "name": "management-consulting",
-    "version": "1.0.0",
-    "description": "Management consulting frameworks for AI strategy, workflow analysis, and business transformation.",
+    "version": "1.2.0",
+    "description": "End-to-end management consulting workflows — from proposals and SOWs to client deliverables, research, project management, thought leadership, ASE workshops, bench management with activity tracking, contract operations, and structured thinking frameworks.",
     "author": {
         "name": "LauraFlorentin"
     },
@@ -13,6 +13,10 @@
         "management-consulting",
         "strategy",
         "business-analysis",
-        "advisory"
+        "advisory",
+        "proposals",
+        "deliverables",
+        "workshops",
+        "thought-leadership"
     ]
 }
