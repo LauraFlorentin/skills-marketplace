@@ -1,0 +1,1 @@
+Read brand-studio/brand-config.md and display a clean, formatted summary of the current brand configuration. Show: brand name, tagline, all colors (with hex codes), fonts, logo status, tone of voice, and key phrases. If brand-config.md is unconfigured or missing, tell the user and suggest running /brand-setup.

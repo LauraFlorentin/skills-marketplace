@@ -1,0 +1,21 @@
+{
+    "name": "brand-studio",
+    "version": "1.0.0",
+    "description": "Complete branding toolkit — apply consistent brand identity (colors, fonts, logo, tone of voice) across PowerPoint, Word, logos, HTML/web, and social media templates. Includes auto-branding hook.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
+    "commands": "./commands/",
+    "keywords": [
+        "branding",
+        "design",
+        "logo",
+        "powerpoint",
+        "social-media",
+        "brand-identity",
+        "templates"
+    ]
+}

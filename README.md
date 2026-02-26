@@ -9,6 +9,7 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | **[Agentic Skills](./agentic-skills/)** | 21 | Core building blocks for autonomous agents — planning, routing, RAG, memory, reflection, tool use, and more. |
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
 | **[Management Consulting](./management-consulting/)** | 13 | End-to-end consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks. |
+| **[Brand Studio](./brand-studio/)** | 1 | Complete branding toolkit — apply consistent brand identity across PowerPoint, Word, logos, HTML/web, and social media. Includes auto-branding hook. |
 
 ---
 
@@ -78,7 +79,14 @@ skills-marketplace/
 │   ├── agents/
 │   ├── commands/
 │   ├── hooks/
-│   ├── skills/          ← Coming soon
+│   ├── skills/          ← 13 consulting skills
+│   └── README.md
+├── brand-studio/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/
+│   ├── commands/        ← 7 brand commands
+│   ├── hooks/           ← Brand Guard auto-enforcement
+│   ├── skills/          ← Brand identity toolkit
 │   └── README.md
 └── README.md
 ```
