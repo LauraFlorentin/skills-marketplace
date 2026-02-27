@@ -10,6 +10,7 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
 | **[Management Consulting](./management-consulting/)** | 13 | End-to-end consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks. |
 | **[Brand Studio](./brand-studio/)** | 1 | Complete branding toolkit — apply consistent brand identity across PowerPoint, Word, logos, HTML/web, and social media. Includes auto-branding hook. |
+| **[M&A Advisory](./ma-advisory/)** | 10 | AI-powered M&A workflows — VDR management, deal screening, legal and financial diligence, synergy analysis, deal marketing, integration planning, regulatory screening, and workflow chains. |
 
 ---
 
@@ -87,6 +88,13 @@ skills-marketplace/
 │   ├── commands/        ← 7 brand commands
 │   ├── hooks/           ← Brand Guard auto-enforcement
 │   ├── skills/          ← Brand identity toolkit
+│   └── README.md
+├── ma-advisory/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/
+│   ├── commands/        ← 19 commands (9 daily + 7 reports + 3 chains)
+│   ├── hooks/
+│   ├── skills/          ← 10 M&A lifecycle skills
 │   └── README.md
 └── README.md
 ```

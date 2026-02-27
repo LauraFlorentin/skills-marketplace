@@ -1,0 +1,22 @@
+{
+    "name": "ma-advisory",
+    "version": "1.0.0",
+    "description": "AI-powered M&A advisory workflows — VDR management, deal screening, legal and financial due diligence, synergy analysis, deal marketing, integration planning, regulatory screening, and end-to-end workflow chains for the full transaction lifecycle.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
+    "commands": "./commands/",
+    "keywords": [
+        "mergers-acquisitions",
+        "due-diligence",
+        "investment-banking",
+        "private-equity",
+        "deal-advisory",
+        "vdr",
+        "synergy",
+        "integration"
+    ]
+}
