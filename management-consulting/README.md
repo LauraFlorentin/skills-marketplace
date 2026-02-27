@@ -20,11 +20,19 @@ End-to-end management consulting workflows — from proposals and SOWs to client
 | [Interview Guides](./skills/interview-guides/SKILL.md) | Question banks by function, interview protocols, cross-interview synthesis |
 | [Financial Modeling](./skills/financial-modeling/SKILL.md) | Cost-benefit analysis, NPV/IRR, sensitivity analysis, scenario modeling |
 | [Whitepaper & Thought Leadership](./skills/whitepaper-thought-leadership/SKILL.md) | Full whitepaper pipeline — idea intake, drafting, research, formatting, cover design |
-| [Structured Thinking](./skills/structured-thinking/SKILL.md) | Crawl-Walk-Run, What-by-When, Five Whys, 2×2 Matrix, Storyline, RAG, Elevator Pitch, Day-One |
+| [Structured Thinking](./skills/structured-thinking/SKILL.md) | Crawl-Walk-Run, What-by-When, Five Whys, 2x2 Matrix, Storyline, RAG, Elevator Pitch, Day-One |
 
 ## Commands
 
 20 slash commands — see [`commands/README.md`](./commands/README.md) for the full list.
+
+## Agents
+
+None.
+
+## Hooks
+
+None.
 
 ## MCP Integration
 

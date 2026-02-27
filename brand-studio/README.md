@@ -2,6 +2,8 @@
 
 A complete branding toolkit — apply consistent brand identity (colors, fonts, logo, tone of voice) across PowerPoint presentations, Word documents, logos, HTML/web artifacts, and social media templates.
 
+> **Important**: This plugin generates brand assets based on your configured identity. Always review outputs for accuracy and brand compliance before publishing.
+
 ## How It Works
 
 On first use, Brand Studio walks you through a conversational setup (~10 questions) and saves your brand identity to `brand-config.md`. From then on, every branded output uses your exact colors, fonts, and tone automatically.
@@ -24,6 +26,8 @@ On first use, Brand Studio walks you through a conversational setup (~10 questio
 
 ## Commands
 
+7 slash commands — see [`commands/README.md`](./commands/README.md) for the full list.
+
 | Command | Description |
 | :--- | :--- |
 | `/brand-setup` | Configure or update your brand identity |
@@ -33,6 +37,10 @@ On first use, Brand Studio walks you through a conversational setup (~10 questio
 | `/brand-logo` | Generate logo SVGs (3 variations) |
 | `/brand-social` | Create social media assets (or full kit) |
 | `/brand-web` | Create branded HTML artifacts |
+
+## Agents
+
+None.
 
 ## Hooks
 

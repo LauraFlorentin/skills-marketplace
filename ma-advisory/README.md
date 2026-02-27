@@ -21,6 +21,8 @@ AI-powered workflows for the full mergers and acquisitions lifecycle — from or
 
 ## Commands
 
+19 slash commands — see [`commands/README.md`](./commands/README.md) for the full list.
+
 ### Daily Operations (9)
 
 | Command | Description | Time Saved |
@@ -54,6 +56,14 @@ AI-powered workflows for the full mergers and acquisitions lifecycle — from or
 | `/chain-origination` | CIM extraction → valuation → IOI | 7 days → 4 hours |
 | `/chain-red-flag` | VDR classify → CoC scan → Red Flag report | 5 days → 6 hours |
 | `/chain-integration` | Synergy map → cost report → PMI plan | 3 weeks → 3 days |
+
+## Agents
+
+None.
+
+## Hooks
+
+None.
 
 ## Example Workflows
 

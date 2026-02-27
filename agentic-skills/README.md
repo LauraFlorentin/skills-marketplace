@@ -43,7 +43,15 @@ Core building blocks for autonomous AI agents — 21 foundational patterns cover
 
 ## Commands
 
-21 slash commands are available — one for each skill. See [`commands/README.md`](./commands/README.md) for the full list.
+21 slash commands — one for each skill. See [`commands/README.md`](./commands/README.md) for the full list.
+
+## Agents
+
+None. These are standalone patterns — combine them to build your own agent architectures.
+
+## Hooks
+
+None.
 
 ## Installation
 
