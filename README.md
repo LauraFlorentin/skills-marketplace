@@ -12,8 +12,9 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | **[Brand Studio](./brand-studio/)** | 1 | 7 | — | 1 | Complete branding toolkit — apply consistent brand identity across PowerPoint, Word, logos, HTML/web, and social media. Includes auto-branding hook. |
 | **[M&A Advisory](./ma-advisory/)** | 10 | 19 | — | — | AI-powered M&A workflows — VDR management, deal screening, legal and financial diligence, synergy analysis, deal marketing, integration planning, and workflow chains. |
 | **[Management Consulting](./management-consulting/)** | 13 | 20 | — | — | End-to-end consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks. |
+| **[Product Management](./product-management/)** | 5 | 19 | 1 | — | Product management from strategy to growth — vision, PRDs, roadmaps, user research, prioritization, GTM, A/B testing, analytics, and product reviews for startup and enterprise PMs. |
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | 11 | 11 | — | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
-| | **46** | **78** | **11** | **1** | |
+| | **51** | **97** | **12** | **1** | |
 
 ---
 
@@ -91,6 +92,12 @@ skills-marketplace/
 │   ├── commands/              ← 20 slash commands
 │   ├── hooks/
 │   ├── skills/                ← 13 consulting skills
+│   └── README.md
+├── product-management/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/                ← Orchestrator with bidirectional routing
+│   ├── commands/              ← 19 slash commands
+│   ├── skills/                ← 5 lifecycle skills (startup + enterprise)
 │   └── README.md
 ├── real-estate-investment/
 │   ├── .claude-plugin/plugin.json
