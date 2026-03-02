@@ -1,0 +1,24 @@
+{
+    "name": "project-management",
+    "version": "1.0.0",
+    "description": "Project management workflows from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and project closeout for software and general PMs.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
+    "commands": "./commands/",
+    "keywords": [
+        "project",
+        "pm",
+        "agile",
+        "scrum",
+        "kanban",
+        "waterfall",
+        "sprint",
+        "risk",
+        "gantt",
+        "retrospective"
+    ]
+}

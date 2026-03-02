@@ -1,0 +1,29 @@
+{
+    "mcpServers": {
+        "jira": {
+            "type": "npm",
+            "package": "@anthropic/jira-mcp",
+            "description": "Issue tracking, sprint management, backlog, boards"
+        },
+        "linear": {
+            "type": "npm",
+            "package": "@anthropic/linear-mcp",
+            "description": "Lightweight project tracking, cycles, triage"
+        },
+        "asana": {
+            "type": "npm",
+            "package": "@anthropic/asana-mcp",
+            "description": "Task management, timelines, portfolios"
+        },
+        "notion": {
+            "type": "npm",
+            "package": "@anthropic/notion-mcp",
+            "description": "Docs, wikis, meeting notes, knowledge base"
+        },
+        "slack": {
+            "type": "npm",
+            "package": "@anthropic/slack-mcp",
+            "description": "Team messaging, standups, status updates"
+        }
+    }
+}
