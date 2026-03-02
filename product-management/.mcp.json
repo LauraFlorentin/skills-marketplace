@@ -1,0 +1,24 @@
+{
+    "mcpServers": {
+        "linear": {
+            "type": "http",
+            "url": "https://linear.mcp.claude.com/mcp"
+        },
+        "notion": {
+            "type": "http",
+            "url": "https://notion.mcp.claude.com/mcp"
+        },
+        "posthog": {
+            "type": "http",
+            "url": "https://posthog.mcp.claude.com/mcp"
+        },
+        "slack": {
+            "type": "http",
+            "url": "https://mcp.slack.com/mcp"
+        },
+        "figma": {
+            "type": "http",
+            "url": "https://figma.mcp.claude.com/mcp"
+        }
+    }
+}

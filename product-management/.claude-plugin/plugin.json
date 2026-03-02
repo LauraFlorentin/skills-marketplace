@@ -1,0 +1,24 @@
+{
+    "name": "product-management",
+    "version": "1.0.0",
+    "description": "Product management workflows from strategy to growth — vision docs, PRDs, roadmaps, user research, prioritization, GTM, analytics, and product reviews for startup and enterprise PMs.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
+    "commands": "./commands/",
+    "keywords": [
+        "product",
+        "pm",
+        "roadmap",
+        "prd",
+        "discovery",
+        "okr",
+        "prioritization",
+        "gtm",
+        "analytics",
+        "user-research"
+    ]
+}
