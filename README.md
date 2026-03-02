@@ -13,8 +13,9 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | **[M&A Advisory](./ma-advisory/)** | 10 | 19 | — | — | AI-powered M&A workflows — VDR management, deal screening, legal and financial diligence, synergy analysis, deal marketing, integration planning, and workflow chains. |
 | **[Management Consulting](./management-consulting/)** | 13 | 20 | — | — | End-to-end consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks. |
 | **[Product Management](./product-management/)** | 5 | 19 | 1 | — | Product management from strategy to growth — vision, PRDs, roadmaps, user research, prioritization, GTM, A/B testing, analytics, and product reviews for startup and enterprise PMs. |
+| **[Project Management](./project-management/)** | 5 | 20 | 1 | — | Project management from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and closeout for software and general PMs. |
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | 11 | 11 | — | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
-| | **51** | **97** | **12** | **1** | |
+| | **56** | **117** | **13** | **1** | |
 
 ---
 
@@ -98,6 +99,12 @@ skills-marketplace/
 │   ├── agents/                ← Orchestrator with bidirectional routing
 │   ├── commands/              ← 19 slash commands
 │   ├── skills/                ← 5 lifecycle skills (startup + enterprise)
+│   └── README.md
+├── project-management/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/                ← Orchestrator with bidirectional re-entry routing
+│   ├── commands/              ← 20 slash commands
+│   ├── skills/                ← 5 lifecycle skills (software + general PM)
 │   └── README.md
 ├── real-estate-investment/
 │   ├── .claude-plugin/plugin.json
