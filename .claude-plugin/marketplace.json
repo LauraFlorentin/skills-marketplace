@@ -10,7 +10,7 @@
     "plugins": [
         {
             "name": "agentic-skills",
-            "description": "Agentic Systems Architecture — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns.",
+            "description": "Agentic Systems Architecture — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns for building autonomous agents.",
             "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
@@ -27,9 +27,44 @@
             ]
         },
         {
-            "name": "management-consulting",
-            "description": "Management consulting frameworks for AI strategy, workflow analysis, and business transformation.",
+            "name": "brand-studio",
+            "description": "Complete branding toolkit — apply consistent brand identity across PowerPoint, Word, logos, HTML/web, and social media. Includes auto-branding hook.",
             "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./brand-studio",
+            "category": "branding",
+            "tags": [
+                "branding",
+                "design",
+                "logo",
+                "powerpoint",
+                "social-media",
+                "brand-identity"
+            ]
+        },
+        {
+            "name": "ma-advisory",
+            "description": "AI-powered M&A advisory workflows — VDR management, deal screening, legal and financial due diligence, synergy analysis, deal marketing, integration planning, and workflow chains.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./ma-advisory",
+            "category": "finance",
+            "tags": [
+                "mergers-acquisitions",
+                "due-diligence",
+                "investment-banking",
+                "private-equity",
+                "deal-advisory"
+            ]
+        },
+        {
+            "name": "management-consulting",
+            "description": "End-to-end management consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks.",
+            "version": "1.2.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -38,12 +73,54 @@
             "tags": [
                 "management-consulting",
                 "strategy",
-                "business-analysis"
+                "business-analysis",
+                "advisory",
+                "proposals",
+                "deliverables"
+            ]
+        },
+        {
+            "name": "product-management",
+            "description": "Product management from strategy to growth — vision docs, PRDs, roadmaps, user research, prioritization, GTM, analytics, and product reviews for startup and enterprise PMs.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./product-management",
+            "category": "product",
+            "tags": [
+                "product",
+                "pm",
+                "roadmap",
+                "prd",
+                "discovery",
+                "gtm",
+                "analytics"
+            ]
+        },
+        {
+            "name": "project-management",
+            "description": "Project management from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and closeout for software and general PMs.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./project-management",
+            "category": "project-management",
+            "tags": [
+                "project",
+                "pm",
+                "agile",
+                "scrum",
+                "kanban",
+                "waterfall",
+                "sprint",
+                "risk"
             ]
         },
         {
             "name": "real-estate-investment",
-            "description": "Real estate investment analysis using an adaptive multi-agent system — deal screening, underwriting, pro forma, financing, tax strategy, and more.",
+            "description": "Adaptive multi-agent system for real estate investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals.",
             "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
