@@ -1,6 +1,6 @@
 ---
-name: Reasoning Techniques
-description: Prompting patterns that encourage the model to articulate its specific thought process (Chain of Thought) to improve performance on complex logical, mathematical, or reasoning tasks.
+name: reasoning
+description: Prompting patterns that encourage the model to articulate its specific thought process (Chain of Thought) to improve performance on complex logical, mathematical, or reasoning tasks. Use when user asks to "improve agent reasoning", "add chain-of-thought", "logical reasoning", or mentions inference, deductive reasoning, or structured thinking.
 ---
 
 # Reasoning Techniques

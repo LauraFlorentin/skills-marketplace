@@ -1,6 +1,6 @@
 ---
-name: Guardrails & Safety
-description: A defensive pattern where inputs and outputs are inspected by dedicated safety agents or rules to preventing malicious use, jailbreaks, and harmful content.
+name: guardrails
+description: A defensive pattern where inputs and outputs are inspected by dedicated safety agents or rules to preventing malicious use, jailbreaks, and harmful content. Use when user asks to "add safety checks", "set up guardrails", "prevent harmful outputs", or mentions agent boundaries, output validation, or content filtering.
 ---
 
 # Guardrails & Safety
@@ -40,3 +40,13 @@ def guarded_execution(user_input):
         
     return response
 ```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Guardrail blocks legitimate requests | Over-broad pattern matching | Tune guardrail thresholds using a labeled test set; track false positive rate |
+| Agent bypasses guardrails | Prompt injection in user input | Apply guardrails *before* injecting user content into agent context |
+| Guardrail adds too much latency | Synchronous pre-call check | Run guardrail in parallel with the first LLM call; cancel if flagged |
+| Silent failures | Guardrail raises exception but agent continues | Treat guardrail exceptions as hard stops; log and escalate |

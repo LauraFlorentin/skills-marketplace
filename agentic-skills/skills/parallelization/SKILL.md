@@ -1,6 +1,6 @@
 ---
-name: Parallelization
-description: A concurrency pattern where multiple agent tasks are executed at the same time to speed up processing or gather diverse perspectives.
+name: parallelization
+description: A concurrency pattern where multiple agent tasks are executed at the same time to speed up processing or gather diverse perspectives. Use when user asks to "run agents in parallel", "parallelize tasks", "concurrent execution", or mentions parallel processing, fan-out, or batch execution.
 ---
 
 # Parallelization
@@ -45,3 +45,13 @@ async def parallel_workflow(topic):
     
     return final_report
 ```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Race conditions | Shared mutable state | Use immutable message passing; collect results only in the aggregator |
+| One slow task blocks completion | No partial results | Set a per-task timeout; return partial results after timeout |
+| Rate limits hit with parallelization | Too many concurrent API calls | Add a semaphore (e.g., `asyncio.Semaphore(10)`) to cap concurrency |
+| Results aggregated in wrong order | Non-deterministic completion order | Tag each result with its task ID; sort before aggregating |

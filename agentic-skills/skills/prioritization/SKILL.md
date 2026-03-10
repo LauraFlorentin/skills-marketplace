@@ -1,6 +1,6 @@
 ---
-name: Prioritization
-description: A management pattern where an agent assesses the urgency and importance of incoming tasks to organize a dynamic execution queue.
+name: prioritization
+description: A management pattern where an agent assesses the urgency and importance of incoming tasks to organize a dynamic execution queue. Use when user asks to "prioritize tasks", "rank agent actions", "task ordering", or mentions priority queues, urgency scoring, or triage.
 ---
 
 # Prioritization
@@ -42,3 +42,33 @@ def prioritization_loop(task_queue):
         next_task = task_queue.pop()
         worker_agent.run(next_task)
 ```
+
+
+## Examples
+
+**Input**: "I have 12 tasks to do today. Help me prioritize."
+
+**RICE scoring output**:
+| Task | Reach | Impact | Confidence | Effort | RICE Score |
+|---|---|---|---|---|---|
+| Fix login bug | 5000 | 3 | 90% | 1 | 13,500 |
+| Add dark mode | 800 | 2 | 70% | 5 | 224 |
+| Write docs | 200 | 1 | 80% | 2 | 80 |
+
+**Recommendation**: Fix the login bug first — 60× higher RICE score than the next item.
+
+---
+
+**Input**: "We have 30 backlog items for this sprint. What goes in?"
+
+**Output**: MoSCoW matrix with Must/Should/Could/Won't labels, sprint capacity check, and a risk-adjusted ordered list.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| All items score similarly | Inputs too vague | Ask for specific numbers (user count, revenue impact) before scoring |
+| Stakeholders reject prioritization | No buy-in on criteria | Surface the scoring rubric *before* running; get alignment on weights |
+| High-priority item blocked | Dependency not captured | Add a dependency pre-check step before finalizing the ordered list |
+| Scores feel arbitrary | Missing confidence calibration | Require a confidence percentage for each estimate |

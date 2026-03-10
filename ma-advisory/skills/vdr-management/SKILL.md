@@ -1,11 +1,12 @@
 ---
-name: "VDR Management"
+name: vdr-management
 description: >
   Virtual Data Room classification and organization. Scans unstructured file
   uploads, identifies document types (cap tables, IP licenses, vendor contracts,
   tax filings, payroll), applies standardized M&A naming conventions and folder
   hierarchies. Transforms chaotic seller document dumps into diligence-ready
   repositories on day one.
+  Use when user asks to "set up a data room", "organize VDR", "data room management", or mentions virtual data room, document indexing, or VDR permissions.
 version: "1.0"
 author: "LauraFlorentin"
 ---

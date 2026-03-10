@@ -1,6 +1,6 @@
 ---
-name: Exception Handling & Recovery
-description: Patterns for ensuring system resilience by detecting failures (API errors, hallucinations, validation errors) and executing predefined fallback logic.
+name: exception-handling
+description: Patterns for ensuring system resilience by detecting failures (API errors, hallucinations, validation errors) and executing predefined fallback logic. Use when user asks to "handle agent errors", "add error recovery", "make my agent fault-tolerant", or mentions exception handling, graceful degradation, or retry logic.
 ---
 
 # Exception Handling & Recovery
@@ -47,3 +47,34 @@ def resilient_tool_call(tool_name, args):
             
     raise SystemError("Max retries exceeded")
 ```
+
+
+## Examples
+
+**Input**: An agent making API calls that sometimes time out.
+
+```python
+@retry(max_attempts=3, backoff=exponential(base=2))
+def call_api(endpoint, payload):
+    try:
+        return requests.post(endpoint, json=payload, timeout=10)
+    except Timeout:
+        log.warning(f"Timeout on {endpoint}, retrying...")
+        raise  # triggers retry decorator
+    except RateLimitError as e:
+        wait(e.retry_after)
+        raise
+    except FatalError:
+        alert_human("Non-recoverable error — requires manual intervention")
+        raise  # don't retry
+```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Retries amplify the problem | Rate limit errors being retried too fast | Use exponential backoff with jitter; respect `Retry-After` headers |
+| Agent silently swallows errors | Bare `except` clause | Always log the exception with full stack trace before handling |
+| Cascading failures | No circuit breaker | Implement circuit breaker: after 5 failures, open circuit for 60s |
+| Human escalation never fires | Alert threshold too high | Test alerting path in staging; set alerting on first fatal-class error |

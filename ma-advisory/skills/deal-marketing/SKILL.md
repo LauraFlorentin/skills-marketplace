@@ -1,10 +1,11 @@
 ---
-name: "Deal Marketing"
+name: deal-marketing
 description: >
   Sell-side deal marketing deliverables — CIM drafting, management presentation
   decks, and equity story construction. Synthesizes raw financials, management
   interviews, and competitive data into compelling investment narratives that
   maximize competitive bidding tension and valuation.
+  Use when user asks to "prepare deal marketing materials", "create a CIM", "teaser document", or mentions deal marketing, investor outreach, or sell-side materials.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -83,3 +84,25 @@ This frees senior advisors to **coach management on delivery** and simulate aggr
 - The Management Presentation is a complement to the CIM, not a duplicate — avoid redundancy
 - Always draft speaker notes that prepare management for pushback questions
 - Include a clear "Investment Highlights" section that buyers can present to their committees
+
+
+## Examples
+
+**Input**: "Draft a two-page teaser for a $85M ARR B2B SaaS company being sold."
+
+**Teaser structure output**:
+- **Transaction overview**: Sell-side process, indicative valuation range
+- **Business summary**: Product, market position, customer base (no name disclosed)
+- **Financial snapshot**: $85M ARR, 95% gross margin, 120% NRR, 3-year CAGR 45%
+- **Investment highlights**: Category leader in [sector], blue-chip customer base, platform expansion opportunity
+- **Next steps**: NDA → full CIM → management presentation
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| CIM too long | Including all company data | CIMs should be 40–60 pages; move granular data to VDR appendices |
+| Equity story isn't compelling | Leading with financials | Open with the strategic thesis: "Why this asset, why now?" |
+| Management presentation overruns time | No time allocation | Cap at 60–90 minutes; assign max page count per section |
+| Valuation range rejected by management | Unrealistic expectations | Anchor with precedent transactions first, then bottom-up DCF |

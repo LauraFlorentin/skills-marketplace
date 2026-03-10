@@ -1,11 +1,12 @@
 ---
-name: "Deal Screening"
+name: deal-screening
 description: >
   Rapid target evaluation through CIM extraction and IOI drafting. Strips
   sell-side marketing rhetoric from Confidential Information Memorandums to
   isolate core financials (EBITDA, margins, churn, CAC/LTV). Enables buy-side
   teams to screen dozens of targets daily and generate customized Indications
   of Interest.
+  Use when user asks to "screen a deal", "evaluate acquisition target", "deal pipeline", or mentions target screening, deal criteria, or preliminary assessment.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -93,3 +94,27 @@ Deliberately bypasses CIM formatting entirely. Instructs the AI to ignore narrat
 - Flag customer concentration above 20% for any single customer
 - For IOIs, ensure the valuation range is defensible with stated methodology
 - Time saved: **3-5 hours per CIM** screening; IOI drafting gives massive competitive advantage in auctions
+
+
+## Examples
+
+**Input**: "Screen this CIM. Key criteria: >$20M EBITDA, >70% gross margin, <12x EV/EBITDA."
+
+**Screening output**:
+| Criterion | Target | Finding | Pass/Fail |
+|---|---|---|---|
+| EBITDA | >$20M | $23.4M (adj.) | ✅ Pass |
+| Gross margin | >70% | 68% | ❌ Fail |
+| EV/EBITDA (ask) | <12x | 14.5x implied | ❌ Fail |
+| Customer concentration | <20% top customer | Top customer = 31% | ⚠️ Flag |
+
+**Recommendation**: Pass. Gross margin and valuation both miss. Note concentration risk for future reference.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| CIM doesn't disclose key metrics | Sell-side omission | Flag gaps in screening report; request data room access or submit IOI with conditions |
+| Adjusted EBITDA looks inflated | Aggressive add-backs | Challenge non-recurring items; apply QoE discount pending diligence |
+| Too many deals passing screening | Criteria too loose | Tighten thresholds or add negative criteria (e.g., "no government revenue >30%") |

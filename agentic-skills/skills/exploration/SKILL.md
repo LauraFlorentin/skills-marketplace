@@ -1,6 +1,6 @@
 ---
-name: Exploration & Discovery
-description: An open-ended pattern where agents autonomously conduct research, generate hypotheses, and explore solution spaces without a predefined path.
+name: exploration
+description: An open-ended pattern where agents autonomously conduct research, generate hypotheses, and explore solution spaces without a predefined path. Use when user asks to "add exploration to my agent", "balance exploration and exploitation", or mentions curiosity-driven, search strategies, or novelty seeking.
 ---
 
 # Exploration & Discovery
@@ -45,3 +45,33 @@ def exploration_loop(topic):
     # Phase 4: Synthesis
     return writer_agent.run("Write a report based on these conclusions", input=knowledge_base)
 ```
+
+
+## Examples
+
+**Input**: "Survey the latest research on LLM memory architectures and identify the top 3 open problems."
+
+**What the agent does**:
+1. Generates 5 hypotheses about unsolved memory challenges
+2. Searches arXiv for recent papers on each hypothesis
+3. Cross-references citation counts to rank relevance
+4. Synthesizes findings into a structured research brief
+
+**Output**: A 2-page research brief with identified gaps and recommended next steps.
+
+---
+
+**Input**: "Explore competitor pricing pages and build a comparison matrix."
+
+**Output**: A structured table comparing plans, features, and pricing across 8 competitors, with a gap analysis highlighting differentiation opportunities.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Agent explores indefinitely | Missing stopping criteria | Set explicit iteration limit (`max_iterations=10`) and convergence condition |
+| All hypotheses converge to same answer | Insufficient diversity in brainstorming | Add temperature variation or inject contrarian perspectives |
+| Research results are outdated | Search tool returning cached content | Specify date filter (`after:2024`) in search queries |
+| Agent loses track of prior findings | Context window exceeded | Use an external knowledge store; summarize findings at each iteration |
+| Exploration produces no actionable output | No synthesis step | Always include a final `writer_agent` pass to consolidate findings |

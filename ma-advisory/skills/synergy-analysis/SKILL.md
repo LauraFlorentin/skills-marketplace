@@ -1,10 +1,11 @@
 ---
-name: "Synergy Analysis"
+name: synergy-analysis
 description: >
   Synergy identification, quantification, and validation for M&A transactions.
   Maps overlapping headcount, vendor relationships, and infrastructure across
   buyer and target organizations. Generates cost-takeout plans with
   costs-to-achieve estimates for lender validation and integration planning.
+  Use when user asks to "analyze synergies", "cost synergy model", "synergy targets", or mentions revenue synergies, cost savings, or synergy bridge.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -93,3 +94,28 @@ The formal deliverable that moves beyond the mapping to a validated, defended an
 - Lenders demand third-party validation — ensure the analysis is independently defensible
 - Revenue synergies are speculative and should be separated from cost synergies
 - Flag any synergy that depends on retaining key personnel who may have flight risk
+
+
+## Examples
+
+**Input**: "Estimate synergies from acquiring a 200-person SaaS company."
+
+**Quick synergy model output**:
+| Category | Run-Rate Savings | Costs to Achieve | Net Year-1 |
+|---|---|---|---|
+| Headcount (G&A overlap) | $8.4M | $3.2M | $5.2M |
+| Software/vendor consolidation | $1.8M | $0.3M | $1.5M |
+| Facilities (office consolidation) | $0.9M | $0.4M | $0.5M |
+| **Total** | **$11.1M** | **$3.9M** | **$7.2M** |
+
+**Confidence**: Medium (benchmarked against 12 comparable SaaS acquisitions).
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Synergy estimates rejected by lenders | No third-party validation | Reference comparable transaction benchmarks; show methodology |
+| Revenue synergies overstated | Optimism bias | Separate cost and revenue synergies; apply 50% haircut to revenue synergies |
+| Costs to achieve underestimated | Missing one-time items | Use M&A database benchmarks for severance ($X per redundant FTE) |
+| Model doesn't account for dis-synergies | One-sided analysis | Explicitly model customer churn risk and key-man retention cost |

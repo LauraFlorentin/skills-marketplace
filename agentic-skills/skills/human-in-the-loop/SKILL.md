@@ -1,6 +1,6 @@
 ---
-name: Human-in-the-Loop
-description: A hybrid pattern where the system pauses execution to request human approval, input, or disambiguation before proceeding with critical actions.
+name: human-in-the-loop
+description: A hybrid pattern where the system pauses execution to request human approval, input, or disambiguation before proceeding with critical actions. Use when user asks to "add human approval", "require human review", "human-in-the-loop", or mentions approval workflows, human oversight, or escalation.
 ---
 
 # Human-in-the-Loop
@@ -44,3 +44,36 @@ def hitl_workflow(user_request):
     # Step 4: Execute
     return agent.execute(plan)
 ```
+
+
+## Examples
+
+**Input**: "Require human approval before the agent sends any email."
+
+```python
+def send_email_with_approval(draft):
+    # Present draft to human
+    approval = review_queue.submit({
+        "type": "email_approval",
+        "content": draft,
+        "timeout_hours": 4
+    })
+    if approval.status == "approved":
+        email_client.send(draft)
+    elif approval.status == "rejected":
+        agent.revise(draft, feedback=approval.comment)
+    else:  # timeout
+        escalate_to_manager(draft)
+```
+
+**Output**: Email sent only after explicit human approval, with full audit trail.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Humans are a bottleneck | Too many approval requests | Raise the automation threshold; only require approval above risk score 0.8 |
+| Agent waits indefinitely | No timeout configured | Set approval timeout; define auto-escalation path on timeout |
+| Reviewer lacks context | UI shows only the action | Include full context: why the agent wants to take this action |
+| Feedback loop never closes | No mechanism to learn from rejections | Log rejection reasons; update agent guidelines after 10+ similar rejections |

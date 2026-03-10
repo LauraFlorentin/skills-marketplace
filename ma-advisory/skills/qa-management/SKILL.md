@@ -1,10 +1,11 @@
 ---
-name: "Q&A Management"
+name: qa-management
 description: >
   Diligence Q&A process acceleration. Synthesizes approved VDR documents,
   disclosure schedules, and prior responses to auto-draft defensible answers
   to buyer diligence questions. Routes drafts for expert approval while
   maintaining consistency across a multi-bidder auction process.
+  Use when user asks to "manage Q&A process", "organize buyer questions", "data room Q&A", or mentions Q&A tracking, management presentations, or buyer inquiries.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -76,3 +77,23 @@ As transactions enter confirmatory diligence, the Q&A process can devolve into a
 - Preserve the Q&A log as it becomes part of the deal's legal record
 
 **Time saved**: 30 minutes per query, preventing coordination bottlenecks and ensuring consistency.
+
+
+## Examples
+
+**Input**: "Draft a response to buyer question: 'Explain the $3.2M revenue reclassification in Q3 2023.'"  
+
+**Auto-drafted response**:
+> The Q3 2023 reclassification reflects adoption of ASC 606 effective July 1, 2023. Previously, installation revenue was recognized at contract signing; under the new standard, it is deferred and recognized over the implementation period (typically 60–90 days). The change had no cash impact. Supporting documentation is available in the VDR at [4.3.2 — Revenue Recognition Policy Memo].
+
+*Routed to: CFO for approval. SLA: 24 hours.*
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Q&A responses are inconsistent across bidders | No central response register | Maintain a master Q&A log; all answers distributed to all bidders |
+| Expert approval is a bottleneck | Routing to wrong reviewer | Build a topic taxonomy; auto-route by category (legal → counsel, financial → CFO) |
+| Sensitive information leaked in response | Draft not reviewed | Never send auto-draft directly; stage → review → approve → distribute |
+| Response tracker gets out of sync | Manual updates | Use a shared spreadsheet with auto-timestamp on status change |

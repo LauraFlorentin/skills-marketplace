@@ -1,6 +1,6 @@
 ---
-name: Market Research & Analysis
-description: Comprehensive market research, competitive analysis, benchmarking, and industry analysis for strategic consulting engagements
+name: research-analysis
+description: Comprehensive market research, competitive analysis, benchmarking, and industry analysis for strategic consulting engagements Use when user asks to "conduct research", "market analysis", "competitor landscape", or mentions industry research, benchmarking, or data analysis.
 triggers:
   - market research
   - competitive analysis

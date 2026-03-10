@@ -1,6 +1,6 @@
 ---
-name: Routing
-description: A control flow pattern where a central component classifies an input request and directs it to the most appropriate specialized agent or tool.
+name: routing
+description: A control flow pattern where a central component classifies an input request and directs it to the most appropriate specialized agent or tool. Use when user asks to "route between agents", "agent routing", "task dispatch", or mentions classifier routing, intent detection, or agent selection.
 ---
 
 # Routing
@@ -42,3 +42,13 @@ def routing_workflow(user_query):
     else:
         return default_agent.run(user_query)
 ```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Wrong agent selected | Classifier underfitted | Add 50+ labeled examples per class; re-train or few-shot prompt |
+| New query types not routed | No catch-all route | Add a "general" fallback route that handles out-of-distribution inputs |
+| Routing adds too much latency | Heavy classifier | Use a lightweight keyword router as first stage; only call LLM when uncertain |
+| Router and agent disagree on task scope | Misaligned schemas | Define a shared task schema; router populates it, agent consumes it |

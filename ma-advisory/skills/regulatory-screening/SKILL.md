@@ -1,10 +1,11 @@
 ---
-name: "Regulatory Screening"
+name: regulatory-screening
 description: >
   Cross-border regulatory risk assessment for M&A transactions. Screens target
   revenue footprints against global antitrust and Foreign Direct Investment (FDI)
   thresholds. Flags jurisdictions requiring mandatory pre-close filings to
   prevent deal delays, fines, or forced unwinding.
+  Use when user asks to "check regulatory requirements", "antitrust screening", "regulatory risk", or mentions HSR filing, competition law, or regulatory approval.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -80,3 +81,28 @@ Cross-border M&A is fraught with overlapping regulatory regimes. Failing to file
 - Include regulatory risk allocation in the SPA (who bears risk of non-approval, break fees)
 
 **Time saved**: 8+ hours of preliminary legal research per transaction.
+
+
+## Examples
+
+**Input**: "$450M acquisition of a US target with EU revenues of €320M."
+
+**Filing flag output**:
+| Jurisdiction | Threshold | Status | Action Required |
+|---|---|---|---|
+| United States (HSR) | Transaction >$119.5M | 🔴 FILING REQUIRED | File within 10 days of signing |
+| European Union (EUMR) | Combined turnover >€5B | ✅ Below threshold | No filing |
+| United Kingdom (CMA) | UK turnover >£70M | 🟡 BORDERLINE | Assess UK revenue split |
+| Germany (GWB) | German turnover >€17.5M | ✅ Likely below | Confirm with local counsel |
+
+**Recommended timeline**: Flag HSR filing to deal team immediately — 30-day waiting period affects closing timeline.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Filing thresholds are outdated | Annual threshold adjustments | Cross-reference official agency websites; thresholds update each year |
+| FDI screening missed | Focus only on antitrust | Run separate CFIUS/FDI screen for any foreign acquirer or sensitive sector |
+| Closing delayed by unexpected filing | Filing flagged late | Run regulatory screen at LOI stage, not post-signing |
+| Local counsel gives conflicting advice | Jurisdictional complexity | Use coordinating international antitrust counsel for multi-jurisdiction review |

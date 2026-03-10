@@ -1,6 +1,6 @@
 ---
-name: Goal Setting & Monitoring
-description: An iterative pattern where an agent defines clear success criteria and continuously evaluates its progress, adjusting its actions until the goal is achieved.
+name: goal-setting
+description: An iterative pattern where an agent defines clear success criteria and continuously evaluates its progress, adjusting its actions until the goal is achieved. Use when user asks to "set agent goals", "define objectives for my agent", "goal decomposition", or mentions goal hierarchies, sub-goals, or objective functions.
 ---
 
 # Goal Setting & Monitoring
@@ -54,3 +54,31 @@ def goal_loop(objective, criteria):
         
     raise TimeoutError("Goal not reached within iteration limit.")
 ```
+
+
+## Examples
+
+**Input**: "Help my agent understand its goal: improve customer retention by 10% in Q2."
+
+**Goal decomposition output**:
+```
+Top-level goal: Increase Q2 retention by 10%
+├── Sub-goal 1: Identify at-risk customers (churn score >0.7)
+│   ├── Task: Pull last 90 days usage data
+│   └── Task: Run churn prediction model
+├── Sub-goal 2: Design intervention campaigns
+│   ├── Task: Draft win-back email sequences
+│   └── Task: Configure trigger conditions
+└── Sub-goal 3: Measure impact
+    └── Task: Track Week-1 / Week-4 retention cohorts
+```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Agent pursues irrelevant sub-goals | Goal too vague | Add measurable success criteria (KPI + target number + deadline) |
+| Goal decomposition is too deep | No max depth set | Cap at 3 levels; use task locks for leaf nodes |
+| Agent declares goal achieved prematurely | Missing verification step | Require explicit metric check before marking goal complete |
+| Conflicting sub-goals | No dependency graph | Build a DAG of sub-goals; resolve conflicts before execution |

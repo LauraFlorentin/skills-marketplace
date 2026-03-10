@@ -1,6 +1,6 @@
 ---
-name: Bench Management
-description: Optimize consultant utilization, manage resource allocation, and balance bench capacity with engagement demand. Track skill matching, forecast staffing needs, and ensure healthy utilization rates while supporting consultant development.
+name: bench-management
+description: Optimize consultant utilization, manage resource allocation, and balance bench capacity with engagement demand. Track skill matching, forecast staffing needs, and ensure healthy utilization rates while supporting consultant development. Use when user asks to "manage bench resources", "staff my project", "resource allocation", or mentions bench time, staffing, or utilization.
 triggers:
   - bench
   - utilization

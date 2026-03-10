@@ -1,6 +1,6 @@
 ---
-name: Client Deliverables
-description: Create professional management consulting deliverables including reports, presentations, frameworks, recommendations, findings, client decks, executive summaries, readouts, and whitepapers. Includes assessment structures, implementation roadmaps, and executive-ready analysis documents.
+name: client-deliverables
+description: Create professional management consulting deliverables including reports, presentations, frameworks, recommendations, findings, client decks, executive summaries, readouts, and whitepapers. Includes assessment structures, implementation roadmaps, and executive-ready analysis documents. Use when user asks to "create a client deliverable", "build a deck", "consulting report", or mentions slide decks, executive summaries, or client presentations.
 ---
 
 # Client Deliverables

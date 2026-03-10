@@ -1,6 +1,6 @@
 ---
-name: Inter-Agent Communication
-description: Protocols and patterns that allow independent agents to exchange messages, negotiate, and collaborate across network boundaries or process isolation.
+name: inter-agent-communication
+description: Protocols and patterns that allow independent agents to exchange messages, negotiate, and collaborate across network boundaries or process isolation. Use when user asks to "make agents communicate", "agent messaging", "inter-agent protocol", or mentions agent coordination, message passing, or shared state.
 ---
 
 # Inter-Agent Communication
@@ -45,3 +45,35 @@ class AgentA:
         if response.status == "CONFIRMED":
             print("Payment successful")
 ```
+
+
+## Examples
+
+**Input**: An orchestrator agent distributing research tasks to specialist agents.
+
+```python
+# Orchestrator sends task
+orchestrator.send(Message(
+    to="researcher-agent-1",
+    task="Find all SEC filings for AAPL in 2024",
+    context={"output_format": "json", "deadline": "2025-03-01"}
+))
+
+# Researcher replies
+researcher.send(Message(
+    to="orchestrator",
+    status="complete",
+    result=filings_data,
+    metadata={"sources": 14, "latency_ms": 3200}
+))
+```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Messages lost | No delivery acknowledgement | Require ACK from receiver; use at-least-once delivery with idempotency keys |
+| Agents talk past each other | No shared schema | Define a typed message schema (Pydantic/JSON Schema) for all message types |
+| Deadlock between agents | Circular dependency | Design a strict orchestrator hierarchy; no peer-to-peer blocking calls |
+| Message queue backs up | Slow consumer agent | Add horizontal scaling or a priority queue for time-sensitive messages |

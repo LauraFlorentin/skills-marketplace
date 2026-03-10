@@ -1,6 +1,6 @@
 ---
-name: Tool Use
-description: The capability that transforms an LLM from a text generator into an agent by allowing it to execute actions and retrieve information from the real world.
+name: tool-use
+description: The capability that transforms an LLM from a text generator into an agent by allowing it to execute actions and retrieve information from the real world. Use when user asks to "add tools to my agent", "function calling", "tool integration", or mentions API calls, external tools, or agent capabilities.
 ---
 
 # Tool Use
@@ -54,3 +54,13 @@ def tool_use_loop(user_query):
         
     return response.content
 ```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Agent calls wrong tool | Ambiguous tool description | Start each tool description with an active verb; add "DO NOT USE FOR..." |
+| Tool call arguments malformed | Model hallucinated parameters | Add JSON Schema validation; return clear error messages back to agent |
+| Agent loops on tool failures | No retry limit | Set `max_retries=2`; after limit, return error and let agent decide next step |
+| Tool not available in some environments | Missing dependency | Check `tool.available()` before including in tool list; graceful degradation |

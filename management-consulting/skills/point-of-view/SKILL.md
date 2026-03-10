@@ -1,6 +1,6 @@
 ---
-name: Point of View Development
-description: Create compelling POVs (Points of View) that establish expertise, build credibility, and generate advisory demand through structured strategic arguments.
+name: point-of-view
+description: Create compelling POVs (Points of View) that establish expertise, build credibility, and generate advisory demand through structured strategic arguments. Use when user asks to "write a point of view", "develop a POV", "thought leadership piece", or mentions industry perspective, strategic viewpoint, or expert opinion.
 triggers:
   - POV
   - point of view

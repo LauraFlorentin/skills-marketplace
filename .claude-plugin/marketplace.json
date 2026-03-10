@@ -135,6 +135,40 @@
                 "syndication",
                 "hospitality"
             ]
+        },
+        {
+            "name": "harness-engineer",
+            "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, and auto-orient fresh sessions. Includes three-layer circuit breaker system.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./harness-engineer",
+            "category": "devtools",
+            "tags": [
+                "harness",
+                "agent-engineering",
+                "circuit-breaker",
+                "context-engineering",
+                "scaffolding"
+            ]
+        },
+        {
+            "name": "skill-checker",
+            "description": "Validate, review, and improve Claude skills against Anthropic's official best practices. Includes automated structural validator and multi-dimensional audit scorecard.",
+            "version": "1.0.0",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./skill-checker",
+            "category": "devtools",
+            "tags": [
+                "skill-validation",
+                "quality-assurance",
+                "best-practices",
+                "audit",
+                "linting"
+            ]
         }
     ]
 }

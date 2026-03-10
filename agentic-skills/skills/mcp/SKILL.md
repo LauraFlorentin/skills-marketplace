@@ -1,6 +1,6 @@
 ---
-name: Model Context Protocol (MCP)
-description: An interoperability standard that allows AI models to connect to external data and tools securely and consistently, decoupling the tool implementation from the agent.
+name: mcp
+description: An interoperability standard that allows AI models to connect to external data and tools securely and consistently, decoupling the tool implementation from the agent. Use when user asks about "MCP servers", "model context protocol", "connect tools to my agent", or mentions MCP integration, tool servers, or context protocol.
 ---
 
 # Model Context Protocol (MCP)
@@ -41,3 +41,40 @@ def calculate_vat(amount: float, country: str) -> float:
 # client.connect(mcp_server)
 # response = client.chat("How much VAT for 100 EUR in Germany?")
 ```
+
+
+## Examples
+
+**Input**: "Connect my agent to a database MCP server."
+
+```json
+// .claude/settings.json
+{
+  "mcpServers": {
+    "postgres": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-postgres"],
+      "env": { "DATABASE_URL": "postgresql://localhost/mydb" }
+    }
+  }
+}
+```
+
+Agent can now call `mcp__postgres__query` to run SQL and `mcp__postgres__schema` to inspect tables.
+
+---
+
+**Input**: "Build a multi-MCP workflow: search the web, then save results to Notion."
+
+**Pattern**: Phase 1 calls `mcp__brave__search`, collects results. Phase 2 calls `mcp__notion__createPage` with formatted output. Each phase validates data before proceeding.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| MCP server not found | Binary not installed | Run `npx -y @modelcontextprotocol/server-name` to install |
+| Tool calls return auth errors | Missing API key in env | Add key to `env` block in `mcpServers` config |
+| Agent can't find MCP tools | Server not registered | Check `.claude/settings.json`; restart Claude Code after changes |
+| Tool call times out | MCP server unresponsive | Test server independently: `npx @modelcontextprotocol/inspector` |
+| Data format mismatch between MCPs | Different schemas | Add a transformation step between phases to normalize formats |

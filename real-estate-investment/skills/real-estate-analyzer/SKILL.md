@@ -1,29 +1,6 @@
 ---
-name: "Real Estate Investment Analyzer"
-description: >
-  ALWAYS USE THIS SKILL when the user mentions ANY of: real estate investing,
-  rental property, commercial property, multifamily, fix-and-flip, BRRRR,
-  cap rate, NOI, cash-on-cash, DSCR, pro forma, 1% rule, 1031 exchange,
-  depreciation, cost segregation, syndication, SPV, PPM, shareholders agreement,
-  hotel investment, resort investment, Bali property, international real estate,
-  property analysis, deal analysis, underwriting, investment package, prospectus,
-  investment deck, passive income from real estate, REIT analysis, preferred return,
-  waterfall distribution, management fee analysis, ADR, RevPAR, occupancy rate,
-  leasehold risk, currency risk, Tulum property, Mexico real estate, fideicomiso,
-  ejido, PT PMA, HGB, cross-border financing, HELOC for overseas, repatriation,
-  withholding tax, DTAA, developer financing, pre-construction investment,
-  J-curve, ramp-up period, or ANY request to analyze an investment document.
-  Also triggers on: Zillow API, Redfin data, AirDNA, Census data, CoStar,
-  batch deal screening, Monte Carlo simulation, Python calculator, JavaScript
-  calculator, investment code, automated analysis pipeline, property API,
-  rental data API, market data, comp data, or any request for code/scripts
-  to analyze real estate investments.
-  This skill provides comprehensive real estate investment analysis using an
-  adaptive multi-agent system that automatically selects the right specialist
-  agents based on deal type and complexity. Covers domestic and international
-  deals (with country-specific profiles for Indonesia/Bali and Mexico/Tulum),
-  direct ownership and passive syndications, all property types including
-  hospitality, cross-border financing strategies, and full legal document review.
+name: real-estate-analyzer
+description: Adaptive multi-agent system for real estate investment analysis — deal screening, underwriting, pro forma modeling, financing strategies, tax optimization, stress testing, syndication structuring, and international deals. Use when user asks to "analyze a property", "run an underwriting model", "pro forma analysis", or mentions cap rate, NOI, cash-on-cash return, DSCR, 1031 exchange, syndication, hotel investment, international real estate, or investment documents.
 version: "2.1"
 author: "User"
 ---

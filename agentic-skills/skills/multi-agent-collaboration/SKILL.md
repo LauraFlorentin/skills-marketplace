@@ -1,6 +1,6 @@
 ---
-name: Multi-Agent Collaboration
-description: A structural pattern where multiple specialized agents communicate and coordinate to solve a problem that is too complex for a single agent.
+name: multi-agent-collaboration
+description: A structural pattern where multiple specialized agents communicate and coordinate to solve a problem that is too complex for a single agent. Use when user asks to "build a multi-agent system", "agents working together", "agent collaboration", or mentions team of agents, distributed agents, or swarm.
 ---
 
 # Multi-Agent Collaboration

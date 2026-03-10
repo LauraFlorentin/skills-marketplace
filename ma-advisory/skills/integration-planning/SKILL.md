@@ -1,10 +1,11 @@
 ---
-name: "Integration Planning"
+name: integration-planning
 description: >
   Post-merger integration (PMI) planning and cultural diagnostics. Generates
   Day 1 readiness checklists, 100-day functional workstream plans, governance
   structures, systems migration roadmaps, and change management communications.
   Includes cultural compatibility assessment using behavioral mapping.
+  Use when user asks to "plan post-merger integration", "PMI plan", "integration workstream", or mentions Day 1 readiness, synergy capture, or integration management.
 version: "1.0"
 author: "LauraFlorentin"
 ---

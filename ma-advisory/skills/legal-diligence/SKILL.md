@@ -1,10 +1,11 @@
 ---
-name: "Legal Diligence"
+name: legal-diligence
 description: >
   Legal due diligence automation — NDA redlining against firm playbooks,
   change-of-control clause scanning across material contracts, disclosure
   schedule drafting for purchase agreements, and red flag report generation.
   Covers the full spectrum of legal risk identification in M&A transactions.
+  Use when user asks to "run legal due diligence", "review contracts", "legal risk assessment", or mentions legal DD, contract review, or compliance diligence.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -125,3 +126,13 @@ The AI continually scans the VDR as documents are uploaded, comparing against a 
 - Disclosure schedules: err on the side of over-disclosure to minimize post-close indemnification risk
 - Red flag reports: focus on exceptions, not comprehensive cataloguing
 - All legal outputs are advisory — always require qualified legal review
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Change-of-control clauses missed | Buried in schedules | Run keyword scan on full contract corpus, not just main body |
+| NDA redline rejected by counterparty | Overly aggressive positions | Use tiered playbook: "must-haves" vs. "nice-to-haves"; escalate only on must-haves |
+| Disclosure schedules incomplete | Seller's counsel rushed | Provide a disclosure schedule checklist at LOI stage; allow 2-week cure period |
+| Material contracts not provided | VDR gaps | Cross-reference audited financials for material contract obligations; request missing items |

@@ -1,6 +1,6 @@
 ---
-name: Planning
-description: A high-level cognitive pattern where an agent formulates a structured sequence of actions (a plan) before executing any of them, ensuring goal-directed behavior.
+name: planning
+description: A high-level cognitive pattern where an agent formulates a structured sequence of actions (a plan) before executing any of them, ensuring goal-directed behavior. Use when user asks to "add planning to my agent", "task planning", "agent planning", or mentions plan generation, plan execution, or step-by-step planning.
 ---
 
 # Planning

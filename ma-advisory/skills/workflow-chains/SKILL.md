@@ -1,8 +1,9 @@
 ---
-name: "Workflow Chains"
+name: workflow-chains
 description: >
   End-to-end M&A pipeline orchestration — chains individual slash commands
   and report generators into continuous operational pipelines. Three core
+  Use when user asks to "chain M&A workflows", "end-to-end deal process", "deal lifecycle", or mentions workflow automation, multi-phase deals, or deal coordination.
   chains: Origination-to-IOI (7 days → 4 hours), VDR Drop-to-Red Flag
   (5 days → 6 hours), and Synergy-to-Day 1 Integration (3 weeks → 3 days).
 version: "1.0"
@@ -105,3 +106,27 @@ Seamless transition from theoretical valuation modeling to a concrete, executabl
 - Document the chain execution log for audit trail and post-deal review
 - If any step produces unexpected results, halt the chain and investigate
 - The consultant's role shifts from execution to **validation and strategic interpretation**
+
+
+## Examples
+
+**Input**: "Run the full sell-side process chain for a $120M transaction."
+
+**Workflow chain output**:
+```
+[Week 1]  VDR Setup        → /vdr-setup completed, 847 docs indexed
+[Week 2]  Deal Marketing   → Teaser + CIM drafted, distributed to 12 strategic + 8 PE buyers
+[Week 3]  Screening        → 9 IOIs received, 6 qualify; management presentation scheduled
+[Week 5]  Diligence Open   → Q&A log active: 47 questions received, 41 answered
+[Week 7]  Final Bids       → 3 LOIs received, best at $127M (10.6x EBITDA)
+[Week 9]  Docs + Close     → Regulatory filing submitted, SPA negotiation underway
+```
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Workflow chain stalls at one stage | Missing prerequisite output | Check each stage's output schema; ensure data is passed completely |
+| Parallel workstreams fall out of sync | No shared status tracker | Use a deal management tracker with stage gates and owner assignments |
+| Chain runs wrong skill | Ambiguous trigger | Explicitly name each skill step in the chain rather than relying on auto-trigger |

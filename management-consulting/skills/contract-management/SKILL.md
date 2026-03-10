@@ -1,10 +1,11 @@
 ---
-name: Contract Management
-description: >-
+name: contract-management
+description: -
   Manage consulting contracts throughout their full lifecycle including MSAs,
   SOWs, change orders, billing, compliance monitoring, and renewal management.
   Handles contract negotiation, execution, obligation tracking, and financial
   controls for professional services engagements.
+  Use when user asks to "draft a contract", "MSA template", "SOW review", or mentions contract negotiation, terms and conditions, or engagement letters.
 triggers:
   - contract management
   - MSA

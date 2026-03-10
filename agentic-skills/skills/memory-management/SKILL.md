@@ -1,6 +1,6 @@
 ---
-name: Memory Management
-description: Techniques for persisting, retrieving, and managing state across agent interactions, enabling long-coherency and personalization.
+name: memory-management
+description: Techniques for persisting, retrieving, and managing state across agent interactions, enabling long-coherency and personalization. Use when user asks to "add memory to my agent", "persistent context", "conversation history", or mentions long-term memory, memory retrieval, or context windows.
 ---
 
 # Memory Management
@@ -53,3 +53,36 @@ def memory_augmented_agent(user_input, user_id):
     
     return response
 ```
+
+
+## Examples
+
+**Input**: A customer support agent needs to remember user preferences across sessions.
+
+```python
+# Write to memory
+memory.store("user:123:preferences", {"language": "Spanish", "tone": "formal"})
+
+# Retrieve on next session
+prefs = memory.retrieve("user:123:preferences")
+response = agent.run(prompt, context=prefs)
+```
+
+**Output**: The agent greets the user in Spanish using formal language, without requiring them to re-specify preferences.
+
+---
+
+**Input**: "My agent keeps forgetting what we discussed earlier in a long conversation."
+
+**Fix**: Implement a sliding window summary: every 10 turns, summarize the conversation so far and store it as a compressed context document. Inject this summary at the start of each new prompt.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Agent retrieves wrong memories | Similarity threshold too low | Raise cosine similarity threshold to ≥0.8 for semantic retrieval |
+| Memory grows unbounded | No expiry policy | Implement TTL on episodic memory; archive after 30 days |
+| Context window overflow | Too much memory injected | Use summarization; only inject top-3 most relevant memories |
+| Agent ignores stored memories | Memory not injected into prompt | Ensure retrieved context is passed before the user message, not after |
+| Stale preferences causing errors | No invalidation on update | Add a `last_modified` timestamp; re-retrieve if > N days old |

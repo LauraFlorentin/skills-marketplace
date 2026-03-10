@@ -1,6 +1,6 @@
 ---
-name: Adaptation
-description: A dynamic pattern where an agent system modifies its own behavior, prompts, or tools over time based on feedback or performance metrics.
+name: adaptation
+description: A dynamic pattern where an agent system modifies its own behavior, prompts, or tools over time based on feedback or performance metrics. Use when user asks to "make my agent adaptive", "add learning capabilities", "self-improving agent", or mentions adaptive behavior, online learning, or feedback loops.
 ---
 
 # Adaptation

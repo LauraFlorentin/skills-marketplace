@@ -4,4 +4,4 @@ description: Apply the Inter-Agent Communication pattern — enable agents to ex
 
 Use the **Inter-Agent Communication** skill from the agentic-skills plugin.
 
-Read the full skill reference at `../skills/inter_agent_communication/SKILL.md` and apply the pattern to help the user design protocols that allow independent agents to exchange messages, negotiate, and collaborate across network boundaries or process isolation.
+Read the full skill reference at `../skills/inter-agent-communication/SKILL.md` and apply the pattern to help the user design protocols that allow independent agents to exchange messages, negotiate, and collaborate across network boundaries or process isolation.

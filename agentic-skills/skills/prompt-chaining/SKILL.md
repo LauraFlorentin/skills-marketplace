@@ -1,6 +1,6 @@
 ---
-name: Prompt Chaining
-description: A fundamental pattern where the output of one LLM call serves as the input for the next, enabling complex tasks to be broken down into manageable sequential steps.
+name: prompt-chaining
+description: A fundamental pattern where the output of one LLM call serves as the input for the next, enabling complex tasks to be broken down into manageable sequential steps. Use when user asks to "chain prompts together", "multi-step prompts", "prompt pipeline", or mentions sequential prompts, prompt workflows, or chain-of-thought.
 ---
 
 # Prompt Chaining

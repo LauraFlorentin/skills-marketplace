@@ -1,6 +1,6 @@
 ---
-name: Evaluation & Monitoring
-description: Systems for quantitatively and qualitatively measuring agent performance, reliability, and cost.
+name: evaluation
+description: Systems for quantitatively and qualitatively measuring agent performance, reliability, and cost. Use when user asks to "evaluate agent performance", "benchmark my agent", "test agent quality", or mentions agent metrics, scoring, or performance assessment.
 ---
 
 # Evaluation & Monitoring
@@ -45,3 +45,30 @@ def evaluate_agent(agent, test_set):
             
     return score / total
 ```
+
+
+## Examples
+
+**Input**: "Evaluate whether our customer support agent is giving accurate answers."
+
+**Evaluation run**:
+```python
+results = evaluator.run(
+    agent=support_agent,
+    test_cases=golden_dataset,  # 200 Q&A pairs
+    metrics=["accuracy", "hallucination_rate", "latency_p95"]
+)
+# Output: accuracy=0.87, hallucination_rate=0.04, latency_p95=2.3s
+```
+
+**Interpretation**: Accuracy above threshold (0.85 ✅), hallucination rate acceptable (0.04 ✅), latency borderline — investigate slow tail cases.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Evaluation results are inconsistent | Non-deterministic LLM judge | Set `temperature=0` on the evaluator model; add majority voting across 3 runs |
+| Test set doesn't reflect real traffic | Golden dataset out of date | Sample 10% of live traffic weekly; add to golden set after human review |
+| Scores improve but user complaints persist | Wrong metrics | Add user satisfaction proxy (thumbs up/down rate) to evaluation suite |
+| Evaluation is slow | Running evaluations serially | Parallelize: batch 10 test cases per API call |

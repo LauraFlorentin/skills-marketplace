@@ -1,6 +1,6 @@
 ---
-name: Reflection
-description: A recursive pattern where an agent evaluates and critiques its own output to iteratively improve quality and catch errors.
+name: reflection
+description: A recursive pattern where an agent evaluates and critiques its own output to iteratively improve quality and catch errors. Use when user asks to "add self-reflection", "agent introspection", "self-critique", or mentions self-evaluation, meta-cognition, or quality self-assessment.
 ---
 
 # Reflection

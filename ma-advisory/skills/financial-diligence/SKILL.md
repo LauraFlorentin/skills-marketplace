@@ -1,10 +1,11 @@
 ---
-name: "Financial Diligence"
+name: financial-diligence
 description: >
   Financial due diligence and Quality of Earnings (QoE) reporting. Automates
   trial balance tie-outs, EBITDA adjustment validation, working capital analysis,
   and debt-like item identification. Detects anomalies in general ledgers and
   accelerates the reconciliation process that traditionally consumes weeks.
+  Use when user asks to "run financial due diligence", "analyze financials", "quality of earnings", or mentions financial DD, QofE, or financial analysis.
 version: "1.0"
 author: "LauraFlorentin"
 ---
@@ -88,3 +89,29 @@ For each proposed management add-back:
 - For NWC, exclude cash and debt from the calculation unless specified in the purchase agreement
 - AI outputs are analytical aids — the subjective debate over valid add-backs requires human judgment
 - Time saved: automates tie-out process that traditionally takes **40+ hours**
+
+
+## Examples
+
+**Input**: "Run a QoE analysis on this target's three-year P&L."
+
+**EBITDA bridge output**:
+| Item | Amount | Type |
+|---|---|---|
+| Reported EBITDA | $18.2M | — |
+| + Owner salary above market | +$1.2M | Non-recurring |
+| – One-time insurance recovery | –$0.8M | Non-recurring |
+| – Understated capex (lease restructure) | –$1.4M | Run-rate |
+| **Adjusted EBITDA (QoE)** | **$17.2M** | — |
+
+**Finding**: Reported EBITDA overstated by $1.0M (5.5%) — material enough to impact valuation by ~$10M at 10x multiple.
+
+
+## Troubleshooting
+
+| Problem | Cause | Fix |
+|---|---|---|
+| Trial balance doesn't tie to P&L | Accounting errors or plug entries | Request a full GL export; flag any journal entry >5% of EBITDA without documentation |
+| Working capital peg disputes | Different normalization methodologies | Align on peg definition (12-month average vs. spot) in the LOI |
+| Revenue recognized incorrectly | ASC 606 misapplication | Engage accounting advisors for revenue recognition memo |
+| Hidden liabilities in debt schedule | Off-balance-sheet items | Request all operating leases, earnouts, and contingent liabilities |
