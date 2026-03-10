@@ -138,8 +138,8 @@
         },
         {
             "name": "harness-engineer",
-            "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, and auto-orient fresh sessions. Includes three-layer circuit breaker system.",
-            "version": "1.0.0",
+            "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, auto-orient sessions, and consult harness engineering theory (CLASS metrics, Constitutional AI, evaluation frameworks). Includes three-layer circuit breaker system and orchestrator agent for autonomous multi-skill workflows.",
+            "version": "1.1.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -150,7 +150,11 @@
                 "agent-engineering",
                 "circuit-breaker",
                 "context-engineering",
-                "scaffolding"
+                "scaffolding",
+                "evaluation",
+                "alignment",
+                "constitutional-ai",
+                "orchestrator"
             ]
         },
         {

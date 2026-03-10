@@ -15,6 +15,10 @@
         "circuit-breaker",
         "context-engineering",
         "scaffolding",
-        "devtools"
+        "devtools",
+        "evaluation",
+        "alignment",
+        "constitutional-ai",
+        "orchestrator"
     ]
 }

@@ -16,6 +16,14 @@ A complete harness engineering toolkit synthesized from OpenAI, Anthropic, and L
 | `harness-doctor` | `/harness-engineer:doctor` | Agent failed, loop broke, session went wrong |
 | `harness-gc` | `/harness-engineer:gc` | Docs stale, constraints violated, features inconsistent |
 | `harness-onboard` | Auto (SessionStart hook) | Every new Claude Code session in a harness project |
+| `harness-engineering` | `/harness-engineer:theory` | Theory, CLASS metrics, Constitutional AI, evaluation design |
+
+## Orchestrator Agent
+
+For multi-stage workflows, the **orchestrator** (`agents/orchestrator.md`) classifies requests, sequences skills, and synthesizes outputs. Three operation modes:
+- **Guided** (default) — single command, no orchestration
+- **Supervised** — orchestrator recommends, user confirms
+- **Autonomous** — orchestrator diagnoses + executes with circuit breaker safety rails
 
 ## Circuit Breaker System
 
