@@ -1,0 +1,46 @@
+{
+  "_generated_by": "harness-engineer plugin",
+  "_rule": "Each layer may only import from layers with a LOWER order number. Violations are enforced by .harness/scripts/check-layers.sh and the watchdog hook.",
+  "layers": [
+    {
+      "order": 1,
+      "name": "types",
+      "description": "Type definitions, interfaces, enums, constants. No imports from other layers.",
+      "paths": ["src/types/", "types/", "shared/types/"]
+    },
+    {
+      "order": 2,
+      "name": "config",
+      "description": "Configuration, environment variables, feature flags.",
+      "paths": ["src/config/", "config/"]
+    },
+    {
+      "order": 3,
+      "name": "repo",
+      "description": "Data access layer: database queries, storage adapters, external API clients.",
+      "paths": ["src/repo/", "src/db/", "src/data/", "repositories/"]
+    },
+    {
+      "order": 4,
+      "name": "service",
+      "description": "Business logic, domain operations, orchestration.",
+      "paths": ["src/service/", "src/services/", "src/domain/", "services/"]
+    },
+    {
+      "order": 5,
+      "name": "runtime",
+      "description": "API routes, controllers, request handlers, middleware.",
+      "paths": ["src/routes/", "src/api/", "src/controllers/", "src/middleware/"]
+    },
+    {
+      "order": 6,
+      "name": "ui",
+      "description": "Frontend components, pages, client-side logic.",
+      "paths": ["src/components/", "src/pages/", "src/views/", "app/", "frontend/"]
+    }
+  ],
+  "exceptions": [
+    "Test files may import from any layer for testing purposes",
+    "Type-only imports (import type) across layers are permitted"
+  ]
+}

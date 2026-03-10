@@ -1,0 +1,83 @@
+# Execution Plan: [FEATURE_ID] — [FEATURE_DESCRIPTION]
+
+**Status:** [ ] Not Started | [ ] In Progress | [x] Complete | [ ] Abandoned
+**Created:** [ISO_DATE]
+**Last Updated:** [ISO_DATE]
+**Agent Session:** [SESSION_ID or timestamp]
+
+---
+
+## Feature Specification
+
+From `features.json`:
+- **ID:** [feat-xxx]
+- **Priority:** [N]
+- **Description:** [exact description from features.json]
+- **Steps:**
+  1. [step 1]
+  2. [step 2]
+  3. [step 3]
+
+---
+
+## Approach
+
+### What needs to change
+- [ ] [file or component 1] — [what changes and why]
+- [ ] [file or component 2] — [what changes and why]
+
+### Layer analysis
+- This feature touches layer(s): [ui / runtime / service / repo / config / types]
+- Layer constraint check: [no violations / violation at X → will resolve by Y]
+
+### Risk assessment
+- What could go wrong: [anticipated failure modes]
+- Mitigation: [how to handle if it goes wrong]
+
+---
+
+## Decision Log
+
+_Record any non-obvious decisions made during implementation. Future agents need to understand WHY, not just WHAT._
+
+| Decision | Alternatives Considered | Reason Chosen |
+|---|---|---|
+| [decision made] | [what else was considered] | [why this was chosen] |
+
+---
+
+## Progress
+
+### Completed sub-tasks
+- [x] [sub-task 1 — commit sha if applicable]
+- [ ] [sub-task 2]
+
+### Current blockers
+- [any blockers, or "none"]
+
+### Known technical debt introduced
+- [any shortcuts taken that need revisiting, or "none"]
+
+---
+
+## Verification Results
+
+Tested against features.json steps:
+| Step | Result | Notes |
+|---|---|---|
+| Step 1: [description] | ✅ Pass / ❌ Fail | [notes] |
+| Step 2: [description] | ✅ Pass / ❌ Fail | [notes] |
+
+Edge cases tested:
+- [ ] [edge case 1]
+- [ ] [edge case 2]
+
+Browser console errors: [none / list]
+
+---
+
+## Outcome
+
+- **Final status:** [passes=true / abandoned — reason]
+- **Commit(s):** [git sha(s)]
+- **Follow-up work logged:** [yes — see docs/tech-debt.md / no]

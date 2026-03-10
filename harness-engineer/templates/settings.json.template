@@ -1,0 +1,94 @@
+{
+  "_comment": "HARNESS ENGINEER — Circuit Breaker System. Place in .claude/settings.json",
+
+  "hooks": {
+
+    "PostToolUse": [
+
+      {
+        "_comment": "Layer 1 — Circuit Breaker: fires on every file write/edit",
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .harness/hooks/circuit-breaker.sh",
+            "timeout": 10
+          }
+        ]
+      },
+
+      {
+        "_comment": "Layer 2 — Dead Man's Switch: fires on every tool call, throttled internally",
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .harness/hooks/dead-mans-switch.sh",
+            "timeout": 10
+          }
+        ]
+      },
+
+      {
+        "_comment": "Layer 3 — Watchdog: fires on every tool call, throttled to every N calls internally",
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash .harness/hooks/watchdog.sh",
+            "timeout": 15
+          }
+        ]
+      }
+
+    ],
+
+    "SessionStart": [
+      {
+        "_comment": "Session bootstrap: reset tool counter, detect initializer vs coding agent mode",
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "mkdir -p .harness/state && echo 0 > .harness/state/tool-call-count.txt && if [ ! -f 'claude-progress.txt' ] || ! grep -q 'SESSION' claude-progress.txt 2>/dev/null; then echo '[HARNESS] INITIALIZER MODE: No prior sessions. Run /harness-engineer:init — do NOT implement features.'; else PASSING=$(python3 -c \"import json; d=json.load(open('features.json')); f=d.get('features',d) if isinstance(d,dict) else d; print(sum(1 for x in f if x.get('passes')))\" 2>/dev/null || echo '?'); TOTAL=$(python3 -c \"import json; d=json.load(open('features.json')); f=d.get('features',d) if isinstance(d,dict) else d; print(len(f))\" 2>/dev/null || echo '?'); echo \"[HARNESS] CODING AGENT MODE. Features: $PASSING/$TOTAL passing. Circuit breakers active. Run harness-onboard ritual.\"; fi"
+          },
+          {
+            "_comment": "Model-specific operating context injection",
+            "type": "command",
+            "command": "bash .harness/hooks/model-context.sh 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+
+    "Stop": [
+      {
+        "_comment": "Pre-completion checklist (LangChain PreCompletionChecklistMiddleware). Forces spec-comparison verification before exit — NOT self-review of code.",
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "prompt",
+            "prompt": "STOP. Before ending this session, complete this checklist in order:\n\n1. IDENTIFY: Open features.json. Find the feature you worked on this session. Read its 'steps' array out loud to yourself.\n\n2. TEST EACH STEP: Execute every step in the 'steps' array as a user would. Check .harness/config.json for browser_automation.enabled — if true, use the configured MCP browser tool to navigate and verify. If false, manually click through the running app. Do NOT review your own code to verify. Test BEHAVIOR, not implementation.\n\n3. COMPARE vs SPEC: For each step, does the actual behavior match what the step says? If any step fails, mark passes=false and fix it before continuing.\n\n4. EDGE CASES: Test at least one edge case per feature (empty input, error state, boundary value). Agents that only test happy paths cause slop buildup.\n\n5. COMMIT: Is there a git commit with a descriptive message referencing the feature id? If not, commit now.\n\n6. PROGRESS: Is claude-progress.txt updated with: what was completed, current state, and a specific instruction for the next agent?\n\n7. LOCK: Is the current_tasks/ lock file removed for this feature?\n\nReturn {\"ok\": true, \"feature_id\": \"feat-xxx\", \"steps_tested\": N, \"browser_used\": true/false} only after all 7 items are confirmed. Return {\"ok\": false, \"reason\": \"specific item that failed\"} if anything is missing — do not exit until resolved.",
+            "timeout": 120
+          }
+        ]
+      }
+    ]
+
+  },
+
+  "harness": {
+    "circuit_breaker": {
+      "soft_threshold": 5,
+      "hard_threshold": 10
+    },
+    "dead_mans_switch": {
+      "warning_minutes": 15,
+      "critical_minutes": 30
+    },
+    "watchdog": {
+      "check_interval_tool_calls": 10,
+      "lock_stale_minutes": 20
+    }
+  }
+}

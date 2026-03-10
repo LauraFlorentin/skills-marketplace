@@ -1,0 +1,20 @@
+{
+    "name": "harness-engineer",
+    "version": "1.0.0",
+    "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, and auto-orient fresh sessions. Includes three-layer circuit breaker system.",
+    "author": {
+        "name": "LauraFlorentin"
+    },
+    "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "license": "MIT",
+    "skills": "./skills/",
+    "commands": "./commands/",
+    "keywords": [
+        "harness",
+        "agent-engineering",
+        "circuit-breaker",
+        "context-engineering",
+        "scaffolding",
+        "devtools"
+    ]
+}
