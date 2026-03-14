@@ -70,3 +70,19 @@ Arguments at any level must be:
 - **Collectively Exhaustive:** Together they cover the full argument, no gaps
 
 Run this check on every set of 3–5 bullets, arguments, or chapters before finalizing.
+
+---
+
+## Argument Ordering Modes (applies to all frameworks)
+
+Once arguments are defined, sequence them using one of these modes:
+
+| Mode | When to use |
+|------|-------------|
+| **Structural** | Arguments are parts of a whole ("three pillars") |
+| **Chronological** | Arguments follow a timeline or sequence |
+| **Comparative** | Arguments contrast options or scenarios |
+| **Deductive** | Premise → implication → conclusion chain |
+| **Inductive** | Multiple examples converge on one pattern |
+
+Always put the strongest or most important argument first.

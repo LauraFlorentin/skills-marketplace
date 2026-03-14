@@ -74,19 +74,32 @@ DECK TITLE: [working title]
 FRAMEWORK: [chosen framework]
 AUDIENCE: [who]
 GOVERNING THOUGHT: [one sentence — the answer/recommendation]
+ARGUMENT ORDERING MODE: [structural / chronological / comparative / deductive / inductive]
 
 SLIDE STORYBOARD:
-1. [TITLE SLIDE] — [Deck title + subtitle]
-2. [EXEC SUMMARY] — [Situation | Complication | Recommendation | 3 key supports | Ask]
-3. [SITUATION] — [Action title: undisputed context]
-4. [COMPLICATION] — [Action title: the tension/problem]
-5. [RESOLUTION HEADLINE] — [Action title: your recommendation]
-6. [ARG 1] — [Action title: first supporting argument]
-7. [ARG 2] — [Action title: second supporting argument]
-8. [ARG 3] — [Action title: third supporting argument]
-9. [CALL TO ACTION] — [Action title: what you need from the audience]
-10. [APPENDIX MARKER] — Backup slides start here
+1. [TITLE SLIDE] — [Deck title + subtitle]                              📝
+2. [EXEC SUMMARY] — [Situation | Complication | Recommendation | 3 key supports | Ask]  📝
+3. [SITUATION] — [Action title: undisputed context]                     📝
+4. [COMPLICATION] — [Action title: the tension/problem]                 📊
+5. [QUESTION] — [Action title: reframe the problem as a focused challenge]  📝
+6. [RESOLUTION HEADLINE] — [Action title: your recommendation]          📝
+7. [ARG 1] — [Action title: first supporting argument]                  🔢
+8. [ARG 2] — [Action title: second supporting argument]                 📊
+9. [ARG 3] — [Action title: third supporting argument]                  📝
+10. [CALL TO ACTION] — [Action title: what you need from the audience]  📝
+11. [APPENDIX MARKER] — Backup slides start here
 ```
+
+> Note on the Question slide: In full SCQA decks, the Question earns its own slide — it reframes the complication as a focused challenge that *invites exploration rather than reaction*. For compressed decks (board, exec briefings), Question can be implicit. For client engagement decks, make it explicit.
+
+**Ladder-up check:** Read the storyboard as a hierarchy:
+```
+GOVERNING THOUGHT
+    ├── Arg 1 title (does it support the governing thought?)
+    ├── Arg 2 title (does it support the governing thought?)
+    └── Arg 3 title (does it support the governing thought?)
+```
+Every argument title must be a direct logical pillar under the governing thought. If you can't see the connection, the argument is off-pyramid.
 
 **Storyboard quality check — run before proceeding:**
 - Read only the action titles aloud in sequence. Do they tell the full story?
