@@ -1,0 +1,1 @@
+Read the brand-studio SKILL.md, then run the Brand Setup Flow — ask the user about their brand identity (name, tagline, colors, fonts, logo, tone) and write the results to brand-config.md. If brand-config.md already has a configured brand, show a summary of the current config and ask if they want to update it.

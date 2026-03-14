@@ -1,0 +1,23 @@
+{
+  "name": "deck-studio",
+  "version": "1.0.0",
+  "description": "End-to-end presentation toolkit — strategic storytelling, narrative frameworks, branded PPTX generation, and data-driven slide craft. Combines deck building, storytelling, and brand identity into one seamless pipeline.",
+  "author": {
+    "name": "LauraFlorentin"
+  },
+  "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+  "license": "MIT",
+  "skills": "./skills/",
+  "commands": "./commands/",
+  "keywords": [
+    "presentations",
+    "powerpoint",
+    "slides",
+    "storytelling",
+    "consulting",
+    "deck-builder",
+    "branding",
+    "narrative",
+    "pptx"
+  ]
+}

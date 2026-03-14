@@ -16,8 +16,9 @@ A curated collection of specialized AI skills, organized as a **Claude Code Plug
 | **[Project Management](./project-management/)** | 5 | 20 | 1 | — | Project management from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and closeout for software and general PMs. |
 | **[Real Estate Investment](./real-estate-investment/)** | 1 | 11 | 11 | — | Adaptive multi-agent system for investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals. |
 | **[Harness Engineer](./harness-engineer/)** | 4 | 3 | — | 4 | Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, and auto-orient fresh sessions. Three-layer circuit breaker system. |
+| **[Deck Studio](./deck-studio/)** | 3 | 14 | — | 1 | End-to-end presentation toolkit — strategic storytelling, narrative frameworks, branded PPTX generation, and data-driven slide craft. |
 | **[Skill Checker](./skill-checker/)** | 1 | 1 | — | — | Validate, review, and score Claude skills against Anthropic's official best practices. Automated structural validator and multi-dimensional audit scorecard. |
-| | **61** | **121** | **13** | **5** | |
+| | **65** | **136** | **13** | **6** | |
 
 ---
 
@@ -114,6 +115,13 @@ skills-marketplace/
 │   ├── commands/              ← 11 slash commands
 │   ├── hooks/
 │   ├── skills/
+│   └── README.md
+├── deck-studio/
+│   ├── .claude-plugin/plugin.json
+│   ├── agents/
+│   ├── commands/              ← 14 slash commands (3 deck + 4 storytelling + 7 brand)
+│   ├── hooks/                 ← Brand Guard auto-enforcement
+│   ├── skills/                ← 3 skills (deck-builder, storytelling, brand-studio)
 │   └── README.md
 ├── harness-engineer/
 │   ├── .claude-plugin/plugin.json
