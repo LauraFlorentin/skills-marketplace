@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "monarch": {
+      "type": "http",
+      "url": "https://api.monarch.com/mcp"
+    }
+  }
+}
