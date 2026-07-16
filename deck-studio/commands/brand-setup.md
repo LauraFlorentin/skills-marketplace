@@ -1,1 +1,10 @@
-Read the brand-studio SKILL.md, then run the Brand Setup Flow — ask the user about their brand identity (name, tagline, colors, fonts, logo, tone) and write the results to brand-config.md. If brand-config.md already has a configured brand, show a summary of the current config and ask if they want to update it.
+---
+description: Configure or update the brand identity used by Deck Studio
+argument-hint: "[project|personal]"
+---
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/SKILL.md` and `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/references/brand-config-template.md`.
+
+Run the Brand Setup Flow. If `$ARGUMENTS` does not choose a scope, ask whether the brand applies to this project or should be the personal default. Write project configuration to `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`; write a personal default to `${CLAUDE_PLUGIN_DATA}/brand-config.md`. Create the parent directory when needed. Never modify the bundled plugin copy.
+
+If the selected config already exists, summarize it and confirm which fields the user wants to update before writing.

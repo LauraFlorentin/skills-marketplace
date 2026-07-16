@@ -4,6 +4,6 @@ description: Screen a target's revenue footprint against global antitrust and FD
 
 Use the **Regulatory Screening** skill.
 
-Read the full skill reference at `../skills/regulatory-screening/SKILL.md` and execute the /screen-fdi protocol. Cross-reference the target's geographic revenue distribution against global FDI and antitrust regulatory frameworks to flag jurisdictions requiring mandatory pre-close filings.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/regulatory-screening/SKILL.md` and perform a dated preliminary screen using current official sources. Return a jurisdiction matrix and counsel questions; do not give a definitive filing conclusion without qualified current legal review.
 
 Ask the user to provide the target's revenue breakdown by geography, physical asset locations, and sector classification.

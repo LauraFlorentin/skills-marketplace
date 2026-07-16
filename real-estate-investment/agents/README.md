@@ -1,25 +1,19 @@
-# Agents
+# Real Estate Investment Agents
 
-This directory contains the orchestrator and specialist agent definitions for the Real Estate Investment Analyzer.
+Claude Code discovers each top-level `.md` file in this directory as a namespaced plugin agent.
 
-## Orchestrator
+| Agent | Role |
+|---|---|
+| [orchestrator](orchestrator.md) | Classify, route, reconcile, and synthesize full analyses |
+| [deal-screener](deal-screener.md) | Preliminary deal triage |
+| [property-underwriter](property-underwriter.md) | Property economics and returns |
+| [pro-forma-builder](pro-forma-builder.md) | Multi-period models |
+| [financing-analyzer](financing-analyzer.md) | Debt and capital comparison |
+| [tax-strategist](tax-strategist.md) | Tax issue spotting and scenarios |
+| [stress-tester](stress-tester.md) | Downside and break-even analysis |
+| [syndication-analyzer](syndication-analyzer.md) | Passive structures, fees, and waterfalls |
+| [international-risk-assessor](international-risk-assessor.md) | Cross-border ownership, currency, and regulatory risk |
+| [hospitality-underwriter](hospitality-underwriter.md) | Hotel, resort, and STR operations |
+| [legal-reviewer](legal-reviewer.md) | Document issue spotting |
 
-The [orchestrator](./orchestrator.md) classifies deals and routes them to the right specialist agents.
-
-## Specialist Agents
-
-Each agent has its own folder with a `reference.md` knowledge base:
-
-| Agent | Folder | Role |
-| :--- | :--- | :--- |
-| A2 Deal Screener | [`deal-screener/`](./deal-screener/) | Quick pass/fail on rules of thumb |
-| A3 Property Underwriter | [`property-underwriter/`](./property-underwriter/) | Full financial analysis |
-| A4 Pro Forma Builder | [`pro-forma-builder/`](./pro-forma-builder/) | Multi-year projections |
-| A5 Financing Analyzer | [`financing-analyzer/`](./financing-analyzer/) | Loan comparison & leverage |
-| A6 Tax Strategist | [`tax-strategist/`](./tax-strategist/) | Depreciation, 1031, cost seg |
-| A7 Stress Tester | [`stress-tester/`](./stress-tester/) | Scenario analysis & resilience |
-| A8 Syndication Analyzer | [`syndication-analyzer/`](./syndication-analyzer/) | SPV/fund structure & fee analysis |
-| A9 Int'l Risk Assessor | [`international-risk-assessor/`](./international-risk-assessor/) | Cross-border & jurisdiction risk |
-| A10 Hospitality Underwriter | [`hospitality-underwriter/`](./hospitality-underwriter/) | Hotel/resort specific metrics |
-| A11 Legal Reviewer | [`legal-reviewer/`](./legal-reviewer/) | Document red flags |
-| — Data Sources | [`data-sources/`](./data-sources/) | API lookups, batch screening, market data |
+Market-data discovery and integration guidance lives in the analyzer skill's [data-sources reference](../skills/real-estate-analyzer/references/data-sources.md).

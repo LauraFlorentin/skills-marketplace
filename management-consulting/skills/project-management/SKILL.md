@@ -1,20 +1,6 @@
 ---
 name: project-management
 description: Comprehensive project management guidance for management consulting engagements, covering planning, tracking, risk management, and client communication Use when user asks to "manage a consulting project", "project plan", "workstream tracking", or mentions project governance, milestone tracking, or engagement management.
-triggers:
-  - engagement tracking
-  - status update
-  - milestone
-  - workplan
-  - project plan
-  - risk register
-  - RAID log
-  - steering committee
-  - weekly update
-  - project status
-  - timeline
-  - Gantt
-  - workstream
 ---
 
 # Project Management for Consulting Engagements

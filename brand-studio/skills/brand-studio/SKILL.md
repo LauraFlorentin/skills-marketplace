@@ -1,141 +1,80 @@
 ---
 name: brand-studio
-description: >
-  Complete branding toolkit — apply consistent brand identity (colors, fonts,
-  logo, tone of voice) across PowerPoint presentations, Word documents, logos,
-  HTML/web artifacts, and social media templates. On first use, walks through
-  a conversational setup (~10 questions) and saves the brand identity to
-  brand-config.md. From then on, every branded output uses the exact colors,
-  fonts, and tone automatically. Includes Brand Guard hook for auto-enforcement.
-  Use when user asks to "apply brand guidelines", "create branded content", "brand consistency", or mentions brand identity, logo usage, brand colors, or branded templates.
-version: "1.0"
-author: "LauraFlorentin"
+description: Configure and apply a persistent brand identity across PowerPoint, Word, SVG logos, HTML, PDF, PNG, and social media assets. Use when the user asks to set up brand guidelines, apply brand colors or typography, create branded content, generate logo variants, or check brand consistency. Do not use for unbranded artifacts or presentation storytelling that does not require a brand system.
 ---
 
 # Brand Studio
 
-Master routing skill for brand identity creation and enforcement. Brand Studio ensures every output — slides, documents, logos, web pages, social assets — reflects a single, consistent brand identity.
+Use one active brand configuration as the source of truth, load only the
+reference needed for the requested artifact, and verify the final output against
+that configuration.
 
-## When to Use
+## Resolve the active configuration
 
-- Setting up a new brand identity from scratch
-- Applying branding to PowerPoint presentations or Word documents
-- Generating logo variations (SVG)
-- Creating branded HTML landing pages or web artifacts
-- Producing social media templates (LinkedIn, Twitter/X, Instagram)
-- Checking or updating an existing brand configuration
+Check these locations in order:
 
-## Step 0: Always Check Brand Config First
+1. `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md` for a project-specific brand.
+2. `${CLAUDE_PLUGIN_DATA}/brand-config.md` for the personal default.
 
-Before doing anything else, **always** read `brand-config.md` from this skill's directory.
+Use the project config when both exist. Do not write user configuration into
+`${CLAUDE_PLUGIN_ROOT}`; installed plugin files are versioned and may be
+replaced during an update.
 
-- **If it exists and is configured** → proceed directly to the requested task using the brand identity stored there.
-- **If it doesn't exist or is empty/placeholder** → run the Brand Setup Flow below before proceeding.
+If neither config exists, run the setup flow before producing a branded asset.
 
-## Brand Setup Flow
+## Configure a brand
 
-Run this when `brand-config.md` is missing or unconfigured. Ask the user the following questions conversationally (not all at once — feel natural, group related questions):
+1. Ask whether the configuration is project-specific or the personal default.
+2. Collect the brand name, optional tagline, industry, and personality.
+3. Collect primary, secondary, accent, background, and text colors. Request hex
+   codes or propose accessible values for confirmation.
+4. Collect heading and body fonts, fallbacks, logo assets or direction, tone,
+   preferred phrases, and prohibited language.
+5. Summarize the proposed system and resolve missing or conflicting choices.
+6. Read [the configuration template](references/brand-config-template.md).
+7. Write the confirmed config to the selected persistent location.
+8. Continue with the user's original asset request.
 
-### Round 1 — Core Identity
-1. What's your company or brand name?
-2. What's your tagline or one-line description? (optional)
-3. What industry or sector are you in?
-4. How would you describe your brand's personality? (e.g. bold & modern, warm & approachable, clean & minimal, luxurious & premium)
+When updating a config, preserve unspecified values and show the proposed
+changes before writing.
 
-### Round 2 — Visual Identity
-5. What are your primary brand colors? (ask for hex codes if they have them, otherwise ask them to describe — e.g. "deep navy and gold" — and suggest hex values)
-6. Do you have secondary/accent colors?
-7. What fonts do you use? (heading font + body font — suggest Google Fonts pairings if they're unsure)
-8. Do you have a logo? If so, ask them to upload it or describe it for generation.
+## Route the request
 
-### Round 3 — Voice & Content
-9. What's your tone of voice? (e.g. professional, conversational, inspirational, technical)
-10. Any words, phrases, or themes you always/never want to use?
-11. What's your website URL? (optional, for footers/web assets)
+Read only the relevant reference:
 
-### After collecting answers:
-- Confirm the brand config with the user in a clean summary
-- Write everything to `brand-config.md` using the template in `references/brand-config-template.md`
-- Tell the user: "Your brand is saved! You can update it anytime by saying 'update my brand config'."
-- Proceed immediately to the task they originally asked for (if any)
-
-## How It Works
-
-1. **Setup** — Run `/brand-setup` or ask to "set up my brand" to walk through the Brand Setup Flow above. Results are saved to `brand-config.md`.
-2. **Create** — Use any output command (`/brand-ppt`, `/brand-doc`, `/brand-logo`, `/brand-web`, `/brand-social`) to produce branded assets.
-3. **Guard** — The Brand Guard hook (`hooks/brand_guard.py`) auto-enforces branding on `.pptx`, `.docx`, `.html`, `.svg`, `.png`, `.pdf` files so nothing ships unbranded.
-
-## Routing — What Does the User Want to Create?
-
-After confirming brand config exists, route to the appropriate reference file:
-
-| User request | Reference file to read |
+| Request | Reference |
 |---|---|
-| "brand my PowerPoint / slides / deck" | `references/ppt-branding.md` |
-| "brand my Word doc / document / report" | `references/doc-branding.md` |
-| "create / generate a logo" | `references/logo-creator.md` |
-| "create a branded website / HTML / landing page / email template" | `references/web-branding.md` |
-| "create social media assets / banners / LinkedIn banner / Instagram post" | `references/social-media-templates.md` |
-| "social media kit / full social kit" | `references/social-media-templates.md` (batch generation) |
-| "apply my brand" (no file type specified) | Ask which output type they want |
-| "update my brand config" | Re-run Brand Setup Flow (pre-fill current values) |
+| PowerPoint or slide branding | [PowerPoint branding](references/ppt-branding.md) |
+| Word document or report branding | [Document branding](references/doc-branding.md) |
+| Logo concepts or SVG variants | [Logo creation](references/logo-creator.md) |
+| Website, HTML, email, or design tokens | [Web branding](references/web-branding.md) |
+| Social banners, cards, or channel kits | [Social templates](references/social-media-templates.md) |
 
-Read only the relevant reference file — do not load all of them.
+If the output type is unclear, ask one focused question before loading a
+reference.
 
-## Output Types
+## Apply the brand
 
-| Output | Reference | Command |
-| :--- | :--- | :--- |
-| PowerPoint | `references/ppt-branding.md` | `/brand-ppt` |
-| Word Documents | `references/doc-branding.md` | `/brand-doc` |
-| Logos | `references/logo-creator.md` | `/brand-logo` |
-| Web / HTML | `references/web-branding.md` | `/brand-web` |
-| Social Media | `references/social-media-templates.md` | `/brand-social` |
+- Use exact configured values; do not invent replacement colors, fonts, logos,
+  or voice rules.
+- Treat an explicit instruction in the current request as an override. Flag the
+  difference and ask whether to persist it when it appears intentional.
+- Preserve the source artifact's content unless the user also requests content
+  editing.
+- Use available artifact-specific tools and preserve editability when the target
+  format supports it.
+- Do not claim a font, logo, contrast ratio, or layout was applied unless the
+  resulting artifact was inspected.
 
-## Brand Config
+## Verify the output
 
-The brand identity is stored in `brand-config.md` alongside this skill. See `references/brand-config-template.md` for the full template. Key sections:
+Before delivery:
 
-- **Identity** — Brand name, tagline, industry, personality
-- **Colors** — Primary, secondary, accent, background, text (hex values)
-- **Typography** — Heading and body fonts with fallbacks
-- **Logo** — Style, icon description, usage rules
-- **Tone of Voice** — Communication style, do/don't guidelines
+1. Compare colors, typography, logo placement, and tone with the active config.
+2. Check legibility, contrast, clipping, overflow, and missing assets.
+3. Render or preview the artifact when possible.
+4. Report any substitution or unsupported brand feature explicitly.
+5. Name the configuration scope used without exposing unrelated local paths.
 
-
-## General Principles
-
-- **Consistency is everything.** Every output must use the exact hex codes, fonts, and tone from `brand-config.md`. Never improvise brand colors.
-- **Brand config is the source of truth.** If there's a conflict between what the user says in chat and what's in the config, apply the config and flag the discrepancy.
-- **Always present output.** Every file created should be presented to the user for review.
-- **Offer brand refresh.** After completing a task, offer: "Want me to update your brand config with any changes?"
-
-## Examples
-
-**Input**: "Set up brand guidelines for Luminary AI, a teal-and-white enterprise AI company."
-
-**brand-config.md output** (excerpt):
-```
-Brand: Luminary AI | Tagline: Intelligence You Can Trust
-Colors: Primary #00B5A3 (teal), Secondary #FFFFFF, Accent #1A1A2E (navy)
-Fonts: Headings: Inter Bold, Body: Inter Regular
-Tone: Professional, clear, confidence-inspiring. Avoid: jargon, hyperbole
-```
-
-**Follow-up**: `/brand-ppt` now generates PowerPoint slides using Luminary AI's exact teal palette and Inter typography automatically.
-
----
-
-**Input**: "/brand-social — create a LinkedIn post announcing our Series B."
-
-**Output**: LinkedIn post formatted with Luminary AI brand voice, teal accent CTA, and character-count within LinkedIn limits.
-
-
-## Troubleshooting
-
-| Problem | Cause | Fix |
-|---|---|---|
-| Brand config not found | `brand-config.md` missing | Run `/brand-setup` to generate it; file must be in the project root |
-| Wrong colors applied | Hex values entered incorrectly | Verify hex codes are 6 digits with `#` prefix; use `/brand-check` to validate |
-| Font not rendering in PowerPoint | Font not installed on target machine | Use web-safe fallbacks (Arial, Helvetica) or embed fonts in the PPTX |
-| Brand Guard fires on every file save | Overly broad file pattern | Narrow the hook's glob pattern to specific file types in `settings.json` |
+The Brand Guard hook reinforces this workflow for common branded file types. It
+adds guidance only; it never auto-approves or blocks a tool call.

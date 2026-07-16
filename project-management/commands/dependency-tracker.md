@@ -27,7 +27,7 @@ Ask about: what does this project depend on from others? What do others depend o
 
 ### 2. Map & Assess
 
-Use the **Monitoring** skill. Read `../skills/monitoring/SKILL.md` and create:
+Use the **Monitoring** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/monitoring/SKILL.md` and create:
 - Dependency map with status for each dependency
 - Critical path impact for blocked dependencies
 - Escalation recommendations for at-risk dependencies

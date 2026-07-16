@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["project", "features"],
+  "properties": {
+    "project": { "type": "string", "minLength": 1 },
+    "generated_at": { "type": "string" },
+    "instructions": { "type": "string" },
+    "features": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "description", "acceptance_criteria", "status"],
+        "properties": {
+          "id": { "type": "string", "minLength": 1 },
+          "category": { "type": "string" },
+          "priority": { "type": "integer", "minimum": 0 },
+          "description": { "type": "string", "minLength": 1 },
+          "acceptance_criteria": {
+            "type": "array",
+            "minItems": 1,
+            "items": { "type": "string", "minLength": 1 }
+          },
+          "status": {
+            "enum": ["planned", "in_progress", "blocked", "verified"]
+          },
+          "owner": { "type": ["string", "null"] },
+          "evidence": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "blocked_by": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -2,6 +2,12 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [OKRs](#okrs)
+- [Competitive Analysis](#competitive-analysis)
+- [Output Formats](#output-formats)
+
 ---
 
 ## OKRs

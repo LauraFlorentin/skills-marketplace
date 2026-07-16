@@ -4,22 +4,15 @@ description: >
   Sell-side deal marketing deliverables — CIM drafting, management presentation
   decks, and equity story construction. Synthesizes raw financials, management
   interviews, and competitive data into compelling investment narratives that
-  maximize competitive bidding tension and valuation.
+  support a factual, reviewable transaction narrative.
   Use when user asks to "prepare deal marketing materials", "create a CIM", "teaser document", or mentions deal marketing, investor outreach, or sell-side materials.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Deal Marketing
 
-The CIM and Management Presentation are the most important sell-side marketing documents. They bridge a buyer's initial curiosity and their formal decision to bid. This skill accelerates their creation from weeks to days.
+Use only authorized transaction data. Preserve confidentiality, cite every factual and financial claim, distinguish management representations from verified evidence, and require deal-team and counsel approval before external distribution.
 
-## When to Use
-
-- Drafting a Confidential Information Memorandum for a sell-side mandate
-- Creating a Management Presentation (equity story) deck
-- Translating raw internal data into polished investment narratives
-- Preparing management teams for buyer Q&A sessions
+The CIM and Management Presentation bridge a buyer's initial review and a decision to bid. This skill structures source-backed drafts for deal-team review.
 
 ## CIM (Confidential Information Memorandum)
 
@@ -47,7 +40,7 @@ The single most important sell-side marketing document, designed to present the 
 4. **Map** messy GL data to formatted management-adjusted EBITDA views
 5. **Ensure** competitive positioning claims are defensible and data-grounded
 
-A 60-page CIM traditionally takes **4-6 weeks**. AI compresses this to **1-2 weeks** with higher consistency.
+Actual drafting time depends on source quality, scope, management availability, review cycles, and required verification. Do not promise a fixed turnaround.
 
 ## Management Presentation (Equity Story) Deck
 

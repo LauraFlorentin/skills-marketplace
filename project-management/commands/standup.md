@@ -31,7 +31,7 @@ Ask about: team size, sprint/phase status, known blockers. Check ~~project-track
 
 ### 2. Generate
 
-Use the **Execution** skill. Read `../skills/execution/SKILL.md` and create the standup format.
+Use the **Execution** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/execution/SKILL.md` and create the standup format.
 
 ### 3. Output
 

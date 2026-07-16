@@ -28,7 +28,7 @@ Ask the user about: current funnel metrics, biggest drop-off points, growth goal
 
 ### 2. Design Experiment
 
-Use the **Launch & Growth** skill. Read `../skills/launch-growth/SKILL.md` and create:
+Use the **Launch & Growth** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/launch-growth/SKILL.md` and create:
 - Hypothesis
 - Target metric and baseline
 - Experiment design (what changes, for whom)

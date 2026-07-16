@@ -2,6 +2,14 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [PRDs](#prds)
+- [Feature Specs](#feature-specs)
+- [Prioritization](#prioritization)
+- [Backlog Grooming](#backlog-grooming)
+- [Output Formats](#output-formats)
+
 ---
 
 ## PRDs

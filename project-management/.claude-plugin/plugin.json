@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "project-management",
-    "version": "1.0.0",
+    "displayName": "Project Management",
+    "version": "1.1.0",
     "description": "Project management workflows from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and project closeout for software and general PMs.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/project-management",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "project",
         "pm",

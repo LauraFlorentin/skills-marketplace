@@ -3,24 +3,16 @@ name: financial-diligence
 description: >
   Financial due diligence and Quality of Earnings (QoE) reporting. Automates
   trial balance tie-outs, EBITDA adjustment validation, working capital analysis,
-  and debt-like item identification. Detects anomalies in general ledgers and
-  accelerates the reconciliation process that traditionally consumes weeks.
+  and debt-like item identification. Detects candidate anomalies in general ledgers
+  and creates traceable reconciliation workpapers for specialist review.
   Use when user asks to "run financial due diligence", "analyze financials", "quality of earnings", or mentions financial DD, QofE, or financial analysis.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Financial Diligence
 
-The Quality of Earnings report directly dictates final purchase price adjustments and protects buyers from overpaying for inflated performance. This skill automates the foundational labor of financial due diligence.
+Protect confidential financial, payroll, customer, bank, and tax data. Use only authorized sources, minimize personal data, preserve a source-to-workpaper audit trail, and route accounting, tax, and purchase-price conclusions to qualified professionals.
 
-## When to Use
-
-- Performing a Quality of Earnings analysis on a target
-- Validating management-proposed EBITDA adjustments
-- Reconciling trial balances against audited financials and tax returns
-- Identifying off-balance-sheet liabilities and debt-like items
-- Analyzing net working capital for purchase agreement peg negotiations
+A Quality of Earnings analysis can inform price and agreement negotiations. This skill supports traceable reconciliation and issue identification; it does not replace accountants, financial advisers, or transaction judgment.
 
 ## Quality of Earnings Report Structure
 
@@ -88,7 +80,7 @@ For each proposed management add-back:
 - Identify related-party transactions and verify arm's-length pricing
 - For NWC, exclude cash and debt from the calculation unless specified in the purchase agreement
 - AI outputs are analytical aids — the subjective debate over valid add-backs requires human judgment
-- Time saved: automates tie-out process that traditionally takes **40+ hours**
+- Record source coverage, reconciliation exceptions, preparer, reviewer, and actual effort rather than promising a fixed time saving
 
 
 ## Examples

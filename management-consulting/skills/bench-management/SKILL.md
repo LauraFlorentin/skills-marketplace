@@ -1,28 +1,11 @@
 ---
 name: bench-management
 description: Optimize consultant utilization, manage resource allocation, and balance bench capacity with engagement demand. Track skill matching, forecast staffing needs, and ensure healthy utilization rates while supporting consultant development. Use when user asks to "manage bench resources", "staff my project", "resource allocation", or mentions bench time, staffing, or utilization.
-triggers:
-  - bench
-  - utilization
-  - staffing
-  - availability
-  - resource allocation
-  - consultant availability
-  - skill matching
-  - capacity planning
-  - staffing plan
-  - resource management
-  - utilization rate
-  - billable hours
-  - chargeability
-  - activity tracking
-  - bench activity
-  - bench report
-  - bench tracker
-  - consultant activity
 ---
 
 # Bench Management
+
+Use authorized, job-relevant staffing data with access controls and a defined retention policy. Do not infer protected traits, health, attitude, or individual performance from utilization or activity proxies. Keep final staffing, employment, compensation, and performance decisions with accountable human leaders and applicable HR or legal review.
 
 ## Understanding the Bench
 

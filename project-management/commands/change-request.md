@@ -27,7 +27,7 @@ Ask about: what's changing, why, who requested it, what's the urgency. Check ~~p
 
 ### 2. Analyze Impact
 
-Use the **Execution** skill. Read `../skills/execution/SKILL.md` and create:
+Use the **Execution** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/execution/SKILL.md` and create:
 - Change request with full description
 - Impact analysis (scope, schedule, cost, risk)
 - Recommendation (approve, defer, reject)

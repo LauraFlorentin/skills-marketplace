@@ -34,7 +34,7 @@ Ask about: what period are we reflecting on? How is the team feeling? Any known 
 
 ### 2. Facilitate
 
-Use the **Closing** skill. Read `../skills/closing/SKILL.md` and generate the retro structure with facilitation guide.
+Use the **Closing** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/closing/SKILL.md` and generate the retro structure with facilitation guide.
 
 ### 3. Output
 

@@ -7,13 +7,6 @@ description: A routing pattern that optimizes for cost and latency by dynamicall
 
 Not every task requires the smartest, most expensive model. Resource-Aware Optimization (or Dynamic Routing) classifies the complexity of a user request and routes it to the most appropriate model tier. This ensures you aren't using a sledgehammer to crack a nut, saving money and improving speed.
 
-## When to Use
-
--   **High Volume APIs**: When 10% of requests are complex and 90% are simple.
--   **Latency Sensitivity**: Routing simple "Hello" or "Stop" commands to instant, small models.
--   **Budget Constraints**: Ensuring high-end models (like GPT-4 or Opus) are only used when absolutely necessary.
--   **Fallback**: Using a small model first, and only upgrading to a large model if the small one fails/expresses low confidence.
-
 ## Use Cases
 
 -   **Tiered Chatbot**: 

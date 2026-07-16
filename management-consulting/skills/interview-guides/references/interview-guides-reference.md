@@ -2,6 +2,14 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Cross-Interview Synthesis](#cross-interview-synthesis)
+- [Presenting Interview Findings](#presenting-interview-findings)
+- [Common Interview Mistakes](#common-interview-mistakes)
+- [Interview Sampling Strategy](#interview-sampling-strategy)
+- [Interview Guides Deliverables](#interview-guides-deliverables)
+
 ---
 
 ## Cross-Interview Synthesis

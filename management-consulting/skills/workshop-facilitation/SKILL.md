@@ -1,25 +1,6 @@
 ---
 name: workshop-facilitation
 description: Design and facilitate high-impact client workshops — agenda design, facilitation techniques, virtual and in-person formats, idea generation, decision-making, and synthesis. Includes ASE (Accelerated Solutions Environment) methodology for complex, multi-day co-creation workshops. Use whenever workshops, facilitation, brainstorming sessions, design thinking, strategy sessions, alignment meetings, ASE, or working sessions come up. Use when user asks to "design a workshop", "facilitate a session", "brainstorming agenda", or mentions facilitation, design thinking, strategy offsite, or ASE methodology.
-triggers:
-  - workshop
-  - facilitation
-  - brainstorming
-  - design thinking
-  - strategy session
-  - alignment meeting
-  - working session
-  - ASE
-  - accelerated solutions environment
-  - co-creation workshop
-  - multi-day workshop
-  - wicked problem
-  - solution design workshop
-  - large group facilitation
-  - design sprint
-  - innovation workshop
-  - icebreaker
-  - energizer
 ---
 
 # Workshop Facilitation for Consulting Engagements

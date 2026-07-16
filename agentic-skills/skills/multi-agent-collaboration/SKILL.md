@@ -7,13 +7,6 @@ description: A structural pattern where multiple specialized agents communicate 
 
 Multi-Agent Collaboration (MAC) involves a team of agents, each with a specific role, tools, and persona. They work together by exchanging messages, handing off tasks, or debating solutions. This mimics human organizational structures (e.g., a software team with a PM, Dev, and QA).
 
-## When to Use
-
--   **Separation of Concerns**: To keep prompts simple and focused. Complex prompts often confuse models; specialized agents are more reliable.
--   **Role-Playing**: When specific expertise or persona is needed (e.g., "Act as a grumpy editor").
--   **Scalability**: Adding new capabilities is as simple as adding a new agent to the team.
--   **Simulating User Behavior**: Modeling market dynamics, social networks, or game theory scenarios.
-
 ## Use Cases
 
 -   **Software Dev Team**: Product Manager -> Developer -> Reviewer -> QA.

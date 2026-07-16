@@ -31,7 +31,7 @@ Ask about: launch date, rollout strategy, stakeholders, dependencies. Check ~~pr
 
 ### 2. Build Checklist
 
-Use the **Launch & Growth** skill. Read `../skills/launch-growth/SKILL.md` and generate the checklist.
+Use the **Launch & Growth** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/launch-growth/SKILL.md` and generate the checklist.
 
 ### 3. Output
 

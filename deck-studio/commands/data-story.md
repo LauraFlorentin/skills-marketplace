@@ -1,3 +1,8 @@
-Read the storytelling SKILL.md and references/data-storytelling.md. Help the user turn data or analysis into a compelling narrative using the Data Story Arc (hook → context → conflict → aha moment → implications → call to action). Ask for their data, key findings, and audience, then structure the story. Include chart annotation guidance and contrast techniques.
+---
+description: Turn analysis or data into a presentation narrative with chart and annotation guidance
+argument-hint: "<data, findings, and audience>"
+---
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/storytelling/SKILL.md` and `${CLAUDE_PLUGIN_ROOT}/skills/storytelling/references/data-storytelling.md`. Gather the data, key findings, and audience, then structure a Data Story Arc from hook through call to action. Include chart selection, annotation, and contrast guidance.
 
 $ARGUMENTS

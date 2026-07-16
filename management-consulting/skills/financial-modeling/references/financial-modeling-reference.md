@@ -2,6 +2,14 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Sensitivity Analysis](#sensitivity-analysis)
+- [Common Financial Models for Consulting](#common-financial-models-for-consulting)
+- [Model Quality Standards](#model-quality-standards)
+- [Presenting Financial Analysis](#presenting-financial-analysis)
+- [Financial Modeling Deliverables](#financial-modeling-deliverables)
+
 ---
 
 ## Sensitivity Analysis

@@ -1,7 +1,7 @@
 ---
-description: Apply Reasoning Techniques — use Chain of Thought to improve performance on complex tasks
+description: Apply decomposition, alternative hypotheses, and verification to improve complex reasoning without requiring private chain-of-thought disclosure
 ---
 
 Use the **Reasoning Techniques** skill from the agentic-skills plugin.
 
-Read the full skill reference at `../skills/reasoning/SKILL.md` and apply reasoning patterns (Chain of Thought, step-by-step decomposition) to help the user improve model performance on complex logical, mathematical, or reasoning tasks.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/reasoning/SKILL.md` and apply decomposition, explicit assumptions, deterministic checks, and concise rationale to the user's logical, mathematical, planning, or decision task. Do not request or expose private chain-of-thought.

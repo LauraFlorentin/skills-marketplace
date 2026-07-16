@@ -1,19 +1,6 @@
 ---
 name: whitepaper-thought-leadership
 description: Guide consultants through a structured whitepaper creation pipeline — from raw idea intake through structuring, drafting, research enhancement, and professional formatting. Produce publication-ready thought leadership content that establishes expertise and generates advisory demand. Use when user asks to "write a whitepaper", "thought leadership draft", "industry paper", or mentions research publication, executive brief, or content strategy.
-triggers:
-  - whitepaper
-  - thought leadership
-  - white paper
-  - content pipeline
-  - whitepaper drafting
-  - publication
-  - industry paper
-  - thought piece
-  - executive brief
-  - research paper
-  - consulting publication
-  - content strategy
 ---
 
 # Thought Leadership & Whitepaper Drafting

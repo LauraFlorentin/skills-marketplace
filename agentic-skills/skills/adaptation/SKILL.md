@@ -7,13 +7,6 @@ description: A dynamic pattern where an agent system modifies its own behavior, 
 
 Adaptation enables an AI system to evolve. Instead of being static, the system monitors its own performance (or receives user feedback) and updates its configuration. This can range from simple parameter tuning to rewriting its own system prompts or code.
 
-## When to Use
-
--   **Optimization**: When you want the agent to automatically improve metrics (e.g., accuracy, conversion rate).
--   **Personalization**: Tailoring the agent's style to a specific user's feedback ("Don't be so formal").
--   **Drift Handling**: Adjusting to changes in data distribution or environment.
--   **Experimentation**: Checking if a new prompt strategy works better than the old one.
-
 ## Use Cases
 
 -   **Prompt Optimization**: An "Optimizer Agent" rewrites the prompt of a "Worker Agent" based on failure cases.

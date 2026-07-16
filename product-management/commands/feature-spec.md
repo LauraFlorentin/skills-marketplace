@@ -27,7 +27,7 @@ Ask the user about: user stories, design references, technical constraints, and 
 
 ### 2. Write Spec
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and create:
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and create:
 - User stories with acceptance criteria (Given/When/Then)
 - Interaction design notes and error states
 - Technical considerations (API contracts, data models)

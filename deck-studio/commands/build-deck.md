@@ -1,3 +1,10 @@
-Read the deck-builder SKILL.md, then run the full 4-stage pipeline: (1) Diagnose the presentation context and choose a narrative framework, (2) Generate a storyboard of action titles and get user approval, (3) Write full slide content for each approved slide, (4) Generate a branded PPTX using brand-config.md or default palettes. If the user provides a topic or brief in $ARGUMENTS, use it as the starting point for Stage 1.
+---
+description: Build a complete presentation from brief through approved storyboard, slide content, and PPTX
+argument-hint: "<topic or presentation brief>"
+---
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/deck-builder/SKILL.md`. Run its four-stage pipeline: diagnose the presentation context, approve a storyboard of action titles, write slide content, then generate the PPTX. Use the project or personal brand config when available and the bundled default palettes otherwise.
+
+Use `$ARGUMENTS` as the initial brief. Preserve the storyboard approval checkpoint before drafting slides.
 
 $ARGUMENTS

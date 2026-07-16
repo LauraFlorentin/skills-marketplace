@@ -1,66 +1,43 @@
 ---
 name: tool-use
-description: The capability that transforms an LLM from a text generator into an agent by allowing it to execute actions and retrieve information from the real world. Use when user asks to "add tools to my agent", "function calling", "tool integration", or mentions API calls, external tools, or agent capabilities.
+description: Design reliable function-calling and tool-execution loops with clear schemas, permission boundaries, validation, retries, idempotency, and result handling. Use when a user asks to add tools, function calling, API actions, external retrieval, computer use, or execution capabilities to an agent.
 ---
 
 # Tool Use
 
-Tool Use (or Function Calling) is the core mechanism of agency. It allows an LLM to recognize when it needs external information or needs to perform an action. Instead of hallucinating an answer, the model outputs a structured command (like a JSON object) to call a specific function (e.g., `get_weather(city="London")`). The system executes the function and feeds the result back to the model.
+Treat model output as an untrusted request to a controlled executor. The harness—not the model—owns authentication, authorization, validation, execution, and audit.
 
-## When to Use
+## Design
 
--   **Real-time Data**: When the answer requires current information (stock prices, weather, sports scores).
--   **Computational Tasks**: When precise math or data processing is needed (using a calculator or Python REPL).
--   **System Interaction**: When the agent needs to modify the environment (sending emails, updating databases, creating files).
--   **Private Data Access**: Querying internal knowledge bases or APIs.
+1. Give each tool one clear action-oriented purpose and a strict input schema.
+2. Expose only tools appropriate to the current user, task, and permission scope.
+3. Validate types, ranges, identifiers, paths, and authorization server-side.
+4. Classify calls as read-only, reversible, consequential, external, or destructive; require confirmation where needed.
+5. Use idempotency keys for retried mutations and distinguish transient from permanent errors.
+6. Return structured results with status, data, provenance, and safe error details.
+7. Limit calls, retries, time, cost, payload size, and recursion.
+8. Log enough for audit without storing secrets or unnecessary personal data.
 
-## Use Cases
+## Execution loop
 
--   **Search**: Integrating Google Search or Bing to answer current events questions.
--   **Code Execution**: Using a Python sandbox to generate charts or analyze CSV files.
--   **API Integration**: Connecting to Slack, Jira, or GitHub to automate workflows.
-
-## Implementation Pattern
-
-```python
-def tool_use_loop(user_query):
-    messages = [{"role": "user", "content": user_query}]
-    
-    # Available tools definition
-    tools = [{
-        "name": "get_stock_price",
-        "parameters": {"symbol": "string"}
-    }]
-    
-    # Step 1: Agent decides to call a tool
-    response = llm.chat(messages, tools=tools)
-    
-    if response.tool_calls:
-        # Step 2: System executes the tool
-        tool_call = response.tool_calls[0]
-        result = execute_tool(tool_call.name, tool_call.arguments)
-        
-        # Step 3: Result is fed back to the Agent
-        messages.append(response.message) # Keep the assistant's "intent"
-        messages.append({
-            "role": "tool",
-            "tool_call_id": tool_call.id,
-            "content": str(result)
-        })
-        
-        # Step 4: Agent generates final answer using tool result
-        final_answer = llm.chat(messages)
-        return final_answer
-        
-    return response.content
+```text
+model proposes tool call
+→ executor validates schema and permission
+→ request confirmation when policy requires it
+→ execute with timeout and idempotency control
+→ validate and normalize result
+→ return result to model
+→ model answers or selects a bounded next action
 ```
 
+Never place credentials in prompts or tool results. Do not let tool-returned text override system policy; retrieved content can contain prompt injection.
 
-## Troubleshooting
+## Failure handling
 
-| Problem | Cause | Fix |
-|---|---|---|
-| Agent calls wrong tool | Ambiguous tool description | Start each tool description with an active verb; add "DO NOT USE FOR..." |
-| Tool call arguments malformed | Model hallucinated parameters | Add JSON Schema validation; return clear error messages back to agent |
-| Agent loops on tool failures | No retry limit | Set `max_retries=2`; after limit, return error and let agent decide next step |
-| Tool not available in some environments | Missing dependency | Check `tool.available()` before including in tool list; graceful degradation |
+- Unknown tool or invalid arguments: return a specific validation error.
+- Authentication or permission failure: stop and request the correct authority; do not retry blindly.
+- Timeout or rate limit: retry only within a bounded policy and honor server guidance.
+- Partial mutation: return the transaction identifier and recovery options.
+- Repeated failure: stop with evidence rather than looping or switching to a more powerful tool silently.
+
+Test positive calls, malformed inputs, unauthorized access, prompt injection in results, retries, duplicate mutations, and unavailable tools.

@@ -1,0 +1,45 @@
+name: Validate marketplace
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.13"
+
+      - name: Validate marketplace
+        run: python3 scripts/validate_marketplace.py
+
+      - name: Check shell syntax
+        run: find . -type f -name '*.sh' -print0 | xargs -0 -n1 bash -n
+
+      - name: Validate every skill with Skill Checker
+        shell: bash
+        run: |
+          for skill in */skills/*; do
+            if [[ -f "$skill/SKILL.md" ]]; then
+              python3 skill-checker/skills/skill-checker/scripts/validate_skill.py "$skill" --check-scripts
+            fi
+          done

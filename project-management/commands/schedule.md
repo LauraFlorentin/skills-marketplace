@@ -31,7 +31,7 @@ Ask about: WBS or scope, team size, target dates, known dependencies, constraint
 
 ### 2. Build Schedule
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and create the schedule.
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and create the schedule.
 
 ### 3. Output
 

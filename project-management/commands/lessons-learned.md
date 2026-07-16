@@ -27,7 +27,7 @@ Ask about: what went well, what didn't, surprises, what would you do differently
 
 ### 2. Compile
 
-Use the **Closing** skill. Read `../skills/closing/SKILL.md` and organize lessons by category with root causes and recommendations.
+Use the **Closing** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/closing/SKILL.md` and organize lessons by category with root causes and recommendations.
 
 ### 3. Output
 

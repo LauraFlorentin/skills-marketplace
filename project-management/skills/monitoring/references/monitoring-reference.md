@@ -2,6 +2,14 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Risk Review](#risk-review)
+- [Dependency Tracking](#dependency-tracking)
+- [Health Check](#health-check)
+- [Output Formats](#output-formats)
+- [Burndown and Forecasting](#burndown-and-forecasting)
+
 ---
 
 ## Risk Review
@@ -1053,20 +1061,3 @@ The plan assumes everything goes right. No one gets sick. No requirements change
 **Not Updating Forecasts:**
 
 The forecast was made 3 months ago and has not been revised despite significant changes in velocity, scope, and team composition. Stakeholders are operating on stale information. Fix: Update the forecast at every reporting period. Even if the forecast has not changed, confirm it: "Forecast reconfirmed as of March 1: on track for June 15 completion." This builds trust that the forecast is actively maintained.
-
----
-
----
-
-## References
-
-For detailed templates, frameworks, and field-level guidance, read:
-
-- [`references/monitoring-reference.md`](references/monitoring-reference.md) — Complete framework details, templates, and examples
-
-Read this file when the task requires:
-- Risk Review
-- Dependency Tracking
-- Health Check
-- Output Formats
-

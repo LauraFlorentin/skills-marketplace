@@ -7,13 +7,6 @@ description: A defensive pattern where inputs and outputs are inspected by dedic
 
 Guardrails are the firewall of an AI system. They sit between the user and the agent (Input Guardrail) and between the agent and the user (Output Guardrail). They enforce policy, security, and tone. Unlike the main agent, which tries to be helpful, the guardrail tries to be safe and compliant.
 
-## When to Use
-
--   **Jailbreak Prevention**: Stopping users from tricking the model ("Ignore previous instructions...").
--   **PII Protection**: Detecting and redacting phone numbers, emails, or credit cards.
--   **Topic Adherence**: Ensuring a customer support bot doesn't discuss politics or religion.
--   **Brand Safety**: preventing the model from generating offensive or competitor-promoting content.
-
 ## Use Cases
 
 -   **Input Filter**: Blocking prompts that violate usage policies.

@@ -30,7 +30,7 @@ Ask the user about:
 
 ### 2. Research & Analyze
 
-Use the **Strategy** skill. Read `../skills/strategy/SKILL.md` and apply the appropriate competitive analysis framework.
+Use the **Strategy** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/strategy/SKILL.md` and apply the appropriate competitive analysis framework.
 
 Use web search for competitor data: pricing pages, feature lists, press releases, Crunchbase profiles, G2/Capterra reviews.
 

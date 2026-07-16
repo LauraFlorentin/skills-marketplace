@@ -1,1 +1,7 @@
-Read brand-studio/brand-config.md and display a clean, formatted summary of the current brand configuration. Show: brand name, tagline, all colors (with hex codes), fonts, logo status, tone of voice, and key phrases. If brand-config.md is unconfigured or missing, tell the user and suggest running /brand-setup.
+---
+description: Show the active Deck Studio brand configuration and its source scope
+---
+
+Read `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md` when it exists; otherwise read `${CLAUDE_PLUGIN_DATA}/brand-config.md`. Show which scope is active, then summarize the brand name, tagline, colors with hex codes, fonts, logo status, tone, and key phrases.
+
+If neither config exists, suggest `/deck-studio:brand-setup`.

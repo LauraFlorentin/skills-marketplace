@@ -27,7 +27,7 @@ Ask the user about: what shipped, what didn't, any blockers. Check ~~project-tra
 
 ### 2. Compile Review
 
-Use the **Product Analytics** skill. Read `../skills/product-analytics/SKILL.md` and create the sprint review.
+Use the **Product Analytics** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/product-analytics/SKILL.md` and create the sprint review.
 
 ### 3. Output
 

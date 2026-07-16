@@ -4,6 +4,6 @@ description: Assess international and cross-border investment risks — jurisdic
 
 Use the **International Risk Assessor** agent (A9).
 
-Read the reference file at `../agents/international-risk-assessor/reference.md` and assess cross-border risks including jurisdiction rules, leasehold structures, currency exposure, political risk, and tax treaty implications.
+Delegate to the `international-risk-assessor` agent provided by this plugin and assess cross-border risks including jurisdiction rules, leasehold structures, currency exposure, political risk, and tax treaty implications.
 
-For Bali or Mexico/Tulum deals, reference the country-specific defaults in `../skills/real-estate-analyzer/SKILL.md`.
+Verify current rules with official sources for the relevant jurisdiction and effective date. Flag issues for qualified local legal and tax advisers rather than presenting legal or tax conclusions.

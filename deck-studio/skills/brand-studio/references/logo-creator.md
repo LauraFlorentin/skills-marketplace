@@ -83,7 +83,7 @@ Before presenting, verify:
 
 1. Save SVG files as `[BrandName]_logo_color.svg`, `[BrandName]_logo_dark.svg`, `[BrandName]_logo_mono.svg`
 2. If PNG generated: `[BrandName]_logo.png`
-3. Copy all to `/mnt/user-data/outputs/`
+3. Save all outputs to the workspace or artifact location provided by the host environment
 4. Present all files via `present_files` tool
 5. Offer: "Want me to try a different icon concept, adjust proportions, or update the colors?"
 

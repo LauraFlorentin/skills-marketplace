@@ -5,6 +5,8 @@ description: Build business cases, ROI analyses, and financial models for consul
 
 # Financial Modeling for Consulting Engagements
 
+Build traceable decision models, not guaranteed forecasts. Separate source facts, user inputs, assumptions, formulas, and scenarios; record units and as-of dates; reconcile outputs; and require qualified finance, accounting, tax, or investment review for consequential decisions.
+
 A rigorous financial model is the foundation of credible recommendations. It forces clarity on assumptions, quantifies impact, enables trade-off analysis, and builds confidence that recommendations are justified. Poor financial models make consulting recommendations questionable and undermine implementation. This skill covers building business cases, financial analyses, and models that drive decisions.
 
 ## Business Case Structure
@@ -295,4 +297,3 @@ Read this file when the task requires:
 - Model Quality Standards
 - Presenting Financial Analysis
 - Financial Modeling Deliverables
-

@@ -1,25 +1,6 @@
 ---
 name: structured-thinking
 description: Quick-access analytical thinking frameworks for management consultants — from root cause analysis and phased implementation to stakeholder accountability and rapid executive communication. Designed for in-the-moment problem solving during client engagements. Use when user asks to "apply a framework", "MECE analysis", "hypothesis-driven", or mentions issue trees, pyramid principle, or structured problem-solving.
-triggers:
-  - structured thinking
-  - thinking framework
-  - analytical framework
-  - consulting framework
-  - problem solving
-  - root cause
-  - phased approach
-  - crawl walk run
-  - what by when
-  - five whys
-  - 2x2 matrix
-  - storyline
-  - red amber green
-  - RAG status
-  - elevator pitch
-  - day one plan
-  - prioritization
-  - action planning
 ---
 
 # Structured Thinking: 8 Essential Consulting Frameworks

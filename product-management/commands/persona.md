@@ -31,7 +31,7 @@ Ask the user about available research: interview transcripts, survey data, analy
 
 ### 2. Build Personas
 
-Use the **Discovery** skill. Read `../skills/discovery/SKILL.md` and apply the appropriate persona template.
+Use the **Discovery** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/discovery/SKILL.md` and apply the appropriate persona template.
 
 ### 3. Output
 

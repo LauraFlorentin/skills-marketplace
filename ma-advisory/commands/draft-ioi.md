@@ -4,7 +4,7 @@ description: Draft an Indication of Interest (IOI) letter — a non-binding expr
 
 Use the **Deal Screening** skill.
 
-Read the full skill reference at `../skills/deal-screening/SKILL.md` and generate a customized IOI covering: Purchase Price Range (as EBITDA multiple), Transaction Structure (asset vs. stock, cash/equity/rollover mix), Sources of Financing, Key Assumptions, Due Diligence Scope, and Timing.
+Read the full skill reference at `${CLAUDE_PLUGIN_ROOT}/skills/deal-screening/SKILL.md` and generate a customized IOI covering: Purchase Price Range (as EBITDA multiple), Transaction Structure (asset vs. stock, cash/equity/rollover mix), Sources of Financing, Key Assumptions, Due Diligence Scope, and Timing.
 
 Map the buyer's strategic rationale directly to the target's growth pillars from the CIM. Ensure the letter feels bespoke and strategic.
 

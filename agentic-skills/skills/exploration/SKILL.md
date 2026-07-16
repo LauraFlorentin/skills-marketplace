@@ -7,13 +7,6 @@ description: An open-ended pattern where agents autonomously conduct research, g
 
 In the Exploration pattern, the goal is not to execute a known task, but to *find* new information or solutions. Agents act as scientists or researchers: they formulate a hypothesis, test it (by searching, coding, or simulating), analyze the results, and iterate. This allows for genuine novelty and discovery.
 
-## When to Use
-
--   **Literature Review**: "Survey the field of Quantum Computing and identify gaps."
--   **Idea Generation**: "Brainstorm 50 potential names for this product and check domain availability."
--   **Scientific Discovery**: Analyzing large datasets to find correlations.
--   **Market Research**: Exploring competitor websites to map out their feature sets.
-
 ## Use Cases
 
 -   **Agent Laboratory**: A team of agents (Professor, Postdoc, Reviewer) writing a research paper.
@@ -72,6 +65,6 @@ def exploration_loop(topic):
 |---|---|---|
 | Agent explores indefinitely | Missing stopping criteria | Set explicit iteration limit (`max_iterations=10`) and convergence condition |
 | All hypotheses converge to same answer | Insufficient diversity in brainstorming | Add temperature variation or inject contrarian perspectives |
-| Research results are outdated | Search tool returning cached content | Specify date filter (`after:2024`) in search queries |
+| Research results are outdated | Search tool returning cached content | Set a task-appropriate recency window and record publication and event dates |
 | Agent loses track of prior findings | Context window exceeded | Use an external knowledge store; summarize findings at each iteration |
 | Exploration produces no actionable output | No synthesis step | Always include a final `writer_agent` pass to consolidate findings |

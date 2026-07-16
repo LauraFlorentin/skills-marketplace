@@ -33,7 +33,7 @@ Ask the user for the list of items to prioritize. Check ~~project-tracker for ba
 
 ### 2. Score Items
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and apply the selected framework. For each item, score on all dimensions.
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and apply the selected framework. For each item, score on all dimensions.
 
 ### 3. Output
 

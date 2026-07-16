@@ -7,20 +7,13 @@ description: >
   hierarchies. Transforms chaotic seller document dumps into diligence-ready
   repositories on day one.
   Use when user asks to "set up a data room", "organize VDR", "data room management", or mentions virtual data room, document indexing, or VDR permissions.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # VDR Management
 
+Respect VDR permissions, clean-team rules, privilege, personal data, export restrictions, and retention policy. Do not upload, rename, move, delete, share, OCR through an external service, or change access without explicit authorization.
+
 The genesis of any M&A transaction involves the population of a Virtual Data Room. Sellers or their investment bankers dump thousands of poorly labeled files into a centralized repository — scanned PDFs of decades-old leases, raw Excel trial balances, unformatted payroll ledgers. The administrative burden of organizing these files represents a massive loss of analytical bandwidth.
-
-## When to Use
-
-- A seller has uploaded unstructured documents to a VDR
-- Buy-side teams need to organize incoming data room files for diligence
-- Files need standardized naming conventions and folder hierarchies
-- Deal teams need to transition from document discovery to analysis immediately
 
 ## The /vdr-classify Protocol
 
@@ -90,4 +83,4 @@ VDR/
 
 ## Time Savings
 
-Saves **10+ hours per VDR drop**. Eliminates the administrative friction of organizing misfiled or poorly named seller documents, creating a diligence-ready environment instantly.
+Generate a proposed index, duplicate and missing-item report, and rename or move plan. Do not rename, move, upload, delete, or change VDR permissions without explicit authorization and an auditable rollback plan.

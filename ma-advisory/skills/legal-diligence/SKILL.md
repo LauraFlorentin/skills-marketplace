@@ -1,138 +1,52 @@
 ---
 name: legal-diligence
-description: >
-  Legal due diligence automation — NDA redlining against firm playbooks,
-  change-of-control clause scanning across material contracts, disclosure
-  schedule drafting for purchase agreements, and red flag report generation.
-  Covers the full spectrum of legal risk identification in M&A transactions.
-  Use when user asks to "run legal due diligence", "review contracts", "legal risk assessment", or mentions legal DD, contract review, or compliance diligence.
-version: "1.0"
-author: "LauraFlorentin"
+description: Spot and organize legal issues in M&A NDAs, corporate records, material contracts, disclosure schedules, and diligence reports. Use for contract comparison, change-of-control or assignment review, disclosure drafting, and red-flag reporting; require qualified transaction counsel to interpret law, approve positions, and finalize legal documents.
 ---
 
 # Legal Diligence
 
-Legal due diligence is where hidden liabilities surface — or slip through. This skill automates the most labor-intensive legal DD tasks: NDA management, contract scanning, disclosure drafting, and red flag identification.
+Support counsel with traceable extraction and comparison. Do not accept, reject, revert, or negotiate contract terms autonomously, and do not present issue spotting as a legal opinion.
 
-## When to Use
+## Controls
 
-- Redlining counterparty NDA markups in a sell-side auction
-- Scanning material contracts for change-of-control triggers
-- Drafting disclosure schedules for a purchase agreement
-- Compiling a red flag due diligence report
+- Confirm the transaction side, phase, jurisdictions, governing law, document version, review scope, materiality, and approved playbook.
+- Preserve confidentiality and legal privilege. Use only authorized documents and do not upload, distribute, or expose deal data beyond the approved environment.
+- Cite document, version, page, section, defined term, and exact relevant language for every finding.
+- Distinguish document text, factual inference, playbook variance, and legal interpretation.
+- Route every proposed legal position and final document to qualified counsel.
 
-## The /redline-nda Protocol
+## NDA comparison
 
-### How It Works
+Create a clause-by-clause comparison against the supplied form and approved positions. Cover parties and representatives, definition and exclusions, use restrictions, disclosure permissions, compelled disclosure, term, return or destruction, residuals, standstill, non-solicitation, no-contact, financing sources, clean teams, remedies, liability, governing law, and conflicts.
 
-Relies on a strict, pre-programmed negotiation playbook:
-1. **Ingests** the counterparty's marked-up NDA
-2. **Compares** semantic differences against the firm's standard positions
-3. **Accepts** benign formatting changes
-4. **Reverts** substantive deviations requiring senior partner review
-5. **Generates** a redlined counter-draft with commentary
+Return `unchanged`, `administrative`, `within playbook`, `outside playbook`, or `ambiguous`; do not silently accept or revert anything. Draft optional language only as clearly labeled counsel-review text.
 
-### Common NDA Negotiation Points
+## Change-of-control and assignment scan
 
-| Clause | Standard Position | Common Counterparty Push |
-|--------|------------------|-------------------------|
-| Confidentiality term | 24 months | Reduce to 12 months |
-| Non-solicitation | 18-24 months | Eliminate or shorten |
-| Permitted disclosure | Named advisors only | Expand to financing sources |
-| Residuals clause | Exclude | Include |
-| Standstill | Include | Remove or sunset |
+Search semantically for direct and indirect change of control, assignment by operation of law, merger, asset transfer, affiliate transfer, consent, notice, termination, pricing, exclusivity, most-favored terms, data, license, and insolvency provisions.
 
-**Time saved**: 1-2 hours per bidder in high-volume auction processes.
+| Contract | Provision | Trigger | Consequence | Notice / consent | Timing | Evidence gap |
+|---|---|---|---|---|---|---|
 
-## The /flag-coc Protocol
+Do not infer that silence permits transfer. Identify governing-law and contract-interpretation questions for counsel.
 
-### How It Works
+## Disclosure schedules
 
-Deploys a **cumulative risk synthesis model** — not simple keyword matching:
-1. **Semantic understanding** of assignment restrictions and transferability clauses
-2. **Identifies** clauses triggered by equity ownership changes
-3. **Flags** financial penalties, consent requirements, and termination rights
-4. **Compiles** an actionable risk register
+Draft from approved source documents and the actual agreement's representations, defined terms, qualifiers, dates, and schedule numbering. Link every entry to its source. Reconcile across capitalization, subsidiaries, contracts, litigation, compliance, IP, employees, benefits, taxes, debt, assets, related parties, and data or cybersecurity.
 
-### Output Format
+Never invent a disclosure, cure a missing fact with boilerplate, or mark a schedule complete without the responsible owner and counsel review.
 
-```
-## Change-of-Control Risk Register
+## Red-flag report
 
-**Contracts Scanned**: [N]
-**CoC Provisions Found**: [N]
-**Critical (deal-threatening)**: [N]
-**Moderate (consent required)**: [N]
-**Low (notification only)**: [N]
+Prioritize exceptions that could affect value, closing, remedies, financing, operations, integration, or reputation. For each finding include:
 
-### Critical Findings
-| Contract | Counterparty | Provision | Impact | Required Action |
-|----------|--------------|-----------|--------|-----------------|
-| | | | Revenue at risk: $X | Third-party consent required |
+1. source and provision;
+2. verified fact versus open question;
+3. loss or delay scenario;
+4. preliminary severity and rationale;
+5. owner, evidence request, and counsel question;
+6. possible diligence, negotiation, covenant, consent, insurance, or integration response for counsel to evaluate.
 
-### Consent Request Priority
-1. [Highest-value contract requiring consent]
-2. [Second priority]
-...
-```
+## Output
 
-**Time saved**: 20+ hours during legal DD. Identifies hidden liabilities that could threaten revenue continuity post-close.
-
-## The /schedule-disclosure Protocol
-
-### How It Works
-
-1. **Extracts** data from VDR to populate initial schedule drafts
-2. **Maps** disclosures to specific SPA/APA sections (e.g., Section 3.14 Material Contracts)
-3. **Cross-references** for internal consistency against the operative agreement
-4. **Flags** potential omissions
-
-### Common Disclosure Schedules
-
-| Schedule | Source Data | Threshold |
-|----------|-----------|-----------|
-| Material Contracts | All contracts | >$250K annual value |
-| Capitalization | Equity grants, warrants, options | All outstanding |
-| Litigation | Pending/threatened claims | All |
-| Employee Benefits | Plan documents | All plans |
-| Real Property | Leases, owned property | All |
-| IP Registrations | Patents, trademarks, copyrights | All registered |
-
-> **⚠️ AI Limitations**: LLMs cannot independently verify the economic substance of related-party transactions or interpret subjective legal standards like "Material Adverse Effect." AI outputs in definitive legal agreements must remain strictly advisory, requiring rigorous human validation.
-
-**Time saved**: 12+ hours of manual drafting per transaction.
-
-## Red Flag Due Diligence Report
-
-### Key Sections
-
-| Section | Focus |
-|---------|-------|
-| Executive Risk Summary | Prioritized dashboard by severity and valuation impact |
-| Corporate Governance & Capitalization | Unresolved equity claims, missing consents, invalid 409A valuations |
-| Material Contracts | Onerous CoC provisions, exclusivity, single-supplier concentration |
-| Intellectual Property | Unsecured chain of title, open-source contamination, infringement |
-| Regulatory & Compliance | Pending investigations, data privacy exposure, environmental liabilities |
-| Labor & Employment | Contractor misclassification, unfunded pensions, key-person flight risk |
-
-### AI-Assisted Workflow
-
-The AI continually scans the VDR as documents are uploaded, comparing against a predefined database of critical transactional risks. When anomalies are detected — missing IP assignment clauses, undocumented equity issuances, broken cap tables — they immediately populate the Red Flag Report template.
-
-## Operating Guidelines
-
-- NDA redlining: always escalate novel or bespoke clauses to senior counsel
-- CoC scanning: go beyond keywords — use semantic understanding for bespoke legal phrasing
-- Disclosure schedules: err on the side of over-disclosure to minimize post-close indemnification risk
-- Red flag reports: focus on exceptions, not comprehensive cataloguing
-- All legal outputs are advisory — always require qualified legal review
-
-
-## Troubleshooting
-
-| Problem | Cause | Fix |
-|---|---|---|
-| Change-of-control clauses missed | Buried in schedules | Run keyword scan on full contract corpus, not just main body |
-| NDA redline rejected by counterparty | Overly aggressive positions | Use tiered playbook: "must-haves" vs. "nice-to-haves"; escalate only on must-haves |
-| Disclosure schedules incomplete | Seller's counsel rushed | Provide a disclosure schedule checklist at LOI stage; allow 2-week cure period |
-| Material contracts not provided | VDR gaps | Cross-reference audited financials for material contract obligations; request missing items |
+Return an executive issue list, detailed cited findings, contradictions and missing documents, decisions required, and an explicit counsel-review gate. Preserve a versioned audit trail of reviewed documents and do not communicate findings externally without authorization.

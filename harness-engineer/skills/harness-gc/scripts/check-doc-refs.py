@@ -1,143 +1,105 @@
 #!/usr/bin/env python3
-"""
-HARNESS ENGINEER — Documentation Reference Checker
-Scans docs/ and AGENTS.md for references to files/paths that no longer exist.
-Run by harness-gc skill.
-"""
+"""Validate local Markdown links and optional features.json state."""
 
-import os
+from __future__ import annotations
+
+import json
 import re
 import sys
 from pathlib import Path
+from urllib.parse import unquote
 
-DOCS_TO_CHECK = ['AGENTS.md', 'docs/architecture.md', 'docs/quality.md', 'docs/beliefs.md']
-DEAD_REFS = []
-STALE_DOCS = []
 
-def find_path_refs(content):
-    """Extract file path references from markdown content."""
-    patterns = [
-        r'`([^`]+\.[a-zA-Z]{2,5})`',           # backtick code paths
-        r'\[.*?\]\(([^)]+)\)',                    # markdown links
-        r'(?:src|lib|app|docs)/[\w/\-\.]+',      # bare paths
-        r'→\s*([\w/\-\.]+\.(?:md|ts|js|py|sh|json))',  # → references
-    ]
-    refs = []
-    for pattern in patterns:
-        refs.extend(re.findall(pattern, content))
-    return refs
+ROOT = Path(sys.argv[1]).resolve() if len(sys.argv) > 1 else Path.cwd().resolve()
+SKIP_DIRS = {".git", ".harness", "node_modules", "dist", "build", ".venv", "venv"}
+LINK_RE = re.compile(r"!?\[[^]]*]\(([^)]+)\)")
 
-def check_doc(filepath):
-    if not os.path.exists(filepath):
-        return
-    
-    with open(filepath, 'r', encoding='utf-8', errors='ignore') as f:
-        content = f.read()
-    
-    refs = find_path_refs(content)
-    
-    for ref in refs:
-        # Skip URLs, anchors, and obvious non-paths
-        if ref.startswith(('http', '#', 'localhost', 'npm', 'git')):
-            continue
-        if len(ref) < 4 or ' ' in ref:
-            continue
-        
-        # Check if file exists
-        if not os.path.exists(ref) and not os.path.exists(ref.lstrip('/')):
-            DEAD_REFS.append({
-                'doc': filepath,
-                'ref': ref,
-                'severity': 'P0' if filepath == 'AGENTS.md' else 'P1'
-            })
 
-def check_feature_list():
-    """Check features.json for integrity issues."""
-    import json
-    
-    if not os.path.exists('features.json'):
-        return
-    
-    with open('features.json') as f:
-        try:
-            data = json.load(f)
-        except json.JSONDecodeError as e:
-            print(f"P0 CRITICAL: features.json has JSON syntax error: {e}")
-            return
-    
-    features = data if isinstance(data, list) else data.get('features', [])
-    
-    issues = []
-    seen_ids = set()
-    
-    for feature in features:
-        fid = feature.get('id', 'UNKNOWN')
-        
-        # Duplicate IDs
-        if fid in seen_ids:
-            issues.append(f"P1 DUPLICATE_ID: {fid}")
-        seen_ids.add(fid)
-        
-        # Inconsistent state
-        if feature.get('passes') and feature.get('circuit_broken'):
-            issues.append(f"P1 INCONSISTENT: {fid} is both passes=true and circuit_broken=true")
-        
-        if feature.get('passes') and feature.get('in_progress'):
-            issues.append(f"P1 INCONSISTENT: {fid} is both passes=true and in_progress=true")
-        
-        # Empty required fields
-        if not feature.get('description'):
-            issues.append(f"P1 MISSING_DESCRIPTION: {fid} has no description")
-        
-        if not feature.get('steps'):
-            issues.append(f"P2 MISSING_STEPS: {fid} has no test steps")
-    
+def markdown_files() -> list[Path]:
+    files: list[Path] = []
+    for path in ROOT.rglob("*.md"):
+        if not any(part in SKIP_DIRS for part in path.relative_to(ROOT).parts):
+            files.append(path)
+    return sorted(files)
+
+
+def local_target(raw: str) -> str | None:
+    target = raw.strip().split(maxsplit=1)[0].strip("<>")
+    if not target or target.startswith(("#", "http://", "https://", "mailto:")):
+        return None
+    target = unquote(target).split("#", 1)[0].split("?", 1)[0]
+    return target or None
+
+
+def check_links() -> list[str]:
+    issues: list[str] = []
+    for document in markdown_files():
+        content = document.read_text(encoding="utf-8", errors="replace")
+        for raw in LINK_RE.findall(content):
+            target = local_target(raw)
+            if target is None:
+                continue
+            candidate = (document.parent / target).resolve()
+            try:
+                candidate.relative_to(ROOT)
+            except ValueError:
+                issues.append(f"OUTSIDE_ROOT {document.relative_to(ROOT)} -> {target}")
+                continue
+            if not candidate.exists():
+                issues.append(f"BROKEN_LINK {document.relative_to(ROOT)} -> {target}")
     return issues
 
-def main():
-    print("=== Harness GC: Documentation Reference Check ===\n")
-    
-    # Check all docs
-    for doc in DOCS_TO_CHECK:
-        check_doc(doc)
-    
-    # Also check all files in docs/
-    if os.path.isdir('docs'):
-        for root, dirs, files in os.walk('docs'):
-            for f in files:
-                if f.endswith('.md'):
-                    check_doc(os.path.join(root, f))
-    
-    # Report dead references
-    if DEAD_REFS:
-        p0 = [r for r in DEAD_REFS if r['severity'] == 'P0']
-        p1 = [r for r in DEAD_REFS if r['severity'] == 'P1']
-        
-        if p0:
-            print(f"P0 — CRITICAL dead references in AGENTS.md ({len(p0)}):")
-            for r in p0:
-                print(f"  ✗ '{r['ref']}' referenced in {r['doc']} does not exist")
-        
-        if p1:
-            print(f"\nP1 — Dead references in docs ({len(p1)}):")
-            for r in p1:
-                print(f"  ✗ '{r['ref']}' referenced in {r['doc']} does not exist")
-    else:
-        print("✓ No dead documentation references found")
-    
-    # Check feature list
-    print("\n=== Feature List Integrity ===\n")
-    feature_issues = check_feature_list()
-    if feature_issues:
-        for issue in feature_issues:
-            print(f"  ✗ {issue}")
-    else:
-        print("✓ features.json integrity check passed")
-    
-    total_issues = len(DEAD_REFS) + len(feature_issues or [])
-    print(f"\nTotal issues found: {total_issues}")
-    
-    return 1 if total_issues > 0 else 0
 
-if __name__ == '__main__':
-    sys.exit(main())
+def check_features() -> list[str]:
+    path = ROOT / "features.json"
+    if not path.exists():
+        return []
+    try:
+        data = json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError) as exc:
+        return [f"INVALID_FEATURES_JSON {exc}"]
+    features = data if isinstance(data, list) else data.get("features", [])
+    if not isinstance(features, list):
+        return ["INVALID_FEATURES features must be an array"]
+
+    issues: list[str] = []
+    seen: set[str] = set()
+    for index, feature in enumerate(features):
+        if not isinstance(feature, dict):
+            issues.append(f"INVALID_FEATURE index {index} is not an object")
+            continue
+        feature_id = feature.get("id")
+        if not feature_id:
+            issues.append(f"MISSING_ID index {index}")
+        elif feature_id in seen:
+            issues.append(f"DUPLICATE_ID {feature_id}")
+        else:
+            seen.add(feature_id)
+        if not feature.get("description"):
+            issues.append(f"MISSING_DESCRIPTION {feature_id or index}")
+        criteria = feature.get("acceptance_criteria", feature.get("steps"))
+        if not isinstance(criteria, list) or not criteria:
+            issues.append(f"MISSING_ACCEPTANCE_CRITERIA {feature_id or index}")
+        status = feature.get("status")
+        if status is not None and status not in {"planned", "in_progress", "blocked", "verified"}:
+            issues.append(f"INVALID_STATUS {feature_id or index}: {status}")
+        if feature.get("passes") and feature.get("in_progress"):
+            issues.append(f"INCONSISTENT_STATE {feature_id or index}: passing and in progress")
+        if feature.get("passes") and feature.get("circuit_broken"):
+            issues.append(f"INCONSISTENT_STATE {feature_id or index}: passing and circuit broken")
+    return issues
+
+
+def main() -> int:
+    issues = check_links() + check_features()
+    if issues:
+        print("Harness validation issues:")
+        for issue in issues:
+            print(f"- {issue}")
+        return 1
+    print("Harness documentation and feature state are valid.")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

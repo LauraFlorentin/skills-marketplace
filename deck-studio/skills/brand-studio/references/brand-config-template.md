@@ -54,5 +54,5 @@ Use this template when writing brand-config.md after setup. Replace all placehol
    - Warm/approachable → Lora + Source Sans Pro  
    - Luxurious → Playfair Display + Cormorant Garamond
    - Technical/clean → IBM Plex Sans + IBM Plex Mono
-3. Store the file at the same directory level as SKILL.md
+3. Store project configuration at `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md` or the personal default at `${CLAUDE_PLUGIN_DATA}/brand-config.md`; never edit the installed plugin directory
 4. After writing, confirm by reading the file back and summarizing it to the user

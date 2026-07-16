@@ -31,7 +31,7 @@ Ask about: project scope, major deliverables, known constraints. Check ~~docs fo
 
 ### 2. Decompose
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and create the WBS with dictionary.
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and create the WBS with dictionary.
 
 ### 3. Output
 

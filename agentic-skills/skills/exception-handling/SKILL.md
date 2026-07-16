@@ -7,13 +7,6 @@ description: Patterns for ensuring system resilience by detecting failures (API 
 
 Exception Handling ensures that an agentic system degrades gracefully rather than crashing. In the nondeterministic world of LLMs, failures are common: models hallucinate, APIs time out, and outputs are malformed. This pattern wraps critical operations in "try/catch" blocks that trigger recovery agents or fallback strategies.
 
-## When to Use
-
--   **Production Systems**: Essential for any user-facing application.
--   **Unreliable Tools**: When using 3rd-party APIs that might be down or rate-limited.
--   **Structured Output**: When the model occasionally fails to output valid JSON.
--   **Safety**: When a tool might return dangerous or unexpected data.
-
 ## Use Cases
 
 -   **API Fallback**: "Primary model API failed? Switch to backup model API." or "Tool A failed? Try Tool B."

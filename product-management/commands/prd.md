@@ -31,7 +31,7 @@ Ask the user about: the problem being solved, target user, desired outcome, cons
 
 ### 2. Write PRD
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and apply the appropriate PRD template.
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and apply the appropriate PRD template.
 
 ### 3. Output
 

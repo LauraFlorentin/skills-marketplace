@@ -32,7 +32,7 @@ Ask about: what happened this period, blockers, upcoming milestones. Check ~~pro
 
 ### 2. Compile Report
 
-Use the **Monitoring** skill. Read `../skills/monitoring/SKILL.md` and generate the status report.
+Use the **Monitoring** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/monitoring/SKILL.md` and generate the status report.
 
 ### 3. Output
 

@@ -7,8 +7,8 @@ Apply the user's brand identity from `brand-config.md` to a PowerPoint presentat
 ## Prerequisites
 
 1. Read `brand-config.md` — extract colors, fonts, logo path, brand name
-2. Read `/mnt/skills/public/pptx/SKILL.md` — follow all technical PPTX instructions from that skill
-3. If the user has an existing `.pptx` file: find it in `/mnt/user-data/uploads/`
+2. Use the host's presentation-creation capability and follow its required rendering and verification workflow
+3. If the user has an existing `.pptx` file: locate it in the user-provided workspace or attachment context
 4. If creating from scratch: ask for slide topics/content before building
 
 ---
@@ -47,6 +47,6 @@ Apply the user's brand identity from `brand-config.md` to a PowerPoint presentat
 ## Delivery
 
 1. Save the branded file as `[BrandName]_branded_[original_filename].pptx`
-2. Copy to `/mnt/user-data/outputs/`
+2. Save the output to the workspace or artifact location provided by the host environment
 3. Present via `present_files` tool
 4. Offer: "Want me to adjust any colors, fonts, or slide layout?"

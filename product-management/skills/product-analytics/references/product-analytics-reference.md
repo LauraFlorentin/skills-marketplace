@@ -2,6 +2,13 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Dashboard Design](#dashboard-design)
+- [Sprint Review](#sprint-review)
+- [Product Review](#product-review)
+- [Output Formats](#output-formats)
+
 ---
 
 ## Dashboard Design

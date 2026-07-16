@@ -1,1 +1,41 @@
+# Operating-system files
 .DS_Store
+Thumbs.db
+
+# Local agent settings and secrets
+.claude/settings.local.json
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# JavaScript
+node_modules/
+
+# Plugin runtime state
+.harness/state/
+
+# Logs
+*.log
+
+# Build and package artifacts
+build/
+dist/
+*.egg-info/
+*.zip
+*.tar.gz
+
+# Editors
+.idea/
+.vscode/
+*.swp
+*~

@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "real-estate-investment",
-    "version": "1.0.0",
-    "description": "Real estate investment analysis using an adaptive multi-agent system — deal screening, underwriting, pro forma, financing, tax strategy, and more.",
+    "displayName": "Real Estate Investment",
+    "version": "1.1.0",
+    "description": "Evidence-based real estate analysis with specialist agents for screening, underwriting, pro formas, financing, stress tests, syndications, hospitality, and cross-border risk.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/real-estate-investment",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "real-estate",
         "investment-analysis",

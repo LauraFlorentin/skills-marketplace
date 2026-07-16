@@ -1,46 +1,25 @@
 {
-  "_generated_by": "harness-engineer plugin",
-  "_rule": "Each layer may only import from layers with a LOWER order number. Violations are enforced by .harness/scripts/check-layers.sh and the watchdog hook.",
+  "generated_by": "harness-engineer",
+  "rule": "A layer may import only from layers with a lower or equal order unless an explicit project-approved exception applies.",
   "layers": [
     {
       "order": 1,
-      "name": "types",
-      "description": "Type definitions, interfaces, enums, constants. No imports from other layers.",
-      "paths": ["src/types/", "types/", "shared/types/"]
+      "name": "foundation",
+      "description": "[Types, constants, and other dependency-free primitives]",
+      "paths": ["[PROJECT_PATH]/"]
     },
     {
       "order": 2,
-      "name": "config",
-      "description": "Configuration, environment variables, feature flags.",
-      "paths": ["src/config/", "config/"]
+      "name": "domain",
+      "description": "[Business rules and domain operations]",
+      "paths": ["[PROJECT_PATH]/"]
     },
     {
       "order": 3,
-      "name": "repo",
-      "description": "Data access layer: database queries, storage adapters, external API clients.",
-      "paths": ["src/repo/", "src/db/", "src/data/", "repositories/"]
-    },
-    {
-      "order": 4,
-      "name": "service",
-      "description": "Business logic, domain operations, orchestration.",
-      "paths": ["src/service/", "src/services/", "src/domain/", "services/"]
-    },
-    {
-      "order": 5,
-      "name": "runtime",
-      "description": "API routes, controllers, request handlers, middleware.",
-      "paths": ["src/routes/", "src/api/", "src/controllers/", "src/middleware/"]
-    },
-    {
-      "order": 6,
-      "name": "ui",
-      "description": "Frontend components, pages, client-side logic.",
-      "paths": ["src/components/", "src/pages/", "src/views/", "app/", "frontend/"]
+      "name": "interface",
+      "description": "[User, API, CLI, or integration entry points]",
+      "paths": ["[PROJECT_PATH]/"]
     }
   ],
-  "exceptions": [
-    "Test files may import from any layer for testing purposes",
-    "Type-only imports (import type) across layers are permitted"
-  ]
+  "exceptions": []
 }

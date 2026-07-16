@@ -1,24 +1,22 @@
 {
-  "_generated_by": "harness-engineer plugin",
-  "_instructions": "Agents may ONLY change these fields: passes, in_progress, circuit_broken, break_reason. ALL other fields are READ-ONLY. It is unacceptable to remove or edit feature descriptions or steps — this would cause missing or buggy functionality that cannot be detected.",
-  "_verification_contract": "Your implementation will be verified against the 'steps' array exactly as written — like a CI test suite that a human QA engineer runs. Each step is a test case. Write your code so that a person executing these steps in a real browser will see the described behavior. Do not write code that passes unit tests but fails these steps.",
+  "$schema": "./features.schema.json",
   "generated_at": "[ISO_TIMESTAMP]",
   "project": "[PROJECT_NAME]",
+  "instructions": "Preserve acceptance criteria unless the task owner approves a product change. Update status only from verification evidence.",
   "features": [
     {
       "id": "feat-001",
       "category": "functional",
       "priority": 1,
-      "description": "[FEATURE DESCRIPTION — testable end-to-end by a human user]",
-      "steps": [
-        "[Step 1: navigate to / perform action]",
-        "[Step 2: verify expected result]",
-        "[Step 3: check edge case]"
+      "description": "[Observable user outcome]",
+      "acceptance_criteria": [
+        "[Given relevant starting state, when the user acts, then observable result occurs]",
+        "[Relevant error or boundary behavior]"
       ],
-      "passes": false,
-      "in_progress": false,
-      "circuit_broken": false,
-      "break_reason": null
+      "status": "planned",
+      "owner": null,
+      "evidence": [],
+      "blocked_by": []
     }
   ]
 }

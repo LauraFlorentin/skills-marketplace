@@ -7,13 +7,6 @@ description: A management pattern where an agent assesses the urgency and import
 
 Prioritization allows an agent to work smarter, not just harder. Instead of processing tasks First-In-First-Out (FIFO), a "Manager Agent" analyzes each request's urgency and business value. It assigns a priority score (P0, P1, P2) and reorders the queue effectively. This is vital for resource-constrained environments.
 
-## When to Use
-
--   **Queue Management**: When the system receives more requests than it can handle instantly.
--   **SLA Enforcement**: Ensuring premium users or critical alerts get processed first.
--   **Resource Allocation**: Assigning the smartest (and most expensive) models to P0 tasks, and cheaper models to P2 tasks.
--   **Triage**: Filtering out spam or low-value requests entirely.
-
 ## Use Cases
 
 -   **Ticket Triage**: Analyzing support tickets and tagging them as "Critical" (Server Down) or "Low" (Typo).

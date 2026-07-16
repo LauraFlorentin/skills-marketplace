@@ -33,7 +33,7 @@ Check ~~docs for existing OKRs, vision docs, or strategy materials.
 
 ### 2. Draft OKRs
 
-Use the **Strategy** skill. Read `../skills/strategy/SKILL.md` and apply the appropriate OKR framework (team-level for startups, cascading for enterprise).
+Use the **Strategy** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/strategy/SKILL.md` and apply the appropriate OKR framework (team-level for startups, cascading for enterprise).
 
 ### 3. Output
 

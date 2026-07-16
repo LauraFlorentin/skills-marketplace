@@ -31,7 +31,7 @@ Ask about: project charter (is there one?), attendee list, meeting duration, key
 
 ### 2. Build Agenda
 
-Use the **Initiation** skill. Read `../skills/initiation/SKILL.md` and create the kickoff package.
+Use the **Initiation** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/initiation/SKILL.md` and create the kickoff package.
 
 ### 3. Output
 

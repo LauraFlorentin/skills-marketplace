@@ -1,13 +1,17 @@
 {
-  "name": "api-skills-marketplace",
-  "version": "1.0.0",
-  "description": "A curated marketplace of AI agent skills for Agentic Systems Architecture, compatible with Claude and Vercel.",
+  "name": "ai-skills-marketplace",
+  "version": "1.1.0",
+  "private": true,
+  "description": "A curated Claude Code plugin marketplace with reusable skills, commands, agents, and non-destructive hooks.",
+  "scripts": {
+    "validate": "python3 scripts/validate_marketplace.py"
+  },
   "keywords": [
     "ai",
     "skills",
     "agent",
     "claude",
-    "vercel",
+    "claude-code",
     "npx-skills",
     "agentic-systems",
     "planning",

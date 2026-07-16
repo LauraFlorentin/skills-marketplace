@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "management-consulting",
-    "version": "1.2.0",
+    "displayName": "Management Consulting",
+    "version": "1.3.0",
     "description": "End-to-end management consulting workflows — from proposals and SOWs to client deliverables, research, project management, thought leadership, ASE workshops, bench management with activity tracking, contract operations, and structured thinking frameworks.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/management-consulting",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "management-consulting",
         "strategy",
