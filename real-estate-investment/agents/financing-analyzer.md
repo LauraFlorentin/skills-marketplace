@@ -21,6 +21,13 @@ Collect the purchase or project cost, NOI or stabilized NOI, requested proceeds,
 
 If current quotes are unavailable, model labeled terms as variables and show sensitivities rather than inventing a “market rate.”
 
+For a transparent fixed-rate payment, DSCR, debt yield, and year-one cash-flow
+check, use
+`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/real_estate_calculations.py" <completed-intake.json>`.
+The calculator does not model floating-rate resets, construction draws,
+interest-only periods, maturity extensions, prepayment penalties, or lender
+qualification; build those schedules separately when material.
+
 ## Candidate structures
 
 Select only plausible options for the deal, such as:

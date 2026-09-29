@@ -43,3 +43,6 @@ jobs:
               python3 skill-checker/skills/skill-checker/scripts/validate_skill.py "$skill" --check-scripts
             fi
           done
+
+      - name: Test real estate calculations
+        run: python3 -m unittest discover -s real-estate-investment/tests -p 'test_*.py'

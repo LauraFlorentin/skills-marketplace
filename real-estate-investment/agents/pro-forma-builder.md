@@ -43,6 +43,13 @@ Equity multiple = total investor distributions / total investor contributions
 
 Calculate IRR from dated cash flows. Do not use IRR when the timing is unknown, and show equity multiple and total profit beside it. Separate property-level, entity-level, and investor-level cash flows.
 
+For a completed single-property intake, the bundled calculator can independently
+check year-one NOI, fixed-rate debt service, DSCR, cash-on-cash return, and a
+simple annual exit case:
+`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/real_estate_calculations.py" <completed-intake.json>`.
+It is not a replacement for monthly construction, lease-up, seasonality,
+floating-rate, or waterfall schedules.
+
 ## Timing rules
 
 - Apply contractual rent steps, free rent, options, tenant improvements, and leasing commissions by date.

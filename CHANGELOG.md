@@ -7,6 +7,10 @@ All notable changes to this marketplace are documented here. Versions follow
 
 ### Added
 
+- Real Estate Investment 1.2.0: a dependency-free underwriting calculator,
+  synthetic regression tests, standardized intake/output templates, an editable
+  underwriting workbook, and explicit confidentiality guidance.
+
 - Repository-wide validation for marketplace, plugin, skill, agent, hook, and
   local-link integrity.
 - GitHub Actions validation and community contribution files.

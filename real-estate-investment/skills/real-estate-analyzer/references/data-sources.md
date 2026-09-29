@@ -2,6 +2,10 @@
 
 Use this reference when market evidence or batch data is needed. Provider coverage, products, endpoints, prices, licensing, and terms change; verify current documentation before relying on an integration.
 
+This plugin intentionally bundles no provider-specific connector or credentials.
+Choose a provider only after the user confirms the geography, asset type,
+license, budget, and authorization for the data transfer.
+
 ## Contents
 
 - [Source selection](#source-selection)

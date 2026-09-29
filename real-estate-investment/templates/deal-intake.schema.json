@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Real Estate Investment Deal Intake",
+  "description": "Portable input contract for the bundled single-property calculator. Rates are decimals, not percentages.",
+  "type": "object",
+  "required": ["property", "financing", "investment"],
+  "properties": {
+    "schema_version": { "type": "string" },
+    "deal_name": { "type": ["string", "null"] },
+    "as_of_date": { "type": ["string", "null"], "format": "date" },
+    "currency": { "type": ["string", "null"] },
+    "property": {
+      "type": "object",
+      "required": ["purchase_price", "annual_operating_expenses"],
+      "properties": {
+        "property_name": { "type": ["string", "null"] },
+        "address_or_market": { "type": ["string", "null"] },
+        "asset_type": { "type": ["string", "null"] },
+        "purchase_price": { "type": "number", "minimum": 0 },
+        "unit_count": { "type": ["number", "null"], "minimum": 0 },
+        "monthly_rent_per_unit": { "type": ["number", "null"], "minimum": 0 },
+        "annual_gross_potential_income": { "type": ["number", "null"], "minimum": 0 },
+        "annual_other_income": { "type": ["number", "null"], "minimum": 0 },
+        "vacancy_and_collection_loss_rate": { "type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 1 },
+        "annual_operating_expenses": { "type": "number", "minimum": 0 },
+        "annual_capital_reserves": { "type": ["number", "null"], "minimum": 0 }
+      },
+      "anyOf": [
+        { "required": ["annual_gross_potential_income"] },
+        { "required": ["unit_count", "monthly_rent_per_unit"] }
+      ],
+      "additionalProperties": true
+    },
+    "financing": {
+      "type": "object",
+      "properties": {
+        "loan_amount": { "type": ["number", "null"], "minimum": 0 },
+        "annual_interest_rate": { "type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 1 },
+        "amortization_years": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "origination_fees": { "type": ["number", "null"], "minimum": 0 },
+        "maturity_years": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "recourse": { "type": ["string", "null"] },
+        "covenants_and_reserves": { "type": ["string", "null"] }
+      },
+      "additionalProperties": true
+    },
+    "investment": {
+      "type": "object",
+      "properties": {
+        "acquisition_costs": { "type": ["number", "null"], "minimum": 0 },
+        "renovation_capex": { "type": ["number", "null"], "minimum": 0 },
+        "initial_reserves": { "type": ["number", "null"], "minimum": 0 },
+        "hold_years": { "type": ["number", "null"], "exclusiveMinimum": 0 },
+        "exit_cap_rate": { "type": ["number", "null"], "exclusiveMinimum": 0, "exclusiveMaximum": 1 },
+        "annual_noi_growth_rate": { "type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 1 },
+        "sale_cost_rate": { "type": ["number", "null"], "minimum": 0, "exclusiveMaximum": 1 }
+      },
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["field", "source", "source_date", "retrieved_date", "status"],
+        "properties": {
+          "field": { "type": "string" },
+          "source": { "type": ["string", "null"] },
+          "source_date": { "type": ["string", "null"] },
+          "retrieved_date": { "type": ["string", "null"] },
+          "status": { "enum": ["actual", "contractual", "researched", "user-provided", "assumed"] },
+          "notes": { "type": ["string", "null"] }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

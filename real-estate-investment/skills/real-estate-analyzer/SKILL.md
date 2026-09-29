@@ -18,6 +18,19 @@ Real estate analysis can affect consequential financial, tax, and legal decision
 - Do not present issue spotting as individualized legal, tax, accounting, lending, or investment advice. Identify questions for appropriately licensed professionals before commitment.
 - Never fabricate a comparable, quote, sponsor record, permit, law, or source. Say when reliable evidence is unavailable.
 
+## Data handling
+
+- Collect and retain only what is necessary for the requested decision. Redact or
+  omit tenant, investor, identity, and financial-account information unless it
+  is necessary and the user is authorized to provide it.
+- Do not send confidential deal materials to a third-party service, repository,
+  API, or shared output without explicit authorization and a review of the
+  service's terms and data handling.
+- Never request or store credentials, passwords, government ID numbers, or full
+  account details. Keep completed deal files in an authorized private location.
+- Read [data-handling.md](references/data-handling.md) whenever a request uses
+  confidential documents or external data services.
+
 ## Minimum deal inputs
 
 Collect only what the analysis needs. Typical inputs are:
@@ -48,6 +61,24 @@ Proceed with partial information when useful, but label every gap and show which
 | Contract or offering document | `legal-reviewer` | Red flags, missing terms, and counsel questions |
 
 Use [data-sources.md](references/data-sources.md) only when a task needs market-data discovery, external data services, or batch screening patterns.
+
+## Reproducible analysis assets
+
+Use the assets in `templates/` when the user needs a reusable or auditable
+deliverable:
+
+- start with `templates/deal-intake.template.json` and record source status and
+  dates in `templates/source-assumption-register.csv`;
+- run the dependency-free calculator for a single-property, fixed-rate summary:
+  `python3 "${CLAUDE_PLUGIN_ROOT}/scripts/real_estate_calculations.py" <completed-intake.json>`;
+- use `templates/real-estate-underwriting-template.xlsx` for an editable
+  single-property workbook; and
+- use the memo, risk, diligence, financing, and legal templates to preserve
+  decisions, evidence gaps, and questions for qualified advisers.
+
+The calculator does not validate market evidence, legal terms, tax treatment,
+or lender eligibility. Inspect its JSON output against the source register and
+do not use it as a substitute for a multi-period model where timing matters.
 
 ## Analysis sequence
 

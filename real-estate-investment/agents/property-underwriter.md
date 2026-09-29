@@ -39,6 +39,18 @@ Total cash invested should include down payment, closing and financing costs, im
 
 For a flip, calculate net sale proceeds after selling costs and taxes, total project cost, peak cash need, profit, and schedule-adjusted return. Model the source and date of each ARV comparable rather than applying a fixed percentage rule.
 
+## Reproducible calculations
+
+For a completed single-property intake, run
+`python3 "${CLAUDE_PLUGIN_ROOT}/scripts/real_estate_calculations.py" <completed-intake.json>`
+to independently calculate the underwriting summary. Inspect every input and
+result against the source register; the tool does not source market data or
+replace an auditable monthly or lease-level model.
+
+Use `templates/real-estate-underwriting-template.xlsx` when the user needs an
+editable workbook. Keep tenant, investor, and financial-account details out of
+the template unless their use is necessary and authorized.
+
 ## Normalize and verify
 
 - Compare rent roll with deposits and collections.

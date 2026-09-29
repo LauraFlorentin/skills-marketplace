@@ -1,0 +1,39 @@
+{
+  "$schema": "./deal-intake.schema.json",
+  "schema_version": "1.0",
+  "deal_name": null,
+  "as_of_date": null,
+  "currency": null,
+  "property": {
+    "property_name": null,
+    "address_or_market": null,
+    "asset_type": null,
+    "purchase_price": null,
+    "unit_count": null,
+    "monthly_rent_per_unit": null,
+    "annual_gross_potential_income": null,
+    "annual_other_income": null,
+    "vacancy_and_collection_loss_rate": null,
+    "annual_operating_expenses": null,
+    "annual_capital_reserves": null
+  },
+  "financing": {
+    "loan_amount": null,
+    "annual_interest_rate": null,
+    "amortization_years": null,
+    "origination_fees": null,
+    "maturity_years": null,
+    "recourse": null,
+    "covenants_and_reserves": null
+  },
+  "investment": {
+    "acquisition_costs": null,
+    "renovation_capex": null,
+    "initial_reserves": null,
+    "hold_years": null,
+    "exit_cap_rate": null,
+    "annual_noi_growth_rate": null,
+    "sale_cost_rate": null
+  },
+  "sources": []
+}

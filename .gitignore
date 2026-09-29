@@ -24,6 +24,10 @@ node_modules/
 # Plugin runtime state
 .harness/state/
 
+# Private real-estate working materials
+real-estate-investment/work/
+real-estate-investment/private/
+
 # Logs
 *.log
 
