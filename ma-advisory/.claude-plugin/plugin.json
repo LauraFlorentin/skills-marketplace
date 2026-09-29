@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "ma-advisory",
-    "version": "1.0.0",
-    "description": "AI-powered M&A advisory workflows — VDR management, deal screening, legal and financial due diligence, synergy analysis, deal marketing, integration planning, regulatory screening, and end-to-end workflow chains for the full transaction lifecycle.",
+    "displayName": "M&A Advisory",
+    "version": "1.1.0",
+    "description": "Source-traceable M&A workflows for VDR intake, screening, legal and financial issue spotting, regulatory research, synergies, marketing, bidding, and integration.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/ma-advisory",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "mergers-acquisitions",
         "due-diligence",

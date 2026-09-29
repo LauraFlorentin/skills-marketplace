@@ -6,7 +6,7 @@ A complete branding toolkit — apply consistent brand identity (colors, fonts, 
 
 ## How It Works
 
-On first use, Brand Studio walks you through a conversational setup (~10 questions) and saves your brand identity to `brand-config.md`. From then on, every branded output uses your exact colors, fonts, and tone automatically.
+On first use, Brand Studio creates either a project brand at `.brand-studio/brand-config.md` or a personal default in the plugin data directory. Project configuration takes precedence. Installed plugin files remain immutable.
 
 ## Skills
 
@@ -30,13 +30,13 @@ On first use, Brand Studio walks you through a conversational setup (~10 questio
 
 | Command | Description |
 | :--- | :--- |
-| `/brand-setup` | Configure or update your brand identity |
-| `/brand-status` | Show a summary of your current brand config |
-| `/brand-ppt` | Brand a PowerPoint or create one from scratch |
-| `/brand-doc` | Brand a Word doc or create one from scratch |
-| `/brand-logo` | Generate logo SVGs (3 variations) |
-| `/brand-social` | Create social media assets (or full kit) |
-| `/brand-web` | Create branded HTML artifacts |
+| `/brand-studio:brand-setup` | Configure or update your brand identity |
+| `/brand-studio:brand-status` | Show a summary of your current brand config |
+| `/brand-studio:brand-ppt` | Brand a PowerPoint or create one from scratch |
+| `/brand-studio:brand-doc` | Brand a Word doc or create one from scratch |
+| `/brand-studio:brand-logo` | Generate logo SVGs (3 variations) |
+| `/brand-studio:brand-social` | Create social media assets (or full kit) |
+| `/brand-studio:brand-web` | Create branded HTML artifacts |
 
 ## Agents
 
@@ -44,7 +44,7 @@ None.
 
 ## Hooks
 
-Includes a **Brand Guard hook** (`hooks/brand_guard.py`) that auto-enforces branding on `.pptx`, `.docx`, `.html`, `.svg`, `.png`, `.pdf` files — so you never accidentally create unbranded content.
+Includes a non-blocking **Brand Guard hook** (`hooks/brand_guard.py`). When a brand is configured and a supported asset is about to be written, it injects the active brand summary into context. It does not modify files or approve tool use.
 
 ## Installation
 

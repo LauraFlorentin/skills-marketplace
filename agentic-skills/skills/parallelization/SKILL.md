@@ -7,13 +7,6 @@ description: A concurrency pattern where multiple agent tasks are executed at th
 
 Parallelization allows an agentic system to perform multiple independent operations simultaneously. This is commonly used in distinct flavors: "Sectioning" (breaking a large task into independent chunks to process in parallel) and "Voting" (running the same task multiple times to get diverse outputs for consensus or increasing quality).
 
-## When to Use
-
--   **Speed**: When tasks are independent and can be run concurrently to reduce total latency (e.g., verifying 5 different facts).
--   **Diversity**: When you want multiple creative options (e.g., generate 5 different headlines).
--   **Reliability**: When used in a "majority vote" pattern to reduce hallucinations (Self-Consistency).
--   **Aggregating Information**: Researching a topic from multiple sources simultaneously.
-
 ## Use Cases
 
 -   **Batch Processing**: Grading 100 student essays concurrently.

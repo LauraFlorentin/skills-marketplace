@@ -2,24 +2,17 @@
 name: qa-management
 description: >
   Diligence Q&A process acceleration. Synthesizes approved VDR documents,
-  disclosure schedules, and prior responses to auto-draft defensible answers
+  disclosure schedules, and prior responses to draft source-cited answers
   to buyer diligence questions. Routes drafts for expert approval while
   maintaining consistency across a multi-bidder auction process.
   Use when user asks to "manage Q&A process", "organize buyer questions", "data room Q&A", or mentions Q&A tracking, management presentations, or buyer inquiries.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Q&A Management
 
+Use only materials approved for the specific bidder, diligence phase, and clean-team boundary. Cite every draft answer, preserve prior approved language, flag conflicts, and never send or publish a response without the designated expert and disclosure approval.
+
 As transactions enter confirmatory diligence, the Q&A process can devolve into a logistical nightmare. Multiple bidders submit hundreds of granular questions about tax liabilities, employee benefits, and IT infrastructure. Junior deal team members become administrative traffic cops, routing questions, chasing answers, and formatting responses.
-
-## When to Use
-
-- Responding to buyer diligence question trackers
-- Managing multi-bidder Q&A in a sell-side auction
-- Ensuring consistency in seller representations across bidders
-- Drafting responses using approved VDR documents and disclosure schedules
 
 ## The /draft-qna Protocol
 
@@ -76,7 +69,7 @@ As transactions enter confirmatory diligence, the Q&A process can devolve into a
 - Track response turnaround time — delays signal deal fatigue to bidders
 - Preserve the Q&A log as it becomes part of the deal's legal record
 
-**Time saved**: 30 minutes per query, preventing coordination bottlenecks and ensuring consistency.
+Track actual handling time, approval latency, and rework. Never send a draft or disclose a document without the designated expert and disclosure approval.
 
 
 ## Examples

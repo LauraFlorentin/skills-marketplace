@@ -6,21 +6,13 @@ description: >
   buyer and target organizations. Generates cost-takeout plans with
   costs-to-achieve estimates for lender validation and integration planning.
   Use when user asks to "analyze synergies", "cost synergy model", "synergy targets", or mentions revenue synergies, cost savings, or synergy bridge.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Synergy Analysis
 
+Use authorized, minimized employee and vendor data. Aggregate personal data where possible, avoid protected-trait or individual-performance inference, and require HR, employment-law, finance, functional-owner, and works-council review as applicable before workforce actions.
+
 Synergy underwriting provides the mathematical and strategic justification for paying an acquisition premium. Cost synergies — headcount rationalization, facility closures, vendor consolidation — are the most reliable forms of value creation, but identifying them requires mapping two complex organizations.
-
-## When to Use
-
-- Quantifying cost synergies to justify an acquisition premium
-- Mapping organizational overlaps between buyer and target
-- Identifying vendor consolidation and contract renegotiation opportunities
-- Building a cost-takeout plan for lender validation
-- Generating the Synergy and Cost Savings Analysis Report
 
 ## The /synergy-map Protocol
 
@@ -35,7 +27,7 @@ Synergy underwriting provides the mathematical and strategic justification for p
 4. **Quantify** savings with confidence ratings
 5. **Estimate** costs to achieve (severance, lease breaks, migration costs)
 
-**Time saved**: 15+ hours per synergy model.
+Record the source, owner, timing, dependency, cost to achieve, and confidence for every synergy. Do not promise a fixed productivity gain.
 
 ### Output Format
 

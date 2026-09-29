@@ -31,7 +31,7 @@ Ask the user what they're trying to learn. Frame as 3-5 specific research questi
 
 ### 2. Design Research Plan
 
-Use the **Discovery** skill. Read `../skills/discovery/SKILL.md` and create:
+Use the **Discovery** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/discovery/SKILL.md` and create:
 - Research methodology
 - Participant criteria and recruiting plan
 - Interview guide with opening, exploration, and closing sections

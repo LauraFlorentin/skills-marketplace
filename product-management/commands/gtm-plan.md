@@ -31,7 +31,7 @@ Ask about: target audience, pricing, competitive positioning, launch timeline, a
 
 ### 2. Build GTM Plan
 
-Use the **Launch & Growth** skill. Read `../skills/launch-growth/SKILL.md` and create the GTM plan.
+Use the **Launch & Growth** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/launch-growth/SKILL.md` and create the GTM plan.
 
 ### 3. Output
 

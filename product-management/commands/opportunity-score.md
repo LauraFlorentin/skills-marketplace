@@ -27,7 +27,7 @@ Clarify what success looks like. What metric or user outcome are we optimizing f
 
 ### 2. Map Opportunities
 
-Use the **Discovery** skill. Read `../skills/discovery/SKILL.md` and build an Opportunity Solution Tree:
+Use the **Discovery** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/discovery/SKILL.md` and build an Opportunity Solution Tree:
 - Target outcome at the top
 - Opportunities branching below (unmet needs, pain points, desires)
 - Potential solutions for each opportunity

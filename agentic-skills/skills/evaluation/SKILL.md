@@ -7,13 +7,6 @@ description: Systems for quantitatively and qualitatively measuring agent perfor
 
 Evaluation determines *how well* an agent performs (correctness, helpfulness, safety), usually on a test dataset. Monitoring determines *how the system is running* (latency, errors, cost) in a live environment. Both are essential for the lifecycle management of AI systems.
 
-## When to Use
-
--   **CI/CD**: Rejecting code changes if they drop accuracy below a threshold.
--   **A/B Testing**: Comparing Prompt A vs. Prompt B to see which users prefer.
--   **Cost Auditing**: Understanding which agents or tools are driving up the bill.
--   **Drift Detection**: Noticing if the model starts hallucinating more often on new data.
-
 ## Use Cases
 
 -   **LLM-as-a-Judge**: Using GPT-4 to grade the answers of a smaller model.

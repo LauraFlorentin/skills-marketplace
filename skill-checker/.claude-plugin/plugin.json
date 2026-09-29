@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "skill-checker",
-    "version": "1.0.0",
-    "description": "Validate, review, and improve Claude skills against Anthropic's official best practices. Includes automated structural validator and multi-dimensional audit scorecard.",
+    "displayName": "Skill Checker",
+    "version": "1.1.0",
+    "description": "Validate and review Claude Code skills for structural correctness, trigger quality, progressive disclosure, portability, safety, and testability.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/skill-checker",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "skill-validation",
         "quality-assurance",

@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "harness-engineer",
-    "version": "1.0.0",
-    "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, and auto-orient fresh sessions. Includes three-layer circuit breaker system.",
+    "displayName": "Harness Engineer",
+    "version": "1.2.0",
+    "description": "Agent-first development toolkit for scaffolding harnesses, diagnosing failures, maintaining context, and designing safe evaluation and recovery workflows.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/harness-engineer",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "harness",
         "agent-engineering",

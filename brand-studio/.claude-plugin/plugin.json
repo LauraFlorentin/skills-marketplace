@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "brand-studio",
-    "version": "1.0.0",
-    "description": "Complete branding toolkit — apply consistent brand identity (colors, fonts, logo, tone of voice) across PowerPoint, Word, logos, HTML/web, and social media templates. Includes auto-branding hook.",
+    "displayName": "Brand Studio",
+    "version": "1.1.0",
+    "description": "Brand identity workflows for PowerPoint, Word, logos, HTML/web, and social media with project or personal configuration and non-blocking brand context.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/brand-studio",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "branding",
         "design",

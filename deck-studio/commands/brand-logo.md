@@ -1,3 +1,10 @@
-Read brand-studio/brand-config.md, then read brand-studio/references/logo-creator.md. Generate a brand logo based on the user's brand identity. Ask which logo type they want (wordmark, lettermark, icon + wordmark, icon only, or badge) if not specified in $ARGUMENTS. Generate 3 SVG variations: full color, dark version, and monochrome.
+---
+description: Create logo concepts and SVG variants from the active brand identity
+argument-hint: "[wordmark|lettermark|combination|icon|badge]"
+---
+
+Load the active brand config from `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`, falling back to `${CLAUDE_PLUGIN_DATA}/brand-config.md`. If neither exists, ask the user to run `/deck-studio:brand-setup`.
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/references/logo-creator.md`. Ask which logo type the user wants when `$ARGUMENTS` does not specify one. Create full-color, dark-background, and monochrome SVG variants.
 
 $ARGUMENTS

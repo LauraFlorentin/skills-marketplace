@@ -1,3 +1,10 @@
-Read brand-studio/brand-config.md, then read brand-studio/references/doc-branding.md. Apply the user's brand identity to the Word document they specify (or ask them to upload one if not provided). If no .docx file is mentioned, ask whether to brand an existing file or create a new branded document from scratch.
+---
+description: Apply the active brand identity to a Word document or create a new branded DOCX
+argument-hint: "<document or brief>"
+---
+
+Load the active brand config from `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`, falling back to `${CLAUDE_PLUGIN_DATA}/brand-config.md`. If neither exists, ask the user to run `/deck-studio:brand-setup`.
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/references/doc-branding.md`. Apply the brand to the Word document the user specifies. If no `.docx` is available, ask whether to brand an existing file or create a new document.
 
 $ARGUMENTS

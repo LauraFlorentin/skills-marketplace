@@ -1,118 +1,99 @@
 #!/usr/bin/env bash
-# =============================================================================
-# HARNESS ENGINEER — Dead Man's Switch Hook
-# Layer 2: Detects dirty working tree held too long without a commit
-#
-# Fires on: PostToolUse (any tool)
-# Logic:
-#   - Track last commit timestamp
-#   - If dirty tree exists AND no commit in TIMEOUT_MINUTES → inject checkpoint
-#   - If CRITICAL_TIMEOUT exceeded → force stash + revert
-# =============================================================================
+# Remind the agent about a long-lived dirty worktree without stashing or committing.
 
-TIMEOUT_MINUTES=${HARNESS_COMMIT_TIMEOUT:-15}
-CRITICAL_TIMEOUT_MINUTES=${HARNESS_CRITICAL_TIMEOUT:-30}
-STATE_DIR=".harness/state"
-TIMESTAMP_FILE="$STATE_DIR/last-commit-time.txt"
-LOG_FILE="$STATE_DIR/deadmans-switch.log"
+set -u
 
+PROJECT_DIR="${CLAUDE_PROJECT_DIR:-$PWD}"
+CONFIG="$PROJECT_DIR/.harness/config.json"
+[ -f "$CONFIG" ] || exit 0
+git -C "$PROJECT_DIR" rev-parse --git-dir >/dev/null 2>&1 || exit 0
+
+STATE_DIR="$PROJECT_DIR/.harness/state"
+DIRTY_SINCE="$STATE_DIR/dirty-since.txt"
+LAST_BAND="$STATE_DIR/checkpoint-band.txt"
+CONFIG_TIMEOUTS=$(python3 - "$CONFIG" <<'PY'
+import json
+import sys
+
+try:
+    config = json.load(open(sys.argv[1], encoding="utf-8"))
+except (OSError, ValueError):
+    config = {}
+settings = config.get("checkpoint_reminder", config.get("dead_mans_switch", {}))
+print(settings.get("warning_minutes", 30))
+print(settings.get("critical_minutes", 60))
+PY
+)
+CONFIG_WARNING=$(printf '%s\n' "$CONFIG_TIMEOUTS" | sed -n '1p')
+CONFIG_CRITICAL=$(printf '%s\n' "$CONFIG_TIMEOUTS" | sed -n '2p')
+WARNING_MINUTES="${HARNESS_COMMIT_TIMEOUT:-$CONFIG_WARNING}"
+CRITICAL_MINUTES="${HARNESS_CRITICAL_TIMEOUT:-$CONFIG_CRITICAL}"
+case "$WARNING_MINUTES" in
+  ''|*[!0-9]*) WARNING_MINUTES=30 ;;
+esac
+case "$CRITICAL_MINUTES" in
+  ''|*[!0-9]*) CRITICAL_MINUTES=60 ;;
+esac
+[ "$CRITICAL_MINUTES" -ge "$WARNING_MINUTES" ] || CRITICAL_MINUTES="$WARNING_MINUTES"
 mkdir -p "$STATE_DIR"
 
-log() {
-  echo "[$(date '+%Y-%m-%d %H:%M:%S')] $1" >> "$LOG_FILE"
-}
-
-# ── Check if working tree is dirty ───────────────────────────────────────────
-
-DIRTY=$(git status --porcelain 2>/dev/null)
-[ -z "$DIRTY" ] && {
-  # Clean tree — update last commit timestamp and exit
-  git log -1 --format="%ct" > "$TIMESTAMP_FILE" 2>/dev/null
+DIRTY=$(git -C "$PROJECT_DIR" status --porcelain 2>/dev/null)
+if [ -z "$DIRTY" ]; then
+  rm -f "$DIRTY_SINCE" "$LAST_BAND"
   exit 0
-}
+fi
 
-# ── Get time since last commit ────────────────────────────────────────────────
-
-LAST_COMMIT_TIME=$(git log -1 --format="%ct" 2>/dev/null)
 NOW=$(date +%s)
-
-if [ -z "$LAST_COMMIT_TIME" ]; then
-  # No commits yet — use session start time
-  LAST_COMMIT_TIME=$NOW
+if [ ! -f "$DIRTY_SINCE" ]; then
+  printf '%s\n' "$NOW" > "$DIRTY_SINCE"
+  exit 0
 fi
 
-ELAPSED_SECONDS=$(( NOW - LAST_COMMIT_TIME ))
-ELAPSED_MINUTES=$(( ELAPSED_SECONDS / 60 ))
+STARTED=$(cat "$DIRTY_SINCE" 2>/dev/null || printf '%s' "$NOW")
+case "$STARTED" in
+  ''|*[!0-9]*) STARTED="$NOW" ;;
+esac
+ELAPSED_MINUTES=$(( (NOW - STARTED) / 60 ))
+BAND=""
 
-log "Dirty tree detected. Time since last commit: ${ELAPSED_MINUTES}m"
-
-# ── Critical timeout — force stash ───────────────────────────────────────────
-
-if [ "$ELAPSED_MINUTES" -ge "$CRITICAL_TIMEOUT_MINUTES" ]; then
-  log "CRITICAL TIMEOUT: ${ELAPSED_MINUTES}m without commit. Forcing stash."
-
-  STASH_MSG="harness-deadmans-critical: ${ELAPSED_MINUTES}m no-commit $(date '+%Y%m%d-%H%M%S')"
-  git stash push -m "$STASH_MSG" 2>/dev/null
-
-  cat << EOF
-
-🚨  HARNESS ENGINEER — DEAD MAN'S SWITCH (CRITICAL)
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-You have had an uncommitted working tree for ${ELAPSED_MINUTES} minutes.
-
-ACTION TAKEN:
-  ✓ All changes stashed as: "$STASH_MSG"
-  ✓ Repo restored to last clean commit
-
-This means one of three things happened:
-  A) You're stuck on a feature that's too large — break it down smaller
-  B) The dev environment broke mid-implementation — run init.sh first
-  C) You forgot to commit after completing something — check git stash
-
-NEXT STEPS:
-  1. Run init.sh — verify the app still works from last clean state
-  2. Check stash: git stash show -p stash@{0}
-  3. If stash contains good work → cherry-pick what's done, commit it, discard the rest
-  4. If stash is all broken → abandon it, restart the feature from scratch
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOF
-  exit 2
+if [ "$ELAPSED_MINUTES" -ge "$CRITICAL_MINUTES" ]; then
+  BAND="critical"
+elif [ "$ELAPSED_MINUTES" -ge "$WARNING_MINUTES" ]; then
+  BAND="warning"
 fi
 
-# ── Warning timeout — inject checkpoint prompt ────────────────────────────────
+[ -n "$BAND" ] || exit 0
+[ "$(cat "$LAST_BAND" 2>/dev/null || true)" != "$BAND" ] || exit 0
+printf '%s\n' "$BAND" > "$LAST_BAND"
 
-if [ "$ELAPSED_MINUTES" -ge "$TIMEOUT_MINUTES" ]; then
-  log "WARNING: ${ELAPSED_MINUTES}m without commit. Injecting checkpoint."
+CHANGED_FILES=$(printf '%s\n' "$DIRTY" | wc -l | tr -d ' ')
+python3 - "$BAND" "$ELAPSED_MINUTES" "$CHANGED_FILES" <<'PY'
+import json
+import sys
 
-  # Count uncommitted files
-  CHANGED_FILES=$(git status --porcelain | wc -l | tr -d ' ')
-
-  cat << EOF
-
-⏱️  HARNESS ENGINEER — COMMIT CHECKPOINT
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-You have $CHANGED_FILES uncommitted file(s) and haven't committed in ${ELAPSED_MINUTES} minutes.
-
-PAUSE before your next tool call and assess:
-
-  ✅ If the current feature is WORKING:
-     → Run tests, verify end-to-end, then git commit with a descriptive message
-     → Update features.json: mark this feature passes=true
-     → Update claude-progress.txt with what was completed
-
-  ⚠️  If you're MID-IMPLEMENTATION and it's NOT working yet:
-     → Is this taking longer than expected? Consider if the approach is right.
-     → Can you commit a partial working state and continue?
-     → If you've been on this for ${ELAPSED_MINUTES}m+, the circuit breaker may fire soon.
-
-  🔴 If the dev server or tests are BROKEN:
-     → Stop. Run init.sh FIRST.
-     → Do not continue building on a broken foundation.
-
-Time until critical timeout (auto-stash): $(( CRITICAL_TIMEOUT_MINUTES - ELAPSED_MINUTES ))m
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-EOF
-fi
+band, minutes, files = sys.argv[1], int(sys.argv[2]), int(sys.argv[3])
+if band == "critical":
+    context = (
+        f"Harness checkpoint: {files} file(s) have remained uncommitted for "
+        f"{minutes} minutes. Pause to run relevant verification and ask the user "
+        "before committing, stashing, reverting, or splitting the work. The hook "
+        "did not change the worktree."
+    )
+else:
+    context = (
+        f"Harness checkpoint: {files} file(s) have been dirty for {minutes} "
+        "minutes. Check whether a small verified checkpoint is appropriate; do "
+        "not commit or stash without authorization."
+    )
+json.dump(
+    {
+        "hookSpecificOutput": {
+            "hookEventName": "PostToolUse",
+            "additionalContext": context,
+        }
+    },
+    sys.stdout,
+)
+PY
 
 exit 0

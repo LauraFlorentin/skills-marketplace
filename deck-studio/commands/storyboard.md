@@ -1,3 +1,8 @@
-Read the deck-builder SKILL.md, then run Stages 1–2 only: diagnose the presentation context (audience, goal, framework) and generate a storyboard of action titles. Present the storyboard for user approval. Do NOT proceed to slide content or PPTX generation — stop after storyboard approval. If $ARGUMENTS provides a topic or brief, use it as context.
+---
+description: Create and approve a presentation storyboard without drafting slides or generating a PPTX
+argument-hint: "<topic or presentation brief>"
+---
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/deck-builder/SKILL.md`. Run stages 1–2 only: diagnose the audience, goal, and framework, then produce a storyboard of action titles. Stop after presenting it for user approval; do not draft slide bodies or generate a PPTX.
 
 $ARGUMENTS

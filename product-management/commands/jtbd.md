@@ -27,7 +27,7 @@ Ask the user about the customer and situation. What are they trying to accomplis
 
 ### 2. Map Jobs
 
-Use the **Discovery** skill. Read `../skills/discovery/SKILL.md` and apply the JTBD framework:
+Use the **Discovery** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/discovery/SKILL.md` and apply the JTBD framework:
 - Core functional jobs
 - Related jobs
 - Emotional and social jobs

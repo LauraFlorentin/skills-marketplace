@@ -5,13 +5,12 @@
     },
     "metadata": {
         "description": "A curated collection of AI skills for Claude Code",
-        "version": "1.0.0"
+        "version": "1.1.0"
     },
     "plugins": [
         {
             "name": "agentic-skills",
             "description": "Agentic Systems Architecture — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns for building autonomous agents.",
-            "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -28,8 +27,7 @@
         },
         {
             "name": "brand-studio",
-            "description": "Complete branding toolkit — apply consistent brand identity across PowerPoint, Word, logos, HTML/web, and social media. Includes auto-branding hook.",
-            "version": "1.0.0",
+            "description": "Brand identity workflows for PowerPoint, Word, logos, HTML/web, and social media, with project or personal configuration and non-blocking brand context.",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -45,9 +43,24 @@
             ]
         },
         {
+            "name": "deck-studio",
+            "description": "End-to-end presentation toolkit — strategic storytelling, narrative frameworks, branded PPTX generation, and data-driven slide craft.",
+            "author": {
+                "name": "LauraFlorentin"
+            },
+            "source": "./deck-studio",
+            "category": "presentations",
+            "tags": [
+                "presentations",
+                "powerpoint",
+                "storytelling",
+                "deck-builder",
+                "branding"
+            ]
+        },
+        {
             "name": "ma-advisory",
-            "description": "AI-powered M&A advisory workflows — VDR management, deal screening, legal and financial due diligence, synergy analysis, deal marketing, integration planning, and workflow chains.",
-            "version": "1.0.0",
+            "description": "Source-traceable M&A workflows for VDR intake, screening, legal and financial issue spotting, regulatory research, synergies, marketing, and integration.",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -64,7 +77,6 @@
         {
             "name": "management-consulting",
             "description": "End-to-end management consulting workflows — proposals, deliverables, research, project management, workshops, bench ops, contracts, and structured thinking frameworks.",
-            "version": "1.2.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -82,7 +94,6 @@
         {
             "name": "product-management",
             "description": "Product management from strategy to growth — vision docs, PRDs, roadmaps, user research, prioritization, GTM, analytics, and product reviews for startup and enterprise PMs.",
-            "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -101,7 +112,6 @@
         {
             "name": "project-management",
             "description": "Project management from initiation to closing — charters, WBS, scheduling, risk registers, sprint planning, status reports, retrospectives, and closeout for software and general PMs.",
-            "version": "1.0.0",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -120,8 +130,7 @@
         },
         {
             "name": "real-estate-investment",
-            "description": "Adaptive multi-agent system for real estate investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, syndication, and international deals.",
-            "version": "1.0.0",
+            "description": "Evidence-based real estate analysis with specialist agents for screening, underwriting, pro formas, financing, stress tests, syndications, hospitality, and cross-border risk.",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -138,8 +147,7 @@
         },
         {
             "name": "harness-engineer",
-            "description": "Agent-first development toolkit — scaffold harnesses, diagnose agent failures, garbage collect stale docs, auto-orient sessions, and consult harness engineering theory (CLASS metrics, Constitutional AI, evaluation frameworks). Includes three-layer circuit breaker system and orchestrator agent for autonomous multi-skill workflows.",
-            "version": "1.1.0",
+            "description": "Agent-harness design, adaptive scaffolding, failure diagnosis, maintenance, onboarding, evaluation, and opt-in non-destructive loop and health guidance.",
             "author": {
                 "name": "LauraFlorentin"
             },
@@ -159,8 +167,7 @@
         },
         {
             "name": "skill-checker",
-            "description": "Validate, review, and improve Claude skills against Anthropic's official best practices. Includes automated structural validator and multi-dimensional audit scorecard.",
-            "version": "1.0.0",
+            "description": "Validate and review Claude Code skills for structural correctness, trigger quality, progressive disclosure, portability, safety, and testability.",
             "author": {
                 "name": "LauraFlorentin"
             },

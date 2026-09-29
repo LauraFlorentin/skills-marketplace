@@ -7,13 +7,6 @@ description: A hybrid pattern where the system pauses execution to request human
 
 Human-in-the-Loop (HITL) bridges the gap between full automation and manual control. It treats the human user as a "privileged tool" or "approver". This is crucial for high-stakes domains where AI errors are unacceptable, or for ambiguous tasks where human intuition is required to guide the agent.
 
-## When to Use
-
--   **High Consequence**: Transferring money, deploying code to production, sending emails to customers.
--   **Ambiguity Resolution**: When the user's intent is unclear ("Book me a flight" -> "Which day?").
--   **Active Learning**: Collecting human feedback to improve the model (RLHF).
--   **Quality Assurance**: Reviewing the final draft of a report before publication.
-
 ## Use Cases
 
 -   **Approval Workflow**: Agent drafts a reply -> Human approves/edits -> Agent sends.

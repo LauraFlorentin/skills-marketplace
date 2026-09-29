@@ -7,13 +7,6 @@ description: A control flow pattern where a central component classifies an inpu
 
 Routing acts as the traffic controller for an agentic system. Instead of a single generalist agent trying to handle every type of user request, a "Router" (often a fast, lightweight LLM or a classifier) analyzes the intent of the incoming message and delegates it to a specialized handler. This creates a system that is modular, scalable, and easier to maintain.
 
-## When to Use
-
--   **Specialization**: When you have diverse tasks that require different prompts, tools, or context (e.g., Tech Support vs. Sales vs. Refund).
--   **Cost Optimization**: To route simple queries to smaller/cheaper models and complex queries to reasoning models.
--   **Security**: To ensure sensitive requests are handled by agents with stricter guardrails.
--   **SoC (Separation of Concerns)**: To keep individual agent prompts focused and clean.
-
 ## Use Cases
 
 -   **Customer Service Dispatch**: Routing "My internet is down" to Tech Support and "How much is the upgrade?" to Sales.

@@ -32,7 +32,7 @@ Ask about: remaining work, completed work, time elapsed, team velocity. Check ~~
 
 ### 2. Analyze & Forecast
 
-Use the **Monitoring** skill. Read `../skills/monitoring/SKILL.md` and:
+Use the **Monitoring** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/monitoring/SKILL.md` and:
 - Analyze current burndown shape
 - Forecast completion date
 - Identify warning signs

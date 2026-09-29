@@ -36,7 +36,7 @@ Check ~~docs for any existing vision documents or strategy materials.
 
 ### 2. Generate Vision
 
-Use the **Strategy** skill. Read `../skills/strategy/SKILL.md` and apply the appropriate vision template (lean or full).
+Use the **Strategy** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/strategy/SKILL.md` and apply the appropriate vision template (lean or full).
 
 ### 3. Output
 

@@ -27,7 +27,7 @@ Ask about: project scope, timeline pressure, team experience, dependencies, tech
 
 ### 2. Identify & Score Risks
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and:
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and:
 - Identify risks using brainstorming, SWOT, and pre-mortem techniques
 - Score each risk (Probability × Impact)
 - Define response strategies (avoid, mitigate, transfer, accept)

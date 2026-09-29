@@ -33,28 +33,28 @@ STORYTELLING              BRAND STUDIO              PPTX OUTPUT
 ### Deck Building
 | Command | Description |
 | :--- | :--- |
-| `/build-deck` | Full 4-stage pipeline: diagnose → storyboard → content → branded PPTX |
-| `/storyboard` | Diagnose context and generate action-title storyboard |
-| `/write-slides` | Write full slide content for an approved storyboard |
+| `/deck-studio:build-deck` | Full 4-stage pipeline: diagnose → storyboard → content → branded PPTX |
+| `/deck-studio:storyboard` | Diagnose context and generate action-title storyboard |
+| `/deck-studio:write-slides` | Write full slide content for an approved storyboard |
 
 ### Storytelling
 | Command | Description |
 | :--- | :--- |
-| `/story-framework` | Choose the right narrative framework for your presentation |
-| `/action-titles` | Rewrite topic titles into action titles |
-| `/data-story` | Turn data into a compelling Data Story Arc narrative |
-| `/audience-mode` | Adapt tone and structure for a specific audience type |
+| `/deck-studio:story-framework` | Choose the right narrative framework for your presentation |
+| `/deck-studio:action-titles` | Rewrite topic titles into action titles |
+| `/deck-studio:data-story` | Turn data into a compelling Data Story Arc narrative |
+| `/deck-studio:audience-mode` | Adapt tone and structure for a specific audience type |
 
 ### Brand Identity
 | Command | Description |
 | :--- | :--- |
-| `/brand-setup` | Configure or update your brand identity |
-| `/brand-status` | Show a summary of your current brand config |
-| `/brand-ppt` | Brand a PowerPoint or create one from scratch |
-| `/brand-doc` | Brand a Word doc or create one from scratch |
-| `/brand-logo` | Generate logo SVGs (3 variations) |
-| `/brand-social` | Create social media assets (or full kit) |
-| `/brand-web` | Create branded HTML artifacts |
+| `/deck-studio:brand-setup` | Configure or update your brand identity |
+| `/deck-studio:brand-status` | Show a summary of your current brand config |
+| `/deck-studio:brand-ppt` | Brand a PowerPoint or create one from scratch |
+| `/deck-studio:brand-doc` | Brand a Word doc or create one from scratch |
+| `/deck-studio:brand-logo` | Generate logo SVGs (3 variations) |
+| `/deck-studio:brand-social` | Create social media assets (or full kit) |
+| `/deck-studio:brand-web` | Create branded HTML artifacts |
 
 ## Agents
 
@@ -62,7 +62,7 @@ None.
 
 ## Hooks
 
-Includes a **Brand Guard hook** (`hooks/brand_guard.py`) that auto-enforces branding on `.pptx`, `.docx`, `.html`, `.svg`, `.png`, `.pdf` files — so you never accidentally create unbranded content.
+Includes a non-blocking **Brand Guard hook** (`hooks/brand_guard.py`). When a brand is configured and a supported asset is about to be written, it injects the active brand summary into context. It does not modify files or approve tool use.
 
 ## Installation
 

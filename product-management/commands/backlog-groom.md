@@ -27,7 +27,7 @@ Ask the user for their current backlog items or check ~~project-tracker for exis
 
 ### 2. Groom
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and:
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and:
 - Review each item against the Definition of Ready
 - Split oversized stories into smaller deliverables
 - Suggest story point estimates (Fibonacci)

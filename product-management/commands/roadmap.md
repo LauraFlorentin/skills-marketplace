@@ -31,7 +31,7 @@ Ask the user about: strategic priorities, OKRs, backlog themes, dependencies, st
 
 ### 2. Build Roadmap
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and apply the appropriate roadmap format.
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and apply the appropriate roadmap format.
 
 ### 3. Output
 

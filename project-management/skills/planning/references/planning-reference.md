@@ -2,6 +2,13 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Resource Planning](#resource-planning)
+- [Risk Management](#risk-management)
+- [Communication Planning](#communication-planning)
+- [Putting It All Together](#putting-it-all-together)
+
 ---
 
 ## Resource Planning

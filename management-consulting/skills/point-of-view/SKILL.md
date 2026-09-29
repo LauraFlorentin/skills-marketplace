@@ -1,17 +1,6 @@
 ---
 name: point-of-view
 description: Create compelling POVs (Points of View) that establish expertise, build credibility, and generate advisory demand through structured strategic arguments. Use when user asks to "write a point of view", "develop a POV", "thought leadership piece", or mentions industry perspective, strategic viewpoint, or expert opinion.
-triggers:
-  - POV
-  - point of view
-  - thought leadership
-  - perspective
-  - position paper
-  - white paper
-  - strategic perspective
-  - opinion piece
-  - industry insight
-  - viewpoint
 ---
 
 # Point of View (POV) Skill Guide

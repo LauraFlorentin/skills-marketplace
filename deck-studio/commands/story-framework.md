@@ -1,3 +1,8 @@
-Read the storytelling SKILL.md and references/frameworks.md. Help the user choose the right narrative framework for their presentation. Ask about their audience, goal, and context, then recommend the best framework (Pyramid Principle, SCQA, SCR, Gap, Hero's Journey, Data Story Arc, or Amazon memo). Explain why the chosen framework fits and show how to apply it to their specific content.
+---
+description: Select and apply an appropriate narrative framework to a presentation
+argument-hint: "<audience, goal, and context>"
+---
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/storytelling/SKILL.md` and `${CLAUDE_PLUGIN_ROOT}/skills/storytelling/references/frameworks.md`. Identify the audience, goal, and context, recommend the best-fit framework, explain the choice, and map the user's content into that structure.
 
 $ARGUMENTS

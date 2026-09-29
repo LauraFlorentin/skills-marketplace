@@ -27,7 +27,7 @@ Ask about: current project status, recent issues, upcoming concerns. Check ~~doc
 
 ### 2. Review Risks
 
-Use the **Monitoring** skill. Read `../skills/monitoring/SKILL.md` and:
+Use the **Monitoring** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/monitoring/SKILL.md` and:
 - Re-score existing risks based on current information
 - Identify new risks
 - Close risks that have been resolved or are no longer relevant

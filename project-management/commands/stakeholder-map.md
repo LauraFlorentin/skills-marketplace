@@ -27,7 +27,7 @@ Ask the user about: who is involved, who is affected, who has decision-making au
 
 ### 2. Map & Analyze
 
-Use the **Initiation** skill. Read `../skills/initiation/SKILL.md` and create:
+Use the **Initiation** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/initiation/SKILL.md` and create:
 - Stakeholder register with influence, interest, and engagement strategy
 - Power/interest grid visualization
 - Communication needs per stakeholder

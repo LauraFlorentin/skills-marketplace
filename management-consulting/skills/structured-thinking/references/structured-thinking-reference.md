@@ -2,6 +2,16 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [3. Five Whys (Root Cause Analysis)](#3-five-whys-root-cause-analysis)
+- [4. 2x2 Matrix (Prioritization and Classification)](#4-2x2-matrix-prioritization-and-classification)
+- [5. Storyline (Consulting Narrative Structure)](#5-storyline-consulting-narrative-structure)
+- [6. Red-Amber-Green (RAG) Assessment](#6-red-amber-green-rag-assessment)
+- [7. Elevator Pitch (Rapid Communication)](#7-elevator-pitch-rapid-communication)
+- [8. Day-One Plan (Initiative Launch)](#8-day-one-plan-initiative-launch)
+- [Combining Frameworks](#combining-frameworks)
+
 ---
 
 ## 3. Five Whys (Root Cause Analysis)
@@ -976,4 +986,3 @@ Example: "We are proposing a $5M customer experience redesign over 18 months. We
 Example: "Monthly steering committee update. Slide 1 is Storyline: Situation (we are 4 weeks into the transformation), Complication (infrastructure team is 10 days behind on database migration), Resolution (we are accelerating testing by 2 weeks to stay on timeline). Slide 2 shows RAG status (4 Green projects, 2 Amber, 1 Red; all Ambers have mitigation plans). Slide 3 walks through What-by-When (completed 12/15 items on time, 2 at risk, 1 overdue by 5 days which we are addressing this week). If the CEO asks 'what is the real issue here?' I have a 30-second Elevator Pitch ready: 'Infrastructure migration is taking 50% longer than estimated because we underestimated data complexity; we are adjusting by compressing the testing phase and extending the go-live by one week.'"
 
 These combinations are not rigid. You will adapt based on context, audience, and what the situation demands. But over time, you will see that these 8 frameworks solve most of the analytical and communication problems that come up in consulting work.
-

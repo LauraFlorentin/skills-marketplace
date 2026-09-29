@@ -1,119 +1,50 @@
-# Skill Checker — Quick Reference
+# Skill Review Quick Reference
 
-Condensed rules from "The Complete Guide to Building Skills for Claude" by Anthropic.
+## Structure
 
----
-
-## Naming Rules
-
-| Rule | Correct | Wrong |
-|---|---|---|
-| Folder name | `my-cool-skill` | `My Cool Skill`, `my_cool_skill`, `MyCoolSkill` |
-| Main file | `SKILL.md` | `skill.md`, `SKILL.MD`, `Skill.md` |
-| Name field | `my-cool-skill` | `My Cool Skill` |
-| No README.md inside skill folder | docs in SKILL.md or references/ | README.md at skill root |
-| Reserved prefixes | anything else | `claude-*`, `anthropic-*` |
-
----
-
-## YAML Frontmatter Template
-
-```yaml
----
-name: skill-name
-description: What it does. Use when user says "phrase1", "phrase2", or mentions X. Do NOT use for Y.
-license: MIT                        # optional
-compatibility: Requires Python 3.8+ # optional, 1-500 chars
-metadata:                           # optional
-  author: Your Name
-  version: 1.0.0
-  mcp-server: server-name
----
-```
-
-**Forbidden in frontmatter:** XML angle brackets (< >), names containing "claude" or "anthropic"
-
----
-
-## Description Formula
-
-```
-[WHAT it does] + [WHEN to use it / trigger phrases] + [Key capabilities] + [Negative triggers if needed]
-```
-
-Good: "Analyzes Figma design files and generates developer handoff documentation. Use when user uploads .fig files, asks for 'design specs', 'component documentation', or 'design-to-code handoff'."
-
-Bad: "Helps with projects."
-
----
-
-## Progressive Disclosure Levels
-
-| Level | What | Size Target | When Loaded |
-|---|---|---|---|
-| 1. Frontmatter | name + description | ~100 words | Always (system prompt) |
-| 2. SKILL.md body | Full instructions | <500 lines | When skill triggers |
-| 3. Bundled files | references/, scripts/, assets/ | Unlimited | On demand |
-
----
-
-## Folder Structure
-
-```
+```text
 skill-name/
-├── SKILL.md           # Required
-├── scripts/           # Optional — executable code
-├── references/        # Optional — docs loaded as needed
-└── assets/            # Optional — templates, fonts, icons
+├── SKILL.md
+├── scripts/       optional deterministic helpers
+├── references/    optional on-demand guidance
+└── assets/        optional reusable inputs
 ```
 
----
+- `SKILL.md` uses exact case.
+- Frontmatter begins on line 1 and has `name` and `description`.
+- Use a lowercase kebab-case name matching the folder.
+- Keep the description within the platform limit and make it identify both capability and trigger context.
 
-## Five Workflow Patterns
+## Progressive disclosure
 
-1. **Sequential Orchestration** — ordered steps with dependencies and validation gates
-2. **Multi-MCP Coordination** — phased work across multiple services
-3. **Iterative Refinement** — draft → validate → improve → repeat
-4. **Context-Aware Tool Selection** — decision tree for choosing the right tool
-5. **Domain-Specific Intelligence** — embedded expertise beyond tool access
+- Description: enough information to decide whether to load the skill.
+- Body: core workflow, constraints, routing, and output contract.
+- Resources: variants, long examples, schemas, scripts, and templates loaded only when needed.
 
----
+Keep the body under roughly 500 lines when practical. Length is a maintainability warning, not a substitute for content review.
 
-## Three Skill Categories
+## Quality questions
 
-1. **Document & Asset Creation** — consistent output generation
-2. **Workflow Automation** — multi-step processes with methodology
-3. **MCP Enhancement** — workflow guidance on top of MCP tool access
+1. Does the description distinguish this skill from nearby skills?
+2. Are critical safety and permission boundaries near the top?
+3. Can the model identify inputs, steps, outputs, and stopping conditions?
+4. Are paths portable and references valid?
+5. Are volatile facts looked up at execution time?
+6. Does the workflow require only tools that exist in the target runtime?
+7. Are scripts deterministic and safe with user data and credentials?
+8. Is success verified proportionately to risk?
 
----
+## Trigger tests
 
-## Testing Checklist
+- obvious positive;
+- two paraphrased positives;
+- adjacent negative;
+- competing-skill case.
 
-**Triggering:**
-- ✅ Triggers on obvious tasks
-- ✅ Triggers on paraphrased requests
-- ❌ Does NOT trigger on unrelated topics
+## Severity
 
-**Functional:**
-- Valid outputs generated
-- API/MCP calls succeed
-- Error handling works
-- Edge cases covered
+- **Error:** violates the runtime contract or prevents loading or execution.
+- **Warning:** likely trigger, portability, safety, or maintainability problem.
+- **Suggestion:** optional editorial improvement.
 
-**Performance:**
-- Fewer back-and-forth messages than without skill
-- Fewer failed API calls
-- Lower token consumption
-
----
-
-## Common Fixes
-
-| Problem | Fix |
-|---|---|
-| Skill doesn't trigger | Add more trigger phrases to description |
-| Skill triggers too often | Add negative triggers, narrow scope |
-| Instructions not followed | Move critical steps to top, use imperative form, explain WHY |
-| Model "laziness" | Add "Take your time, quality over speed" (better in user prompt than SKILL.md) |
-| Slow / degraded responses | Reduce SKILL.md size, use progressive disclosure, check enabled skill count |
-| MCP calls fail | Verify connection, check auth, test MCP independently, verify tool names |
+Confirm current platform-specific rules in official documentation before calling a heuristic an error.

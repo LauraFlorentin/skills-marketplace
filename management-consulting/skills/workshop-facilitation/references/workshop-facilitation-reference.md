@@ -2,6 +2,16 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Facilitation Techniques](#facilitation-techniques)
+- [Virtual Facilitation](#virtual-facilitation)
+- [Decision-Making in Workshops](#decision-making-in-workshops)
+- [Pre-Work and Follow-Up](#pre-work-and-follow-up)
+- [Common Workshop Pitfalls](#common-workshop-pitfalls)
+- [Workshop Facilitation Deliverables](#workshop-facilitation-deliverables)
+- [Accelerated Solutions Environment (ASE) Methodology](#accelerated-solutions-environment-ase-methodology)
+
 ---
 
 ## Facilitation Techniques

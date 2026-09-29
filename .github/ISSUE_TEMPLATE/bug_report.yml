@@ -1,0 +1,54 @@
+name: Bug report
+description: Report a reproducible problem in a plugin or skill
+title: "[Bug]: "
+labels:
+  - bug
+body:
+  - type: dropdown
+    id: plugin
+    attributes:
+      label: Plugin
+      options:
+        - agentic-skills
+        - brand-studio
+        - deck-studio
+        - harness-engineer
+        - ma-advisory
+        - management-consulting
+        - product-management
+        - project-management
+        - real-estate-investment
+        - skill-checker
+        - marketplace or repository
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      placeholder: "For example, 1.0.0"
+  - type: textarea
+    id: problem
+    attributes:
+      label: What happened?
+      description: Include the prompt or command, expected result, and actual result.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction steps
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Product, client version, operating system, and relevant connected tools.
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed credentials, private data, and confidential documents.
+          required: true

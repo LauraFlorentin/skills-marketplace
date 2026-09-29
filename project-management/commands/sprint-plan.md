@@ -28,7 +28,7 @@ Ask about: team members and availability, sprint length, backlog priorities, car
 
 ### 2. Plan Sprint
 
-Use the **Execution** skill. Read `../skills/execution/SKILL.md` and:
+Use the **Execution** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/execution/SKILL.md` and:
 - Calculate team capacity
 - Select stories/tasks from backlog
 - Set sprint goal

@@ -1,9 +1,9 @@
 ---
-description: Classify and auto-folder raw VDR uploads into standard M&A due diligence categories based on document content
+description: Classify VDR documents and propose a due-diligence index and rename plan without mutating the data room
 ---
 
 Use the **VDR Management** skill.
 
-Read the full skill reference at `../skills/vdr-management/SKILL.md` and execute the /vdr-classify protocol. Scan the uploaded files, identify document types (cap tables, IP licenses, vendor contracts, tax filings), and apply standardized M&A naming conventions and folder hierarchies.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/vdr-management/SKILL.md` and execute the VDR classification protocol. Analyze only authorized files, identify document types, and produce a proposed index, duplicate and missing-item report, and rename or move plan. Do not mutate the VDR without explicit authorization.
 
 Ask the user to provide the files or describe the VDR contents to classify.

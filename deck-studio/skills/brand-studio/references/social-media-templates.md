@@ -168,6 +168,6 @@ Before presenting, verify each template:
 ## Delivery
 
 1. Save each file as `[BrandName]_[platform]_[type].html`
-2. Copy all to `/mnt/user-data/outputs/`
+2. Save all outputs to the workspace or artifact location provided by the host environment
 3. Present all files via `present_files` tool — they render as visual previews
 4. Offer: "Want me to swap the layout style, adjust copy, or generate more sizes?"

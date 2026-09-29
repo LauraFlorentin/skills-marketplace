@@ -1,21 +1,11 @@
 ---
 name: research-analysis
 description: Comprehensive market research, competitive analysis, benchmarking, and industry analysis for strategic consulting engagements Use when user asks to "conduct research", "market analysis", "competitor landscape", or mentions industry research, benchmarking, or data analysis.
-triggers:
-  - market research
-  - competitive analysis
-  - benchmarking
-  - industry analysis
-  - landscape
-  - market sizing
-  - TAM
-  - due diligence
-  - secondary research
-  - data gathering
-  - industry trends
 ---
 
 # Market Research & Analysis Skill
+
+Define an as-of date and source standard before research. Use current primary sources for volatile or consequential claims, distinguish publication date from event date, cite evidence near each conclusion, and say when data is unavailable or not comparable. Never fabricate a statistic, interview, benchmark, or source.
 
 ## Disclaimer
 

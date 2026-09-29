@@ -32,7 +32,7 @@ STORYTELLING SKILL          BRAND-STUDIO SKILL         PPTX SKILL
 ### Stage 3 — Write Slide Content
 ### Stage 4 — Generate Branded PPTX
 
-Always run all 4 stages in order. Do not skip to PPTX generation without completing the storyboard and content stages — this is the most common way decks fail.
+Use all four stages, but reuse context and approved content the user already supplied. Pause for storyboard approval only when the narrative direction is materially uncertain or the user asks for a review checkpoint.
 
 ---
 
@@ -107,7 +107,7 @@ Every argument title must be a direct logical pillar under the governing thought
 - Is the governing thought stated by slide 5 at the latest?
 - Are the arguments MECE? (No overlap, no gaps)
 
-**Present the storyboard to the user and ask for approval before writing content.**
+Present the storyboard for approval when changing direction later would waste substantial work. If the user asked for an end-to-end build and the brief is clear, continue while making the storyboard visible in the final deliverable or handoff.
 
 ---
 
@@ -145,13 +145,13 @@ SPEAKER NOTES:
 ## Stage 4 — Generate Branded PPTX
 
 ### Step 4a — Load Brand Config
-Read `/mnt/skills/user/brand-studio/brand-config.md`.
+Read the project brand at `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`, falling back to the personal default at `${CLAUDE_PLUGIN_DATA}/brand-config.md`.
 
 - **If configured:** extract Primary color, Secondary color, Accent color, Heading Font, Body Font, logo path, brand name. Use these throughout.
-- **If NOT configured:** ask the user for brand colors and fonts before generating. Offer a set of default consulting-grade palettes as fallback (see `references/default-palettes.md`).
+- **If NOT configured:** use a bundled palette from `references/default-palettes.md` unless brand choice is decision-critical, in which case ask for direction.
 
 ### Step 4b — Generate PPTX
-Follow `/mnt/skills/public/pptx/SKILL.md` + `/mnt/skills/public/pptx/pptxgenjs.md` for all technical implementation.
+Use the host's available presentation-creation capability and follow its required rendering and verification workflow. Do not assume a fixed filesystem path for another skill.
 
 **Slide layout assignments:**
 | Slide type | Layout to use |
@@ -175,17 +175,12 @@ Follow `/mnt/skills/public/pptx/SKILL.md` + `/mnt/skills/public/pptx/pptxgenjs.m
 - [ ] No `#` prefix on any hex color (PptxGenJS requirement)
 
 ### Step 4c — QA
-Per pptx skill QA requirements:
-1. Convert to images: `python scripts/office/soffice.py --headless --convert-to pdf output.pptx`
-2. `pdftoppm -jpeg -r 150 output.pdf slide`
-3. Visually inspect every slide for: text overflow, overlapping elements, low contrast, placeholder leftovers
-4. Fix issues and re-verify before presenting to user
+Render the deck with the host presentation tooling and visually inspect every slide for text overflow, overlap, clipping, low contrast, chart legibility, and placeholder content. Fix issues and re-render before delivery.
 
 ### Step 4d — Deliver
 - Save as `[BrandName]_[DeckTitle]_[YYYY-MM-DD].pptx`
-- Copy to `/mnt/user-data/outputs/`
-- Present via `present_files` tool
-- Offer: "Want me to adjust any slides, update the storyboard, or change the brand?"
+- Save it in the workspace or artifact location provided by the host environment.
+- Report the final filename and any unresolved content or rendering limitations.
 
 ---
 
@@ -201,4 +196,4 @@ Per pptx skill QA requirements:
 
 ## Quick Mode (Power User)
 
-If the user provides full context upfront (topic, audience, key points), you may compress stages 1–3 into a single output — the approved storyboard + all slide content at once — before asking for PPTX generation confirmation. Never skip the storyboard approval step.
+If the user provides full context upfront, compress stages 1–3 and proceed directly to generation unless the user requested an approval checkpoint.

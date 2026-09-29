@@ -4,6 +4,6 @@ description: Review legal documents (PPM, SHA, operating agreements) for red fla
 
 Use the **Legal Reviewer** agent (A11).
 
-Read the reference file at `../agents/legal-reviewer/reference.md` and review any investment legal documents — PPMs, shareholders agreements, operating agreements — for red flags, missing protections, and negotiation priorities.
+Delegate to the `legal-reviewer` agent provided by this plugin and review any investment legal documents — PPMs, shareholders agreements, operating agreements — for red flags, missing protections, and negotiation priorities.
 
-⚠️ Always note that this analysis is not a substitute for professional legal advice.
+Quote or cite the relevant document provision for each issue. Make clear that this is issue spotting, not a substitute for advice from qualified counsel in the applicable jurisdiction.

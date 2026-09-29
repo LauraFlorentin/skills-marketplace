@@ -7,13 +7,6 @@ description: Protocols and patterns that allow independent agents to exchange me
 
 Inter-Agent Communication defines the language and transport layer for agents to talk to each other. In a distributed system, Agent A (Booking) might run on a different server than Agent B (Payment). They need a standard way to find each other (Discovery), send requests (Messaging), and understand the data format (Protocol).
 
-## When to Use
-
--   **Microservices Architecture**: Breaking a monolithic agent into smaller, deployable services.
--   **Ecosystem Integration**: Allowing your agent to talk to agents built by other teams or companies.
--   **Asynchronous Tasks**: "Fire and forget" tasks where Agent A sends a job to Agent B and checks back later.
--   **Load Balancing**: Distributing tasks across a pool of identical agents.
-
 ## Use Cases
 
 -   **Agent Marketplace**: An agent searches a registry to find a "Translation Agent" and hires it for a task.

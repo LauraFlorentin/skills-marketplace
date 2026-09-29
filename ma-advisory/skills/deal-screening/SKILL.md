@@ -7,20 +7,13 @@ description: >
   teams to screen dozens of targets daily and generate customized Indications
   of Interest.
   Use when user asks to "screen a deal", "evaluate acquisition target", "deal pipeline", or mentions target screening, deal criteria, or preliminary assessment.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Deal Screening
 
-Buy-side consultants, PE associates, and corporate development teams waste critical evaluation hours manually stripping corporate jargon from CIMs to find core data. This skill automates target screening and IOI generation.
+Use only authorized deal materials. Cite each extracted figure to the source document and page, preserve confidentiality, label management claims and assumptions, and treat every IOI as a draft requiring investment, financing, and legal approval before submission.
 
-## When to Use
-
-- Evaluating an inbound CIM or teaser from a sell-side bank
-- Screening multiple targets simultaneously for a buy-side mandate
-- Generating a customized IOI for an attractive target
-- Building a rapid valuation view before investment committee review
+This skill separates source-backed facts, management adjustments, and marketing claims so the deal team can perform preliminary screening and draft an IOI for review.
 
 ## The /cim-extract Protocol
 
@@ -93,7 +86,7 @@ Deliberately bypasses CIM formatting entirely. Instructs the AI to ignore narrat
 - Distinguish between organic and inorganic (M&A-driven) revenue growth
 - Flag customer concentration above 20% for any single customer
 - For IOIs, ensure the valuation range is defensible with stated methodology
-- Time saved: **3-5 hours per CIM** screening; IOI drafting gives massive competitive advantage in auctions
+- Record the time spent, evidence gaps, and review status rather than promising a fixed productivity gain
 
 
 ## Examples

@@ -27,7 +27,7 @@ Ask about: what was decided, why, what alternatives were considered, who made th
 
 ### 2. Record Decision
 
-Use the **Execution** skill. Read `../skills/execution/SKILL.md` and create a structured decision record.
+Use the **Execution** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/execution/SKILL.md` and create a structured decision record.
 
 ### 3. Output
 

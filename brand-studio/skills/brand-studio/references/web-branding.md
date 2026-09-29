@@ -7,7 +7,7 @@ Create branded HTML artifacts — landing pages, email templates, web components
 ## Prerequisites
 
 1. Read `brand-config.md` — extract all brand variables
-2. Read `/mnt/skills/public/frontend-design/SKILL.md` — follow design quality standards
+2. Use the host's available website-building capability and follow its accessibility and visual-verification workflow
 3. Clarify the deliverable type if not specified (see Output Types below)
 
 ---
@@ -113,6 +113,6 @@ When writing placeholder or actual copy:
 ## Delivery
 
 1. Save as `[BrandName]_[type].html` (e.g. `Acme_landing_page.html`)
-2. Copy to `/mnt/user-data/outputs/`
+2. Save the output to the workspace or artifact location provided by the host environment
 3. Present via `present_files` tool (HTML renders in-browser preview)
 4. Offer: "Want me to adjust the layout, copy, or generate additional components?"

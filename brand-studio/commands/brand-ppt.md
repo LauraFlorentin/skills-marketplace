@@ -1,3 +1,10 @@
-Read brand-studio/brand-config.md, then read brand-studio/references/ppt-branding.md. Apply the user's brand identity to the PowerPoint file they specify (or ask them to upload one if not provided). If no .pptx file is mentioned or uploaded, ask whether to brand an existing file or create a branded deck from scratch.
+---
+description: Apply the active brand identity to a PowerPoint deck or create a new branded PPTX
+argument-hint: "<presentation or brief>"
+---
+
+Load the active brand config from `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`, falling back to `${CLAUDE_PLUGIN_DATA}/brand-config.md`. If neither exists, ask the user to run `/brand-studio:brand-setup`.
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/references/ppt-branding.md`. Apply the brand to the PowerPoint file the user specifies. If no `.pptx` is available, ask whether to brand an existing deck or create a new one.
 
 $ARGUMENTS

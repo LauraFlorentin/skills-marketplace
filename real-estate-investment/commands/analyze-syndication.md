@@ -4,6 +4,6 @@ description: Analyze a syndication, SPV, or fund structure and its fee impact
 
 Use the **Syndication Analyzer** agent (A8).
 
-Read the reference file at `../agents/syndication-analyzer/reference.md` and analyze the deal's GP/LP structure, share classes, waterfall distribution, management fees, promote structure, and investor protection provisions.
+Delegate to the `syndication-analyzer` agent provided by this plugin and analyze the deal's GP/LP structure, share classes, waterfall distribution, management fees, promote structure, and investor protection provisions.
 
-Flag any fee structures that drag returns below benchmark targets.
+Quantify fee drag and compare it with the sponsor's disclosed projections. Treat any comparison threshold as deal-specific rather than universal.

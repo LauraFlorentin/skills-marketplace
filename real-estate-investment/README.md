@@ -1,52 +1,68 @@
 # Real Estate Investment Analyzer
 
-Adaptive multi-agent system for real estate investment analysis — deal screening, underwriting, pro forma, financing, tax strategy, stress testing, and more.
+Evidence-based real estate investment analysis for deal screening, underwriting,
+pro formas, financing, tax issue spotting, stress testing, and specialist risk
+review. It includes a dependency-free calculation tool and reusable templates
+for consistent, auditable analysis.
 
-> **Important**: This plugin assists with investment analysis but does not provide financial, legal, or tax advice. All outputs should be reviewed by qualified professionals before making investment decisions.
+> **Important:** This plugin assists with investment analysis but does not
+> provide financial, legal, tax, accounting, or lending advice. Qualified
+> professionals must review outputs before an investment decision.
 
-## How It Works
+## How it works
 
-An **orchestrator agent** classifies each deal by property type, strategy, geography, and complexity, then deploys the right combination of specialist agents. Describe your deal and the system handles the routing.
+The [orchestrator](./agents/orchestrator.md) classifies a deal by property type,
+strategy, geography, stage, and complexity, then routes only the relevant work
+to specialist agents. A full analysis reconciles evidence, calculations, and
+assumptions before producing an investment memo.
 
-See the [orchestrator](./agents/orchestrator.md) for classification logic and routing rules.
+## Components
 
-## Skills
+| Component | Purpose |
+|---|---|
+| [Real Estate Analyzer](./skills/real-estate-analyzer/SKILL.md) | Entry point for mixed-scope analysis and workflow controls |
+| [Commands](./docs/commands.md) | Eleven namespaced commands for full or focused analysis |
+| [Agents](./docs/agents.md) | Orchestrator plus ten underwriting, finance, legal, and risk specialists |
+| [Templates](./templates/README.md) | Structured intake, source register, workbook, and decision-output templates |
+| [Tests](./tests/README.md) | Synthetic regression tests for the bundled calculator |
 
-| Skill | Description |
-| :--- | :--- |
-| [Real Estate Analyzer](./skills/real-estate-analyzer/SKILL.md) | Entry point for the multi-agent analysis system. Covers domestic and international deals, direct ownership and syndications, all property types including hospitality. |
+## Reproducible toolkit
 
-## Commands
+The specialist agents remain the decision workflow; these assets make a result
+easier to review and reproduce:
 
-11 slash commands — see [`commands/README.md`](./commands/README.md) for the full list.
+- `scripts/real_estate_calculations.py` calculates a transparent, fixed-rate,
+  single-property underwriting summary from a completed JSON intake.
+- [`templates/`](./templates/) includes a deal-intake contract, source register,
+  financing comparison, risk and legal logs, diligence checklist, investment
+  memo, and an editable Excel underwriting model.
+- [`tests/`](./tests/) contains synthetic regression cases for the calculator.
 
-## Agents
+Example use from the plugin root:
 
-1 orchestrator + 10 specialist agents — see [`agents/README.md`](./agents/README.md) for the full registry.
+```bash
+python3 scripts/real_estate_calculations.py path/to/completed-deal-intake.json
+python3 -m unittest discover -s tests -p 'test_*.py'
+```
 
-| Agent | Role |
-| :--- | :--- |
-| Orchestrator | Classifies deals and routes to the right specialists |
-| A2 Deal Screener | Quick pass/fail on rules of thumb |
-| A3 Property Underwriter | Full financial analysis |
-| A4 Pro Forma Builder | Multi-year projections |
-| A5 Financing Analyzer | Loan comparison and leverage |
-| A6 Tax Strategist | Depreciation, 1031, cost segregation |
-| A7 Stress Tester | Scenario analysis and resilience |
-| A8 Syndication Analyzer | SPV/fund structure and fee analysis |
-| A9 Int'l Risk Assessor | Cross-border and jurisdiction risk |
-| A10 Hospitality Underwriter | Hotel/resort specific metrics |
-| A11 Legal Reviewer | Document red flags |
+The calculator uses only values supplied in the intake. It does not source
+market data, validate loan eligibility, or give legal, tax, accounting, or
+investment advice.
 
-## Hooks
+## Confidentiality
 
-None.
+Do not commit or upload completed deal intakes, rent rolls, investor lists,
+bank information, tax records, credentials, or other confidential materials to
+this repository. Use an authorized private working location, minimize personal
+data, and confirm authorization before sending materials to an external
+provider. See [data handling guidance](./skills/real-estate-analyzer/references/data-handling.md).
 
 ## Installation
 
 ### Claude Code / Cowork
 
-Add the marketplace (`LauraFlorentin/skills-marketplace`) via Plugins, then install **real-estate-investment**.
+Add the marketplace (`LauraFlorentin/skills-marketplace`) via Plugins, then
+install **real-estate-investment**.
 
 ### Vercel AI SDK
 

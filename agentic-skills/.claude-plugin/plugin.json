@@ -1,14 +1,15 @@
 {
+    "$schema": "https://json.schemastore.org/claude-code-plugin-manifest.json",
     "name": "agentic-skills",
-    "version": "1.0.0",
+    "displayName": "Agentic Skills",
+    "version": "1.1.0",
     "description": "Agentic Systems Architecture skills — planning, routing, tool use, RAG, memory, reflection, and 15 more patterns for building autonomous agents.",
     "author": {
         "name": "LauraFlorentin"
     },
     "repository": "https://github.com/LauraFlorentin/skills-marketplace",
+    "homepage": "https://github.com/LauraFlorentin/skills-marketplace/tree/master/agentic-skills",
     "license": "MIT",
-    "skills": "./skills/",
-    "commands": "./commands/",
     "keywords": [
         "agentic",
         "planning",

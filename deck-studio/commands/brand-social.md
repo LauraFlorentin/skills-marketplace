@@ -1,3 +1,10 @@
-Read brand-studio/brand-config.md, then read brand-studio/references/social-media-templates.md. Create branded social media assets. If $ARGUMENTS specifies a platform or template type (e.g. "linkedin banner", "instagram post", "full kit"), create those. Otherwise ask what they need. For "full kit" or no argument, generate the full batch: LinkedIn banner, LinkedIn post card, Twitter/X card, Instagram square, and Instagram story.
+---
+description: Create branded social media assets for one platform or a complete channel kit
+argument-hint: "[linkedin|x|instagram|full-kit]"
+---
+
+Load the active brand config from `${CLAUDE_PROJECT_DIR}/.brand-studio/brand-config.md`, falling back to `${CLAUDE_PLUGIN_DATA}/brand-config.md`. If neither exists, ask the user to run `/deck-studio:brand-setup`.
+
+Read `${CLAUDE_PLUGIN_ROOT}/skills/brand-studio/references/social-media-templates.md`. Create the platform or template requested in `$ARGUMENTS`; otherwise ask what the user needs. For `full-kit`, produce a LinkedIn banner and post card, X card, Instagram square, and Instagram story.
 
 $ARGUMENTS

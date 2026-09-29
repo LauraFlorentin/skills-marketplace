@@ -6,21 +6,13 @@ description: >
   structures, systems migration roadmaps, and change management communications.
   Includes cultural compatibility assessment using behavioral mapping.
   Use when user asks to "plan post-merger integration", "PMI plan", "integration workstream", or mentions Day 1 readiness, synergy capture, or integration management.
-version: "1.0"
-author: "LauraFlorentin"
 ---
 
 # Integration Planning
 
+Use employee and communications data only for a lawful, authorized purpose with minimization, access controls, and appropriate privacy, employment, and works-council review. Do not infer individual performance, protected traits, or termination decisions from behavioral data.
+
 Post-merger integration is where deal value is either captured or destroyed. Cultural mismatch is the leading cause of integration failure, and poorly planned Day 1 transitions create lasting organizational damage. This skill covers both the analytical (culture diagnostics) and operational (PMI planning) dimensions.
-
-## When to Use
-
-- Assessing cultural compatibility between acquirer and target
-- Building a PMI Target Operating Model
-- Creating Day 1 readiness checklists
-- Designing functional workstream plans (HR, IT, Finance, Operations)
-- Developing employee communications and change management plans
 
 ## The /culture-diag Protocol
 
@@ -58,7 +50,7 @@ Shifts cultural assessment from subjective interviews to **objective behavioral 
 2. [...]
 ```
 
-**Time saved**: Replaces days of subjective interviewing with objective behavioral mapping, enabling proactive change-management planning before Day 1.
+Behavioral data is incomplete and can encode surveillance or cultural bias. Use it only with lawful purpose, minimization, anonymization, worker and privacy safeguards, and human interpretation; do not replace interviews or employee voice.
 
 ## PMI Target Operating Model
 

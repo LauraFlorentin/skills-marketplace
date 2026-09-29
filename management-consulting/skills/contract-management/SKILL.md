@@ -1,26 +1,16 @@
 ---
 name: contract-management
-description: -
+description: >
   Manage consulting contracts throughout their full lifecycle including MSAs,
   SOWs, change orders, billing, compliance monitoring, and renewal management.
   Handles contract negotiation, execution, obligation tracking, and financial
   controls for professional services engagements.
   Use when user asks to "draft a contract", "MSA template", "SOW review", or mentions contract negotiation, terms and conditions, or engagement letters.
-triggers:
-  - contract management
-  - MSA
-  - master service agreement
-  - amendment
-  - change order
-  - contract renewal
-  - billing milestone
-  - invoice
-  - contract compliance
-  - engagement letter
-  - contract lifecycle
-  - SOW amendment
-  - contract tracking
 ---
+
+# Contract Management
+
+Use the executed document and amendments as the source of truth, cite relevant provisions, verify current law when it matters, and route interpretation, notices, waivers, disputes, and negotiated language to qualified counsel.
 
 ## Legal Disclaimer
 
@@ -312,9 +302,8 @@ If dispute emerges, escalate internally and with client immediately:
 5. **Escalate with client**: Move conversation from project team to partnership leadership
 6. **Mediation**: If unresolved, propose third-party mediation before arbitration/litigation
 
-Cost of escalation: $5K-$20K in leadership time and potential concessions. Cost of litigation: $100K+. Escalate aggressively.
+Quantify escalation and dispute costs from current matter-specific estimates. Escalate proportionately under the approved governance and counsel strategy.
 
 ---
 
-**Last Updated**: 2024
-**Maintain and review contract practices quarterly**
+Replace all example dates, values, and terms with the current contract record. Review contract-management practices on the organization's approved cadence.

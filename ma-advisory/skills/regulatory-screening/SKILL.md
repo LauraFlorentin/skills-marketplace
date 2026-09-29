@@ -1,108 +1,61 @@
 ---
 name: regulatory-screening
-description: >
-  Cross-border regulatory risk assessment for M&A transactions. Screens target
-  revenue footprints against global antitrust and Foreign Direct Investment (FDI)
-  thresholds. Flags jurisdictions requiring mandatory pre-close filings to
-  prevent deal delays, fines, or forced unwinding.
-  Use when user asks to "check regulatory requirements", "antitrust screening", "regulatory risk", or mentions HSR filing, competition law, or regulatory approval.
-version: "1.0"
-author: "LauraFlorentin"
+description: Perform preliminary, current-source screening for merger control, foreign investment, national security, subsidy, sector, and related transaction approvals across jurisdictions. Use when a deal team asks which filings or approvals may affect signing, closing, structure, diligence, or timing; require qualified local counsel to confirm every conclusion.
 ---
 
 # Regulatory Screening
 
-Cross-border M&A is fraught with overlapping regulatory regimes. Failing to file for antitrust clearance or FDI approval in a tertiary jurisdiction can lead to massive fines, mandated divestitures, or forced deal unwinding.
+Create an issue map for counsel, not a filing opinion. Thresholds, exemptions, filing forms, fees, review periods, agency practice, and effective dates change frequently. Some regimes are mandatory and suspensory; others are voluntary, call-in, transaction-value, market-share, asset, control, or sector based.
 
-## When to Use
+## Inputs
 
-- Evaluating a cross-border acquisition for regulatory hurdles
-- Initial assessment of antitrust filing requirements across jurisdictions
-- FDI screening for foreign acquirers
-- Timeline forecasting for regulatory approvals
-- Risk allocation planning in definitive agreements
+Collect:
 
-## The /screen-fdi Protocol
+- acquirer, target, ultimate parents, controllers, co-investors, and financing parties;
+- signing and intended closing dates;
+- transaction form, consideration, voting and governance rights, joint-control terms, and prior acquisitions;
+- worldwide and jurisdictional revenue, assets, market shares, customers, employees, subsidiaries, and local nexus for every relevant party;
+- ownership nationalities, state ownership, beneficial owners, sanctions exposure, and government contracts;
+- sensitive sectors, technology, data, infrastructure, land, licenses, media, defense, energy, telecom, health, finance, and public procurement.
 
-### How It Works
+State the currency, financial year, accounting basis, source, and confidence for every threshold input.
 
-1. **Ingest** the target's geographic revenue breakdown, physical asset locations, and customer distribution
-2. **Cross-reference** against the latest global thresholds for:
-   - Mandatory merger control filings (HSR in US, CMA in UK, EC in EU, SAMR in China, etc.)
-   - FDI notification requirements (CFIUS, EU FDI Screening Regulation, etc.)
-   - Sector-specific reviews (defense, critical infrastructure, healthcare, telecoms)
-3. **Flag** jurisdictions requiring mandatory pre-close filings
-4. **Estimate** review timelines and potential remedies
+## Source and freshness rules
 
-### Output Format
+- Use the current official agency, statute, regulation, guidance, form, or fee schedule for each jurisdiction.
+- Record source URL or citation, publication or effective date, retrieval date, and any pending change.
+- Do not reuse a prior deal's threshold table or a remembered waiting period.
+- Use reputable secondary summaries only to discover regimes or explain ambiguity, then confirm with primary authority and counsel.
+- If web or official-source access is unavailable, return a research plan and unknowns rather than a filing conclusion.
 
-```
-## Regulatory Screening Report
+## Screen separately
 
-### Deal Parameters
-- **Acquirer jurisdiction**: [Country]
-- **Target jurisdictions**: [List]
-- **Combined revenue**: $[X]M
-- **Sector(s)**: [Industry classification]
+Assess each potentially applicable regime:
 
-### Filing Requirements
+1. merger control and joint-control rules;
+2. foreign direct investment and national-security review;
+3. foreign subsidies or state-support notification;
+4. sector regulator, license, concession, broadcasting, banking, insurance, telecom, energy, transport, health, data, or defense approvals;
+5. sanctions, export control, public procurement, or government-contract consent;
+6. local, regional, or subnational filings and call-in powers.
 
-| Jurisdiction | Regime | Threshold | Status | Est. Timeline | Risk Level |
-|-------------|--------|-----------|--------|---------------|------------|
-| United States | HSR Act | Size-of-transaction >$[X]M | FILING REQUIRED | 30-60 days | 🟡 |
-| European Union | EC Merger Reg | Combined turnover >€5B | FILING REQUIRED | 25-90 working days | 🟡 |
-| United Kingdom | CMA | UK turnover >£70M or >25% share | REVIEW LIKELY | 40-60 working days | 🟡 |
-| China | SAMR | [Thresholds] | TO BE ASSESSED | 30-180 days | 🔴 |
+Consider transaction aggregation, related-party transactions, minority rights that confer control or influence, local nexus, exemptions, simplified procedures, and whether closing before clearance is prohibited.
 
-### FDI-Specific Risks
-| Jurisdiction | Trigger | Required Action |
-|-------------|---------|-----------------|
-| [Country] | [Critical infrastructure / national security] | Mandatory pre-close notification |
+## Output
 
-### Structural Recommendations
-- [Strategies to avoid/mitigate regulatory triggers]
-- [Suggested risk allocation in purchase agreement]
+Create a counsel-ready matrix:
 
-### Timeline Impact
-- **Earliest possible close**: [Date estimate]
-- **Critical path**: [Longest regulatory review]
-```
+| Jurisdiction / regime | Trigger facts | Current rule and source | Preliminary status | Timing implication | Missing evidence / counsel question |
+|---|---|---|---|---|---|
 
-> **⚠️ Explicit Limitation**: This tool provides preliminary screening only and does **not** replace formal antitrust legal counsel. Thresholds change annually. Always verify current filing requirements with qualified competition lawyers.
+Use statuses such as `likely in scope`, `likely out of scope`, `fact dependent`, and `not yet assessed`; avoid definitive “filing required” unless current qualified counsel has confirmed it.
 
-## Operating Guidelines
+Then provide:
 
-- This is a preliminary screening tool — always verify with qualified legal counsel
-- Thresholds are jurisdiction and year-specific — flag if data may be outdated
-- Consider both target-side and acquirer-side revenue for combined thresholds
-- Sector-specific reviews (defense, telecoms, critical infrastructure) have lower thresholds
-- For Chinese (SAMR) filings, timeline can extend to 180+ days — plan accordingly
-- FDI screening is increasingly aggressive globally post-2020 — err on the side of filing
-- Include regulatory risk allocation in the SPA (who bears risk of non-approval, break fees)
+- a critical-path timeline showing statutory and practical uncertainty;
+- signing and closing conditions, long-stop, cooperation, information, risk-allocation, and remedy issues for counsel;
+- data gaps and owners;
+- a dated source register;
+- explicit professional-review disclaimer.
 
-**Time saved**: 8+ hours of preliminary legal research per transaction.
-
-
-## Examples
-
-**Input**: "$450M acquisition of a US target with EU revenues of €320M."
-
-**Filing flag output**:
-| Jurisdiction | Threshold | Status | Action Required |
-|---|---|---|---|
-| United States (HSR) | Transaction >$119.5M | 🔴 FILING REQUIRED | File within 10 days of signing |
-| European Union (EUMR) | Combined turnover >€5B | ✅ Below threshold | No filing |
-| United Kingdom (CMA) | UK turnover >£70M | 🟡 BORDERLINE | Assess UK revenue split |
-| Germany (GWB) | German turnover >€17.5M | ✅ Likely below | Confirm with local counsel |
-
-**Recommended timeline**: Flag HSR filing to deal team immediately — 30-day waiting period affects closing timeline.
-
-
-## Troubleshooting
-
-| Problem | Cause | Fix |
-|---|---|---|
-| Filing thresholds are outdated | Annual threshold adjustments | Cross-reference official agency websites; thresholds update each year |
-| FDI screening missed | Focus only on antitrust | Run separate CFIUS/FDI screen for any foreign acquirer or sensitive sector |
-| Closing delayed by unexpected filing | Filing flagged late | Run regulatory screen at LOI stage, not post-signing |
-| Local counsel gives conflicting advice | Jurisdictional complexity | Use coordinating international antitrust counsel for multi-jurisdiction review |
+Do not recommend evasion, artificial transaction splitting, or closing in breach of a suspensory regime.

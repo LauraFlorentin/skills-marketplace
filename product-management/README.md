@@ -30,7 +30,7 @@ None.
 
 ## Startup vs. Enterprise
 
-Every skill supports both modes. Commands accept an optional mode hint (e.g., `/prd my-feature lean` or `/prd my-feature full`). When no mode is specified, the command asks about your team context and recommends the appropriate depth.
+Every skill supports both modes. Commands accept an optional mode hint (e.g., `/product-management:prd my-feature lean` or `/product-management:prd my-feature full`). When no mode is specified, the command asks about your team context and recommends the appropriate depth.
 
 ## MCP Integration
 

@@ -27,7 +27,7 @@ Ask about: stakeholder list, team structure, reporting requirements, existing co
 
 ### 2. Build Plan
 
-Use the **Planning** skill. Read `../skills/planning/SKILL.md` and create:
+Use the **Planning** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/planning/SKILL.md` and create:
 - Communication matrix (audience, message, frequency, channel, owner)
 - RACI matrix for key decisions
 - Escalation path

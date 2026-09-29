@@ -31,7 +31,7 @@ Ask the user about: project purpose, sponsor, key stakeholders, timeline, constr
 
 ### 2. Build Charter
 
-Use the **Initiation** skill. Read `../skills/initiation/SKILL.md` and apply the appropriate charter template.
+Use the **Initiation** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/initiation/SKILL.md` and apply the appropriate charter template.
 
 ### 3. Output
 

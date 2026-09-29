@@ -27,7 +27,7 @@ Ask the user about: product stage, business model, current metrics (if any), key
 
 ### 2. Design Framework
 
-Use the **Product Analytics** skill. Read `../skills/product-analytics/SKILL.md` and define:
+Use the **Product Analytics** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/product-analytics/SKILL.md` and define:
 - North Star Metric with rationale
 - Input metrics (3-5 levers)
 - Dashboard layout with metric definitions, data sources, and refresh cadence

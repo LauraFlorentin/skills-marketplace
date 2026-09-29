@@ -5,6 +5,8 @@ description: Develop professional proposals, statements of work, and engagement 
 
 # Proposal & Statement of Work
 
+Ground scope, estimates, rates, dependencies, and commitments in approved inputs. Clearly label assumptions and exclusions, reconcile the proposal with the controlling contract, and require commercial, delivery, finance, and legal approval before sending or signing.
+
 **Important**: This skill assists with proposal and SOW development but does not provide legal advice. All proposals, terms, and pricing should be reviewed by qualified legal and financial professionals before submission to clients.
 
 Framework for developing client-facing proposals, statements of work (SOWs), and engagement letters. Covers scoping methodology, pricing models, rate structures, RFP response strategy, and workflows for moving from discovery to finalized engagement terms.
@@ -220,4 +222,3 @@ Read this file when the task requires:
 - Proposal Scoring Rubric
 - Common Proposal Mistakes
 - Negotiation Tactics
-

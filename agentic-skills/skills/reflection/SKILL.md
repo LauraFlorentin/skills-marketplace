@@ -7,13 +7,6 @@ description: A recursive pattern where an agent evaluates and critiques its own 
 
 Reflection (also known as Self-Correction or Self-Refinement) gives an agent the ability to look at its work and ask, "Is this correct?" or "Can this be better?". Instead of accepting the first draft, the agent acts as its own critic, identifying flaws and generating an improved version. This significantly boosts performance on reasoning and coding tasks.
 
-## When to Use
-
--   **Quality Control**: When high accuracy is required (e.g., generating code, writing legal text).
--   **Compliance**: To ensure the output follows specific formatting or policy constraints.
--   **Iterative Improvement**: When "good enough" isn't enough, and polish is needed.
--   **Hallucination Check**: Asking the model to verify facts against its own knowledge or retrieved context.
-
 ## Use Cases
 
 -   **Code Repair**: Creating code -> Running it -> Reading the error -> Fixing the code.

@@ -2,6 +2,13 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Personas](#personas)
+- [Jobs-to-Be-Done](#jobs-to-be-done)
+- [Opportunity Scoring](#opportunity-scoring)
+- [Output Formats](#output-formats)
+
 ---
 
 ## Personas

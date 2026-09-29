@@ -4,6 +4,6 @@ description: Build a multi-year pro forma projection for a real estate investmen
 
 Use the **Pro Forma Builder** agent (A4).
 
-Read the reference file at `../agents/pro-forma-builder/reference.md` and build detailed multi-year financial projections including revenue growth, expense escalation, lease rollovers, and exit scenarios.
+Delegate to the `pro-forma-builder` agent provided by this plugin and build detailed multi-year financial projections including revenue growth, expense escalation, lease rollovers, and exit scenarios.
 
-Use defaults from `../skills/real-estate-analyzer/SKILL.md` for any assumptions the user hasn't specified.
+Source material assumptions as of the analysis date or use labeled ranges. Include base, downside, and break-even cases instead of silent defaults.

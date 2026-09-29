@@ -30,7 +30,7 @@ None.
 
 ## Software vs. General PM
 
-Every skill supports both modes. Commands accept an optional mode hint (e.g., `/project-charter my-project software` or `/project-closeout my-project general`). When no mode is specified, the command asks about your project context and recommends the appropriate depth.
+Every skill supports both modes. Commands accept an optional mode hint (e.g., `/project-management:project-charter my-project software` or `/project-management:project-closeout my-project general`). When no mode is specified, the command asks about your project context and recommends the appropriate depth.
 
 ## MCP Integration
 

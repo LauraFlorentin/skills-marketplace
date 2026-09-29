@@ -2,6 +2,13 @@
 
 Detailed frameworks, templates, and field-level guidance. Read when SKILL.md directs you here.
 
+## Contents
+
+- [Launch Management](#launch-management)
+- [A/B Testing](#ab-testing)
+- [Growth Experiments](#growth-experiments)
+- [Output Formats](#output-formats)
+
 ---
 
 ## Launch Management

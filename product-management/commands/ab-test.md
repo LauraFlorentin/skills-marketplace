@@ -27,7 +27,7 @@ Ask the user what they expect to happen and why. Frame as: "We believe [change] 
 
 ### 2. Design Test
 
-Use the **Launch & Growth** skill. Read `../skills/launch-growth/SKILL.md` and create:
+Use the **Launch & Growth** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/launch-growth/SKILL.md` and create:
 - Hypothesis statement
 - Control and variant descriptions
 - Primary metric and guardrail metrics

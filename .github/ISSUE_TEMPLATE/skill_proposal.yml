@@ -1,0 +1,31 @@
+name: Skill or plugin proposal
+description: Propose a new workflow or a substantial improvement
+title: "[Proposal]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: User problem
+      description: What repeated task or specialist workflow should this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: examples
+    attributes:
+      label: Example requests
+      description: Provide two or three realistic user prompts that should trigger it.
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output and success criteria
+    validations:
+      required: true
+  - type: textarea
+    id: resources
+    attributes:
+      label: Reusable resources
+      description: Note any scripts, references, assets, APIs, or MCP tools the workflow needs.

@@ -1,12 +1,12 @@
 ---
-description: "Execute Chain 3: Synergy Underwriting to Day 1 Integration Readiness — compress 3 weeks of integration planning into 3 days"
+description: Coordinate synergy underwriting through Day 1 integration planning with owners, dependencies, validation, and review gates
 ---
 
 Use the **Workflow Chains** skill.
 
-Read the full skill reference at `../skills/workflow-chains/SKILL.md` and execute **Chain 3: Synergy Underwriting to Day 1 Integration Readiness**:
+Read the full skill reference at `${CLAUDE_PLUGIN_ROOT}/skills/workflow-chains/SKILL.md` and execute **Chain 3: Synergy Underwriting to Day 1 Integration Readiness**:
 
-1. **Step 1**: Run `/synergy-map` — model overlapping footprints, redundant licenses, duplicate vendors
+1. **Step 1**: Run `/ma-advisory:synergy-map` — model overlapping footprints, redundant licenses, duplicate vendors
 2. **Step 2**: Generate Synergy & Cost Savings Analysis Report for lenders/board/sponsor
 3. **Step 3**: Generate PMI Target Operating Model — feed synergy data into workstream plans:
    - Headcount redundancies → HR 30-day severance/retention plan

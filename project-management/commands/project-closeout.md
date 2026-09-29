@@ -31,7 +31,7 @@ Ask about: were all deliverables accepted? Any open items? Final budget status? 
 
 ### 2. Compile Closeout
 
-Use the **Closing** skill. Read `../skills/closing/SKILL.md` and create:
+Use the **Closing** skill. Read `${CLAUDE_PLUGIN_ROOT}/skills/closing/SKILL.md` and create:
 - Closeout report (objectives vs. actuals)
 - Handoff checklist
 - Lessons learned summary
